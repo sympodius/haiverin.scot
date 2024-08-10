@@ -59,7 +59,7 @@ Once I could see inside the lock, it appeared that it had simply been forced to 
 
 As I slowly closed the door, I looked directly into the eyes of my fellow restroommates. Their faces had a look of awe as I disappeared behind the cubicle door and turned the lock. As soon as it met its recess with a satisfying click, I heard at least one of my fellow queuers release a loud laugh of amusement.
 
-I hope you also found this story amusing, but I tell it to illustrate a genuine point. There have been quite a few times in my life that I have been presented with interesting opportunities that I have felt ill-equipped to take on. Sometimes I have let the opportunities pass by, and sometimes I have taken them on. Both decisions have led me to successes and failures, but the important point is that feeling ill-equipped to handle the situation was rarely predictive in whether I was successful.
+I hope you also found this story amusing, but I tell it to illustrate a genuine point. There have been quite a few times in my life that I have been presented with interesting opportunities that I have felt ill-equipped to take on. Sometimes I have let the opportunities pass by, and sometimes I have risen to the challenge. Both decisions have led me to successes and failures, but the important point is that feeling ill-equipped to handle the situation was rarely predictive in whether I was successful.
 
 ![Knitted Mittens. Credit: John Urquhart Ferguson](images/mitten.jpg "Other things I made without asking permission: Knitted mittens. Credit: John Urquhart Ferguson")
 
