@@ -20,7 +20,7 @@ In the [Arts](/arts) section, you will find John's thoughts on artistic stuff: P
 
 The [Tech](/tech) section is where you'll see John's super-expert opinions on science and technology. He's got a PhD, you know?
 
-And to get real personal and find out what's going on in John's [Life](/life), there's a section for that as well.
+And to get really personal and find out what's going on in John's [Life](/life), there's a section for that as well.
 
 With any luck, you'll leave here with a little more knowledge than when you arrived. It may not be knowledge that you want or need, but it'll be there... sitting in wait for the day you can drop it casually into conversation, not even knowing where it came from. Those around you will herald your trivia, sing your praises, and hail you as *Foreperson of the Factoid*.
 
