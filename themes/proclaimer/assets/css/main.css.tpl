@@ -635,7 +635,7 @@ aside {
 .related-link-container .related-link-title {
     text-decoration: none;
     text-decoration-color: var(--logo-low);
-    background-image: linear-gradient(to bottom, var(--logo-high) 0%, var(--logo-low) 100%);
+    // background-image: linear-gradient(to bottom, var(--logo-high) 0%, var(--logo-low) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; 
@@ -660,6 +660,7 @@ aside {
     margin-bottom: auto;
 }
 
+/*
 .related-link-container:hover .related-link-title {
     text-decoration: none;
     text-decoration-color: var(--logo-high);
@@ -668,6 +669,7 @@ aside {
     background-clip: text;
     color: transparent;
 }
+*/
 
 .sharing-links svg {
     width: 1.5rem;
