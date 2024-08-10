@@ -754,6 +754,7 @@ aside {
     display: flex;
     justify-content: space-between;
     max-width: 962px;
+    min-width: 275px;
     margin-right: auto;
     margin-left: 0;
     padding: 1.5rem;
@@ -761,7 +762,7 @@ aside {
 }
 
 .list-story-generic-block-text {
-    margin-right: 3rem;
+    margin-right: 1rem;
 }
 
 .list-story-generic-block-text h2 {
@@ -1042,6 +1043,10 @@ footer {
 
     .top-three:first-child {
 	padding-top: 5px;
+    }
+
+    .list-story-generic-block-text {
+	margin-right: 3rem;
     }
     
     .list-story-generic-block-image-rectangle {
