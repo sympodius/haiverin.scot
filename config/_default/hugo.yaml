@@ -1,0 +1,75 @@
+baseURL: https://haiverin.scot/
+languageCode: en
+title: Haiverin.scot
+theme: proclaimer
+enableEmoji: true
+enableGitInfo: true
+
+copyright: John Urquhart Ferguson. All Rights Reservered.
+
+markup:
+  goldmark:
+    parser:
+      wrapStandAloneImageWithinParagraph: false
+
+outputs:
+  home:
+    - html
+    - amp
+    - rss
+    - json
+  section:
+    - html
+    - amp
+    - rss
+  taxonomy:
+    - html
+    - amp
+    - rss
+  term:
+    - html
+    - amp
+    - rss
+
+imaging:
+  exif:
+    disableDate: false
+    disableLatLong: false
+    excludeFields: ""
+    includeFields: ""
+  bgColor: '#ffffff'
+  hint: photo
+  quality: 75
+  resampleFilter: box
+
+related:
+  includeNewer: true
+  indices:
+  - applyFilter: false
+    cardinalityThreshold: 0
+    name: keywords
+    pattern: ""
+    toLower: false
+    type: basic
+    weight: 100
+  - applyFilter: false
+    cardinalityThreshold: 0
+    name: date
+    pattern: ""
+    toLower: false
+    type: basic
+    weight: 10
+  - applyFilter: false
+    cardinalityThreshold: 0
+    name: tags
+    pattern: ""
+    toLower: false
+    type: basic
+    weight: 80
+  threshold: 80
+  toLower: true
+
+pagination:
+  disableAliases: false
+  pagerSize: 5
+  path: page

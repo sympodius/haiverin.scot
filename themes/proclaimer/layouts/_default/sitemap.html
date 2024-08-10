@@ -1,0 +1,62 @@
+{{ define "main" }}
+    <div class="single-page-container">
+      <article>
+        {{- /* {{ partial "breadcrumbs.html" (dict "page" .) }} */}}
+        <h1>{{- .Title -}}</h1>
+        {{ partial "storySharingLinks.html" (dict "page" .) }}
+        <h2>Sections</h2>
+        <ul>
+        {{- range site.Sections }}
+          {{- $section := . }}
+          {{ with $section -}}<li><a href="{{- $section.RelPermalink -}}">{{- $section.Title -}}</a></li>{{- end }}
+        {{- end }}
+        </ul>
+      {{- with .Site.Taxonomies.categories }}
+        <h2>Categories</h2>
+        <ul>
+        {{- range $name, $taxonomy := . }}
+          <li><a href="/categories/{{- $name -}}/">{{- $name | humanize -}}</a></li>
+        {{- end }}
+        </ul>
+      {{- end }}
+      {{- with .Site.Taxonomies.tags }}
+        <h2>Tags</h2>
+        <ul>
+        {{- range $name, $taxonomy := . }}
+          <li><a href="/tags/{{- $name -}}/">{{- $name | humanize -}}</a></li>
+        {{- end }}
+        </ul>
+      {{- end }}
+      </article>
+
+      <aside>
+      {{- $related := .Site.RegularPages.Related . | first 5 }}
+      {{- with $related }}
+        <div class="aside-card">
+          <div class="aside-card-title">Recommended For You</div>
+          <ul class="related-entries">
+          {{- range . }}
+          {{- $page := . }}
+          {{- $relBannerImages := .Params.images }}
+          {{- $relBannerImgURL := index $relBannerImages 0 | safeURL }}
+          {{- $relBannerImg := .Resources.GetMatch $relBannerImgURL }}
+            <li>
+              <a href="{{- .RelPermalink -}}">
+                <div class="related-link-container">
+                {{- with $relBannerImg }}
+                  {{- $relBannerImgWebP := .Fill "92x92 webp" }}
+                  <div class="related-link-image">
+                    <img src="{{- $relBannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/>
+                  </div>
+                {{- end }}
+                  <div class="related-link-title">{{- .LinkTitle -}}</div>
+                </div>
+              </a>
+            </li>
+          {{- end }}
+          </ul>
+        </div>
+      {{- end }}
+      </aside>
+    </div>
+{{ end }}

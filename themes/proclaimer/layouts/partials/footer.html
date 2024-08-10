@@ -1,1 +1,27 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+{{- $site := .Site -}}
+{{- $page := . -}}
+
+  {{- with index site.Menus "legal" }}
+    <div class="footer-line print-hidden-flex hidden">
+      <ul>
+        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+      </ul>
+    </div>
+  {{- end }}
+
+    <div class="sharing-links footer-line print-hidden-flex hidden">
+      <ul>
+      {{- $sitemapIcon := resources.GetMatch "images/sitemap.svg" }}
+        <li><a href="/sitemap" title="Sitemap">{{- if ne $sitemapIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $sitemapIcon "page" $page) }}{{- else -}}Sitemap{{- end }}
+            </a></li>
+      {{- with site.Home.OutputFormats.Get "rss" }}
+        {{- $rssIcon := resources.GetMatch "images/rss.svg" }}
+        <li><a href="/index.xml" title="{{- $site.Title -}} News Feed">{{- if ne $rssIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $rssIcon "page" $page) }}{{- else -}}RSS Feed{{- end }}
+            </a></li>
+      {{- end }}
+      </ul>
+    </div>
+
+    <div class="footer-line">
+      {{- with .Site.Copyright }}© {{ (index $site.RegularPages.ByLastmod.Reverse 0).Lastmod.Format "2006" | safeHTML }} {{ . }}{{ end -}}
+    </div>

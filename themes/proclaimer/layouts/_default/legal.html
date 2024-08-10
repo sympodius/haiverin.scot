@@ -1,0 +1,80 @@
+{{ define "main" }}
+{{- $page := . }}
+    <div class="single-page-container">
+      <article>
+      {{ partial "breadcrumbs.html" (dict "page" .) }}
+        <h1>{{- .Title -}}</h1>
+        {{ partial "storySharingLinks.html" (dict "page" .) }}
+        {{ .Content }}
+        {{- if eq (.Path | path.BaseName) "legal" }}
+          {{- with index site.Menus "legal" }}
+            {{ partial "inline/menu-legal/walk.html" (dict "page" $page "menuEntries" .) }}
+          {{- end }}
+        {{- end }}
+      </article>
+
+      <aside>
+      {{- $related := .Site.RegularPages.Related . | first 5 }}
+      {{- with $related }}
+        <div class="aside-card">
+          <div class="aside-card-title">Recommended For You</div>
+          <ul class="related-entries">
+          {{- range . }}
+            {{- $page := . }}
+            {{- $relBannerImages := .Params.images }}
+            {{- $relBannerImgURL := index $relBannerImages 0 | safeURL }}
+            {{- $relBannerImg := .Resources.GetMatch $relBannerImgURL }}
+            <li>
+              <a href="{{- .RelPermalink -}}">
+                <div class="related-link-container">
+                {{- with $relBannerImg }}
+                  {{- $relBannerImgWebP := .Fill "92x92 webp" }}
+                  <div class="related-link-image">
+                    <img src="{{- $relBannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/>
+                  </div>
+                {{- end }}
+                  <div class="related-link-title">{{- .LinkTitle -}}</div>
+                </div>
+              </a>
+            </li>
+          {{- end }}
+          </ul>
+        </div>
+      {{- end }}
+      </aside>
+    </div>
+{{ end }}
+
+{{- define "partials/inline/menu-legal/walk.html" }}
+  {{- $page := .page }}
+  {{- range .menuEntries }}
+    {{- $currEntry := . }}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $page.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+    {{- else if $page.HasMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "true") }}
+      {{- /* {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }} */}}
+    {{- end }}
+    {{- $name := .Name }}
+    {{- with .Identifier }}
+      {{- with T . }}
+        {{- $name = . }}
+      {{- end }}
+    {{- end }}
+    {{- with $currEntry }}
+        <h2><a
+      {{- range $k, $v := $attrs -}}
+        {{- with $v -}}
+          {{- printf " %s=%q" $k $v | safeHTMLAttr -}}
+        {{- end -}}
+      {{- end -}}
+        >{{- $name -}}</a></h2>
+      {{- with .Page }}
+        <p>
+        {{- .Summary -}}
+        </p>
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- end }}

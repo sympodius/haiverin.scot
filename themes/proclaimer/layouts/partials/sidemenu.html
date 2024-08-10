@@ -1,0 +1,20 @@
+<ul class="side-menu-sections">
+{{- range site.Sections }}
+  {{- $section := . }}
+  {{- with $section }}
+            <li><a href="{{- $section.RelPermalink -}}">{{- $section.LinkTitle -}}</a></li>
+    {{- $sectionCategories := slice }}
+    {{- range $section.RegularPages }}
+      {{- $currentPage := . }}
+      {{- range $currentPage.Params.categories }}
+        {{- $sectionCategories = $sectionCategories | append . | uniq | sort }}
+      {{- end }}
+    {{- end }}
+              <ul class="side-menu-categories">
+      {{- range $sectionCategories -}}
+                <li><a href="/categories/{{- . -}}/">{{- . | humanize | title -}}</a></li>
+      {{- end }}
+              </ul>
+    {{- end }}
+  {{- end }}
+          </ul>

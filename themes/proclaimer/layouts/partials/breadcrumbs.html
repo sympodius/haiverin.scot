@@ -1,0 +1,19 @@
+{{- /*
+Renders breadcrumbs for the given page.
+
+@context {page} page The current page.
+
+@example: {{ partial "breadcrumbs.html" (dict "page" .) }}
+*/}}
+
+{{- $page := .page }}
+        <div class="breadcrumbs print-hidden-block hidden">
+        {{- $len := (len $page.Ancestors) }}
+        {{- range $index, $element := $page.Ancestors.Reverse }}
+          <a href="{{- .RelPermalink -}}">{{- .LinkTitle -}}</a> {{ if ne (add $index 1) $len -}}> {{ end }}
+        {{- end }}
+        {{- with $page.GetTerms "categories" -}}
+          >
+          <a href="{{- (index . 0).RelPermalink -}}">{{- (index . 0).LinkTitle -}}</a>
+        {{- end }}
+        </div>

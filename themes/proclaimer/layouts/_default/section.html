@@ -1,0 +1,105 @@
+{{ define "main" }}
+{{- $pages := .Pages }}
+{{- $paginator := .Paginate $pages.ByDate.Reverse }}
+    <div class="list-page-container">
+
+    {{- if not $paginator.HasPrev }}
+      {{- range first 1 $pages.ByDate.Reverse }}
+        {{- $page := . }}
+        {{- $bannerImages := .Params.images }}
+        {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
+        {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
+      <div id="section-pull-banner">
+        {{ with $bannerImg -}}<a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "1536x768 webp" -}}<img src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a>{{- end }}
+        <div id="section-pull-top-story">
+          <div id="section-pull-top-summary" class="hidden">
+            {{ .Summary }}
+          </div>
+          <div class="section-pull-top-title">
+            <a href="{{- $page.RelPermalink -}}">{{- .Title -}}</a>
+          </div>
+        </div>
+        <div id="section-pull-top-stories">
+        {{- range after 1 $pages.ByDate.Reverse | first 3 }}
+          {{- $page := . }}
+          <div class="top-three">
+            <a href="{{- $page.RelPermalink -}}">
+              <div class="top-three-summary hidden">{{- .Summary -}}</div>
+              <div class="top-three-title">{{- .Title -}}</div>
+            </a>
+          </div>
+        {{- end }}
+        </div>
+      </div>
+      {{- end }}
+    {{- end }}
+
+      <div class="single-page-container">
+        <article class="more-on">
+          {{ .Content }}
+          <h1>More on {{ .Title | humanize | title -}}</h1>
+          {{- range (.Paginate .Pages).Pages }}
+            {{- $page := . }}
+            {{- $bannerImages := .Params.images }}
+            {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
+            {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
+          <div class="list-stories-block">
+            <div class="list-story-generic-block">
+              <div class="list-story-generic-block-text">
+                <h2><a href="{{- .RelPermalink -}}">{{ .LinkTitle | humanize | title }}</a></h2>
+                <div class="list-story-generic-block-summary hidden">{{ .Summary }}</div>
+                <div class="list-story-generic-block-entry-info">
+                  {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+                  {{- $dateHuman := .Date | time.Format ":date_long" }}
+                  <div class="list-story-generic-block-date"><time datetime="{{- $dateMachine -}}">{{- $dateHuman -}}</time></div>
+                  <div class="list-story-generic-block-author hidden">{{- with $page.Params.Author }}By {{ $page.Params.Author -}}{{- end -}}</div>
+                  <div class="list-story-generic-block-reading-time">Reading Time: {{ $page.ReadingTime }} minutes <span class="list-story-generic-block-word-count hidden">({{- $page.FuzzyWordCount }} words)</span></div>
+                </div>
+              </div>
+              <div class="list-story-generic-block-image-rectangle hidden">
+              {{- with $bannerImg }}
+                {{- $bannerImgWebP := .Fill "220x133 webp" }}
+                <a href="{{- $page.RelPermalink -}}"><img src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a>
+              {{- end }}
+              </div>
+              <div class="list-story-generic-block-image-square">
+              {{- with $bannerImg }}
+                {{- $bannerImgWebP := .Fill "92x92 webp" }}
+                <a href="{{- $page.RelPermalink -}}"><img src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a>
+              {{- end }}
+              </div>
+            </div>
+          </div>
+          {{- end }}
+          {{ template "_internal/pagination.html" . }}
+        </article>
+
+        <aside class="aside-list">
+        {{- $sec := .Section }}
+          <div class="aside-card aside-card-list-top print-hidden-block hidden">
+            <div class="aside-card-title">Trending Tags in {{ .Title | humanize | title -}}</div>
+            <div class="terms-container">
+              <ul>
+              {{- $t := where .Site.Taxonomies.tags ".Page.Section" $sec }}
+	      {{- range $t.ByCount | first $paginator.PagerSize }}
+	        <li><a class="lowercase" href="{{- .Page.RelPermalink -}}">#{{- replace .Page.Title " " "-" -}}</a></li>
+              {{- end }}
+              </ul>
+            </div>
+          </div>
+
+          <div class="aside-card print-hidden-block hidden">
+            <div class="aside-card-title">Trending Categories in {{ .Title | humanize | title -}}</div>
+            <div class="terms-container">
+              <ul>
+              {{- $c := where .Site.Taxonomies.categories ".Page.Section" $sec }}
+	      {{- range $c.ByCount | first $paginator.PagerSize }}
+	        <li><a href="{{- .Page.RelPermalink -}}">{{- .Page.Title | humanize | title -}}</a></li>
+              {{- end }}
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+{{ end }}

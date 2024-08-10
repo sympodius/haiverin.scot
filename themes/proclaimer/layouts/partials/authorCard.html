@@ -1,0 +1,69 @@
+{{- /*
+Renders an Author Card.
+
+Author Name
+
+Author Bio
+
+Contact Info/Socials
+
+@context {page} page The current page.
+@context {string} authorName The name of the author in the params settings under "authors".
+
+@example: {{ partial "authorCard.html" (dict "authorName" "John Urquhart Ferguson" "page" .) }}
+*/}}
+
+{{- $page := .page }}
+{{- $authorName := .authorName -}}
+
+{{- $websiteIcon := resources.GetMatch "images/globe.svg" }}
+{{- $instagramIcon := resources.GetMatch "images/instagram.svg" }}
+{{- $facebookIcon := resources.GetMatch "images/facebook.svg" }}
+{{- $xtwitterIcon := resources.GetMatch "images/xtwitter.svg" }}
+{{- $githubIcon := resources.GetMatch "images/github.svg" }}
+{{- $redditIcon := resources.GetMatch "images/reddit.svg" }}
+{{- $flickrIcon := resources.GetMatch "images/flickr.svg" }}
+{{- $imvdbIcon := resources.GetMatch "images/imvdb.svg" }}
+{{- $mailIcon := resources.GetMatch "images/mail.svg" }}
+{{- $keybaseIcon := resources.GetMatch "images/keybase.svg" }}
+
+    {{- range site.Params.authors }}
+      {{- if (eq .name $authorName) }}
+        <div class="aside-card sharing-links">
+          <div class="aside-card-title">About The Author</div>
+          <div class="aside-card-subtitle">{{- .name -}}</div>
+          <div class="aside-card-content">
+          {{- $authorImage := resources.GetMatch .image }}
+          {{- with $authorImage }}
+            {{- $authorImageWebP := .Fill "92x92 webp" }}
+            <div class="aside-card-image"><img src="{{- $authorImageWebP.RelPermalink | safeURL -}}"  data-ngsrc="{{- $authorImage.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="author-group"
+                 data-nanogallery2-lightbox = '{
+                   "viewerGallery": "none",
+                   "viewerToolbar": { "display": false },
+                   "viewerTools": {
+                     "topLeft": "",
+                     "topRight": "rotateLeft, rotateRight, zoomButton, fullscreenButton, closeButton"
+                   }
+                 }'
+                 alt="Author image."/>
+            </div>
+          {{ end }}
+          {{- with .bio }}
+            <div class="aside-card-text">{{- . | $page.RenderString (dict "display" "block") -}}</div>
+          {{- end }}
+          </div>
+          <ul class="print-hidden-flex hidden">
+            {{- with .website }}<li><a href="{{- . -}}" title="Website">{{- if ne $websiteIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $websiteIcon "page" .) }}{{- else -}}Website{{- end -}}</a></li>{{ end }}
+            {{- with .instagram }}<li><a href="https://www.instagram.com/{{- . -}}/" title="Instagram">{{- if ne $instagramIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $instagramIcon "page" .) }}{{- else -}}Instagram{{- end -}}</a></li>{{ end }}
+            {{- with .facebook }}<li><a href="https://www.facebook.com/{{- . -}}" title="Facebook">{{- if ne $facebookIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $facebookIcon "page" .) }}{{- else -}}Facebook{{- end -}}</a></li>{{ end }}
+            {{- with .xtwitter }}<li><a href="https://twitter.com/{{- . -}}" title="X">{{- if ne $xtwitterIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $xtwitterIcon "page" .) }}{{- else -}}X{{- end -}}</a></li>{{ end }}
+            {{- with .github }}<li><a href="https://github.com/{{- . -}}" title="GitHub">{{- if ne $githubIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $githubIcon "page" .) }}{{- else -}}GitHub{{- end -}}</a></li>{{ end }}
+            {{- with .reddit }}<li><a href="https://www.reddit.com/user/{{- . -}}" title="Reddit">{{- if ne $redditIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $redditIcon "page" .) }}{{- else -}}Reddit{{- end -}}</a></li>{{ end }}
+            {{- with .flickr }}<li><a href="https://www.flickr.com/photos/{{- . -}}/" title="Flickr">{{- if ne $flickrIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $flickrIcon "page" .) }}{{- else -}}Flickr{{- end -}}</a></li>{{ end }}
+            {{- with .imvdb }}<li><a href="https://imvdb.com/n/{{- . -}}" title="IMVDb">{{- if ne $imvdbIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $imvdbIcon "page" .) }}{{- else -}}IMVDb{{- end -}}</a></li>{{ end }}
+            {{- with .email }}<li><a href="mailto:{{- . -}}" target="_blank" title="Email">{{- if ne $mailIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $mailIcon "page" .) }}{{- else -}}Email{{- end -}}</a></li>{{ end }}
+            {{- with .keybase }}<li><a href="https://keybase.io/{{- . -}}" title="Keybase">{{- if ne $keybaseIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $keybaseIcon "page" .) }}{{- else -}}Keybase{{- end -}}</a></li>{{ end }}
+          </ul>
+        </div>
+      {{- end }}
+    {{- end }}

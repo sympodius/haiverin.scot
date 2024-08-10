@@ -10,42 +10,98 @@ Renders a menu for the given menu ID.
 {{- $page := .page }}
 {{- $menuID := .menuID }}
 
-{{- with index site.Menus $menuID }}
-  <nav>
-    <ul>
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </ul>
-  </nav>
-{{- end }}
-
-{{- define "partials/inline/menu/walk.html" }}
-  {{- $page := .page }}
-  {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL }}
-    {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
-    {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
-    {{- end }}
-    {{- $name := .Name }}
-    {{- with .Identifier }}
-      {{- with T . }}
-        {{- $name = . }}
-      {{- end }}
-    {{- end }}
-    <li>
-      <a
-        {{- range $k, $v := $attrs }}
-          {{- with $v }}
-            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-          {{- end }}
-        {{- end -}}
-      >{{ $name }}</a>
-      {{- with .Children }}
-        <ul>
+  {{- with index site.Menus $menuID }}
+    <nav class="topnav hidden">
+      <div id="side-menu" class="hidden">
+        <div class="menu-close-icon-container" onclick="closeSideMenu()">
+          <a href="javascript:void(0);" id="menu-close-icon-clicker">
+          {{- $cross := resources.GetMatch "images/cross.svg" }}
+            {{ partial "inlineSVG.html" (dict "svgFile" $cross "page" $page) }}
+          </a>
+        </div>
+        <div id="side-menu-contents">
+          {{ partialCached "sidemenu.html" . }}
+        </div>
+      </div>
+      <div id="hamburger-menu" onclick="clickHamburgerIcon()">
+        <a href="javascript:void(0);" id="hamburger-icon-clicker">
+        {{- $hamburger := resources.GetMatch "images/hamburger.svg" }}
+          {{ partial "inlineSVG.html" (dict "svgFile" $hamburger "page" $page) }}
+        </a>
+      </div>
+      {{- $logo := resources.GetMatch (site.Params.logo.svg | default "images/logo.svg") }}
+      <div class="topnav-centered">
+        <div class="homelink">
+          <div {{ with $logo -}}class="logorollover"{{- end -}}>
+            <a href="/">
+	      {{- with $logo }}
+                {{ partial "inlineSVG.html" (dict "svgFile" $logo "page" $page) }}{{ else }}{{ site.Title }}
+              {{- end }}
+            </a>
+          </div>
+        </div>
+        <ul class="topnav-sections hidden">
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
         </ul>
+      </div>
+      <div class="top-search">
+      {{- with site.Params.enableSearch }}
+        <div class="search-icon-container" onclick="clickSearchIcon()">
+          <a href="javascript:void(0);" id="search-icon-clicker">
+          {{- $search := resources.GetMatch "images/search.svg" }}
+            {{ partial "inlineSVG.html" (dict "svgFile" $search "page" $page) }}
+          </a>
+        </div>
       {{- end }}
-    </li>
+      </div>
+    {{- with site.Params.enableSearch }}
+      <div id="search-bar-container" class="hidden">
+        <form action="/search" method="GET">
+          <input class="searchbar" type="search" name="q" id="search-query" placeholder="Search..." onfocusout="leaveSearchbar()">
+        {{- with site.Params.searchPagerSize }}
+          <input type="hidden" id="search-page-num" name="p" value="1">
+          <input type="hidden" id="search-pager-size" name="s" value="{{ site.Params.searchPagerSize }}">
+        {{- end }}
+        </form>
+      </div>
+    {{- end }}
+    </nav>
   {{- end }}
+
+{{- define "partials/inline/menu/walk.html" }}
+    {{- $page := .page }}
+    {{- range .menuEntries }}
+      {{- $currEntry := . }}
+      {{- $attrs := dict "href" .URL }}
+      {{- if $page.IsMenuCurrent .Menu . }}
+        {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+      {{- else if $page.HasMenuCurrent .Menu . }}
+        {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "true") }}
+        {{- /* {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }} */}}
+      {{- end }}
+      {{- $name := .Name }}
+      {{- with .Identifier }}
+        {{- with T . }}
+          {{- $name = . }}
+        {{- end }}
+      {{- end }}
+      {{- with (and (ne .URL "/") (ne .URL "/search/")) }}
+        {{- with $currEntry }}
+          <li>
+            <a
+            {{- range $k, $v := $attrs }}
+              {{- with $v }}
+                {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+              {{- end }}
+            {{- end -}}
+            >{{- $name -}}</a>
+          {{- with .Children }}
+            <ul>
+              {{ partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+            </ul>
+          {{- end }}
+          </li>
+        {{- end }}
+      {{- end }}
+    {{- end }}
 {{- end }}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 118.58 79.487" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="sitemapLinearGradient8">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+  <linearGradient id="sitemapLinearGradient9" x1="158.25" x2="-661.72" y1="212.79" y2="209.97" gradientUnits="userSpaceOnUse" xlink:href="#sitemapLinearGradient8"/>
+  <linearGradient id="sitemapLinearGradient11" x1="296.96" x2="294.62" y1="107.91" y2="412.67" gradientTransform="matrix(3.3021 0 0 3.3021 -911.43 -639.45)" gradientUnits="userSpaceOnUse" xlink:href="#sitemapLinearGradient8"/>
+ </defs>
+ <g transform="matrix(.14345 0 0 .14345 28.759 4.4218)" style="fill:#a100fa">
+  <path d="m245.03 69.173v64.385-64.385 64.385h-64.385v-64.385zm-64.385-48.288h-48.288 48.288-48.288v160.96h56.336v40.24h-209.25v88.529h-56.336v160.96h160.96v-160.96h-56.336v-40.24h160.96v40.24h-56.336v160.96h160.96v-160.96h-56.336v-40.24h160.96v40.24h-56.336v160.96h160.96v-160.96h-56.336v-88.529h-209.25v-40.24h56.336v-160.96h-48.288zm-209.25 402.4v-64.385 64.385-64.385h64.385v64.385zm209.25-64.385h64.385-64.385 64.385v64.385h-64.385zm209.25 64.385v-64.385 64.385-64.385h64.385v64.385z" style="fill:url(#sitemapLinearGradient11);stroke-width:4.6197"/>
+  <circle transform="rotate(-90)" cx="-246.22" cy="212.83" r="405.63" style="fill:none;stroke-width:15.347;stroke:url(#sitemapLinearGradient9)"/>
+ </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 118.58 79.487" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="flickrLinearGradient8">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+  <linearGradient id="flickrLinearGradient9" x1="158.25" x2="-661.72" y1="212.79" y2="209.97" gradientUnits="userSpaceOnUse" xlink:href="#flickrLinearGradient8"/>
+  <linearGradient id="flickrLinearGradient11" x1="296.96" x2="294.62" y1="107.91" y2="412.67" gradientTransform="matrix(2.8466 0 0 2.8466 -671.13 -505.47)" gradientUnits="userSpaceOnUse" xlink:href="#flickrLinearGradient8"/>
+ </defs>
+ <g transform="matrix(.14345 0 0 .14345 28.759 4.4218)" style="fill:#a100fa">
+  <path d="m423.81-22.29h-421.96 421.96-421.96q-23.975 1.1988-40.758 16.783-15.584 16.783-16.783 40.758v421.96q1.1988 23.975 16.783 40.758 16.783 15.584 40.758 16.783h421.96q23.975-1.1988 40.758-16.783 15.584-16.783 16.783-40.758v-421.96q-1.1988-23.975-16.783-40.758-16.783-15.584-40.758-16.783zm-305.68 344.04q-33.565-1.1988-53.944-22.776-21.578-20.379-22.776-52.745 1.1988-33.565 22.776-53.944 20.379-21.578 53.944-22.776 32.366 1.1988 52.745 22.776 21.578 20.379 22.776 53.944-1.1987 32.366-22.776 52.745-20.379 21.578-52.745 22.776zm190.6 0q-33.565-1.1988-53.944-22.776-21.578-20.379-22.776-52.745 1.1987-33.565 22.776-53.944 20.379-21.578 53.944-22.776 32.366 1.1988 52.745 22.776 21.578 20.379 22.776 53.944-1.1988 32.366-22.776 52.745-20.379 21.578-52.745 22.776z" style="fill:url(#flickrLinearGradient11);stroke-width:3.9825"/>
+  <circle transform="rotate(-90)" cx="-246.22" cy="212.83" r="405.63" style="fill:none;stroke-width:15.347;stroke:url(#flickrLinearGradient9)"/>
+ </g>
+</svg>

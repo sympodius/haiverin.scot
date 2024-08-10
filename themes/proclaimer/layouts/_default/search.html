@@ -1,0 +1,119 @@
+{{ define "main" }}
+    <div class="list-page-container">
+      <h1 id="search-title">Search Results</h1>
+      <div id="search-results"></div> 
+      <div class="search-loading">Searching...</div>
+      <script id="search-result-template" type="text/x-js-template">
+        <div class="list-stories-block">
+          <div class="list-story-generic-block">
+            <div class="list-story-generic-block-text">
+              <div id="summary-${key}">
+                <h2><a href="${link}">${title}</a></h2>
+                <p>${snippet}</p>
+                <p>
+                  <small>
+                    ${ isset tags }Tags: ${tags}<br>${ end }
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+
+      <script id="search-pagination-template" type="text/x-js-template">
+        <ul class="pagination pagination-default">
+          <li class="page-item${startActivationClass}">
+            <a ${firstHref} aria-label="First" class="page-link" role="button"${startTabIndex}><span aria-hidden="true">&laquo;&laquo;</span></a>
+          </li>
+          <li class="page-item${startActivationClass}">
+            <a ${prevHref} aria-label="Previous" class="page-link" role="button"${startTabIndex}><span aria-hidden="true">&laquo;</span></a>
+          </li>
+          ${pages}
+          <li class="page-item${endActivationClass}">
+            <a ${nextHref} aria-label="Next" class="page-link" role="button"${endTabIndex}><span aria-hidden="true">&raquo;</span></a>
+          </li>
+          <li class="page-item${endActivationClass}">
+            <a ${lastHref} aria-label="Last" class="page-link" role="button"${endTabIndex}><span aria-hidden="true">&raquo;&raquo;</span></a>
+          </li>
+        </ul>
+      </script>
+
+      <script id="search-pagination-page-template" type="text/x-js-template">
+        <li class="page-item${activationClass}">
+          <a ${href} aria-label="Page ${page}" class="page-link" role="button">${page}</a>
+        </li>
+      </script>
+  
+{{- /*
+  If using production code, get the third party javascript from CDNs. Otherwise, use a local copy.
+  This makes it easier for me to test the site without an internet connection, and means I don't
+  have to include the external libraries directly in my repo.
+*/}}
+{{- if eq hugo.Environment "production" }}
+  {{- $fuseJsUrl := "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" }}
+  {{- with resources.GetRemote $fuseJsUrl }}
+    {{- with .Err }}
+      {{- errorf "%s" . }}
+    {{- else }}
+      {{- with . | fingerprint }}
+      <script type="text/javascript" src="{{ $fuseJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    {{- errorf "Unable to get remote resource %q" $fuseJsUrl }}
+  {{- end }}
+  {{- $markJsUrl := "https://cdn.jsdelivr.net/gh/julkue/mark.js@a283c4c437ff38d2b09c81da1030af9b0191b9f1/dist/mark.min.js" }}
+  {{- with resources.GetRemote $markJsUrl }}
+    {{- with .Err }}
+      {{- errorf "%s" . }}
+    {{- else }}
+      {{- with . | fingerprint }}
+      <script type="text/javascript" src="{{ $markJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    {{- errorf "Unable to get remote resource %q" $markJsUrl }}
+  {{- end }}
+{{- else }}
+  {{- with resources.Get "js/fuse.min.js" }}
+    {{- if eq hugo.Environment "development" }}
+      {{- with . }}
+      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+      {{- end }}
+    {{- else }}
+      {{- with . | resources.Minify | fingerprint }}
+      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  {{- end }}
+  {{- with resources.Get "js/mark.min.js" }}
+    {{- if eq hugo.Environment "development" }}
+      {{- with . }}
+      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+      {{- end }}
+    {{- else }}
+      {{- with . | resources.Minify | fingerprint }}
+      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/julkue/mark.js@a283c4c437ff38d2b09c81da1030af9b0191b9f1/dist/mark.min.js"></script>
+  {{- end }}
+{{- end }}
+
+{{- with resources.Get "js/search.js" }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . }}
+      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+    {{- end }}
+  {{- else }}
+    {{- with . | resources.Minify | fingerprint }}
+      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    {{- end }}
+  {{- end }}
+{{- end }}
+    </div>
+{{ end }}

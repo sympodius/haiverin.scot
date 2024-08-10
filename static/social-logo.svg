@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="30.018787mm"
+   height="29.998995mm"
+   viewBox="0 0 85.092635 85.03652"
+   version="1.2"
+   id="svg47"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata51">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs24">
+    <linearGradient
+       id="linearGradient21">
+      <stop
+         style="stop-color:#15c5fe;stop-opacity:1;"
+         offset="0"
+         id="stop21" />
+      <stop
+         style="stop-color:#a100fa;stop-opacity:1;"
+         offset="1"
+         id="stop22" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1">
+      <stop
+         style="stop-color:#15c5fe;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+      <stop
+         style="stop-color:#a100fa;stop-opacity:1;"
+         offset="1"
+         id="stop1" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient1"
+       id="linearGradient6"
+       gradientUnits="userSpaceOnUse"
+       x1="9.7771873"
+       y1="7.7227407"
+       x2="9.7752457"
+       y2="49.908272"
+       gradientTransform="matrix(0.74999999,0,0,0.74999999,-62.244237,-60.950854)" />
+    <linearGradient
+       xlink:href="#linearGradient21"
+       id="linearGradient23"
+       gradientUnits="userSpaceOnUse"
+       x1="1.1875904"
+       y1="-2.7564671"
+       x2="-52.94907"
+       y2="-2.2623589"
+       gradientTransform="matrix(0.99588768,0,0,0.99588768,64.631078,-99.866066)" />
+    <linearGradient
+       xlink:href="#linearGradient21"
+       id="linearGradient24"
+       gradientUnits="userSpaceOnUse"
+       x1="1.3088444"
+       y1="-6.395318"
+       x2="-51.894733"
+       y2="-5.8775954"
+       gradientTransform="matrix(0.98614474,0,0,0.97923741,63.643217,-98.959627)" />
+    <linearGradient
+       xlink:href="#linearGradient21"
+       id="linearGradient25"
+       gradientUnits="userSpaceOnUse"
+       x1="2.4351387"
+       y1="-8.8565502"
+       x2="-51.470665"
+       y2="-6.9280486" />
+  </defs>
+  <g
+     id="jufproclamation"
+     transform="translate(7.1079069,11.980544)"
+     style="display:inline">
+    <title
+       id="title5">JUF Proclamation</title>
+    <ellipse
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Uncial Antiqua';-inkscape-font-specification:'Uncial Antiqua';letter-spacing:0px;word-spacing:0px;display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.993945;stroke-opacity:1"
+       id="ellipse6"
+       ry="26.825733"
+       rx="27.028337"
+       cy="-7.0288501"
+       cx="-24.661083"
+       transform="matrix(0,-1.5446971,1.557178,0,46.38358,-7.5561809)">
+      <title
+         id="title6">Circle 03</title>
+    </ellipse>
+    <ellipse
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Uncial Antiqua';-inkscape-font-specification:'Uncial Antiqua';letter-spacing:0px;word-spacing:0px;display:inline;fill:none;fill-opacity:1;stroke:url(#linearGradient25);stroke-width:0.993945;stroke-opacity:1"
+       id="circle03"
+       ry="26.825733"
+       rx="27.028337"
+       cy="-7.0288501"
+       cx="-24.661083"
+       transform="matrix(0,-1.5446971,1.557178,0,46.38358,-7.5561809)">
+      <title
+         id="title4">Circle 03</title>
+    </ellipse>
+    <circle
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Uncial Antiqua';-inkscape-font-specification:'Uncial Antiqua';letter-spacing:0px;word-spacing:0px;display:inline;fill:none;fill-opacity:1;stroke:url(#linearGradient24);stroke-width:0.923882;stroke-opacity:1"
+       id="circle02"
+       cx="38.357292"
+       cy="-105.18623"
+       r="25.45447"
+       transform="matrix(0,-1.5859591,1.5859591,0,201.16558,92.086616)">
+      <title
+         id="title3">Circle 02</title>
+    </circle>
+    <circle
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Uncial Antiqua';-inkscape-font-specification:'Uncial Antiqua';letter-spacing:0px;word-spacing:0px;display:inline;fill:none;fill-opacity:1;stroke:url(#linearGradient23);stroke-width:0.929142;stroke-opacity:1"
+       id="circle01"
+       cx="37.905067"
+       cy="-105.85918"
+       r="24.55817"
+       transform="matrix(0,-1.5859591,1.5859591,0,201.16558,92.086616)">
+      <title
+         id="title2">Circle 01</title>
+    </circle>
+    <path
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:'Uncial Antiqua';-inkscape-font-specification:'Uncial Antiqua';letter-spacing:0px;word-spacing:0px;display:inline;fill:url(#linearGradient6);fill-opacity:1;stroke:none;stroke-width:0.5625;stroke-opacity:1"
+       d="m -110.19443,-52.986498 c -1.76758,0.703125 -3.34961,1.640625 -4.7461,2.8125 -0.5957,0.498047 -1.17675,1.074219 -1.74316,1.728515 -0.56641,0.644531 -1.07422,1.376953 -1.52344,2.197266 -0.43945,0.810547 -0.7959,1.713867 -1.06933,2.709961 -0.26367,0.986328 -0.39551,2.06543 -0.39551,3.237304 0,1.083985 0.14648,2.084961 0.43945,3.00293 0.29297,0.908203 0.69336,1.728516 1.20117,2.460937 0.51758,0.722657 1.12305,1.362305 1.81641,1.918946 0.69336,0.546875 1.44043,1.005859 2.24121,1.376953 0.81055,0.371093 1.65527,0.649414 2.53418,0.834961 0.87891,0.185547 1.75781,0.27832 2.63672,0.27832 0.71289,0 1.37207,-0.07813 1.97754,-0.234375 0.60547,-0.146484 1.16211,-0.34668 1.66992,-0.600586 0.51758,-0.253906 0.98633,-0.546875 1.40625,-0.878906 0.41992,-0.341797 0.80566,-0.703125 1.15723,-1.083984 v 2.197265 7.819336 c -0.0288,0.726009 -0.074,1.430434 -0.15674,2.085937 -0.12695,0.996094 -0.29785,1.90918 -0.5127,2.739258 -0.20507,0.839844 -0.43945,1.59668 -0.70312,2.270508 -0.26367,0.673827 -0.53223,1.274414 -0.80567,1.801758 -0.64453,1.240233 -1.37695,2.250976 -2.19726,3.032226 l 0.26367,0.483399 c 1.64063,-0.712891 3.10547,-1.806641 4.39453,-3.28125 0.54688,-0.625 1.08399,-1.372071 1.61133,-2.241211 0.52734,-0.859376 0.996094,-1.855469 1.40625,-2.988281 0.410156,-1.123047 0.742187,-2.392579 0.996094,-3.808594 0.253906,-1.425781 0.380859,-3.017578 0.380859,-4.775391 v -3.137695 h 2.544434 v -0.541992 c -0.556641,0 -1.005859,-0.06836 -1.347657,-0.205078 -0.332031,-0.146485 -0.59082,-0.322266 -0.776367,-0.527344 -0.175781,-0.205078 -0.297851,-0.424805 -0.36621,-0.65918 -0.02407,-0.0963 -0.04001,-0.18715 -0.0542,-0.276855 v -4.744629 c 0,-0.263672 0.03418,-0.512695 0.102539,-0.747071 0.07813,-0.234374 0.214845,-0.444336 0.410157,-0.629883 0.126431,-0.120109 0.292353,-0.217314 0.476073,-0.304687 0.615978,0.0022 1.273449,0.0026 1.775391,0.0088 0.791016,0.0098 1.469727,0.04394 2.036133,0.102539 0.566406,0.0586 1.035156,0.151367 1.40625,0.278321 0.380859,0.126953 0.69336,0.307617 0.9375,0.541992 0.253906,0.234375 0.454101,0.532226 0.600586,0.893554 0.146485,0.351563 0.273437,0.791017 0.38086,1.31836 l 0.483398,-0.08789 c 0.0098,-0.439452 0.04394,-0.888671 0.102539,-1.347656 0.04883,-0.390625 0.126951,-0.810547 0.234374,-1.259766 0.107422,-0.449219 0.263671,-0.878907 0.46875,-1.289062 h -9.448238 v -8.935548 c 0,-0.273437 0.03418,-0.532226 0.102539,-0.776367 0.06836,-0.244141 0.195313,-0.458985 0.380859,-0.644531 0.128717,-0.128717 0.298232,-0.231722 0.486328,-0.322266 h 3.864258 c 0.527344,0 1.069336,0.04395 1.625976,0.131836 0.556642,0.07813 1.079103,0.234375 1.567383,0.46875 0.488282,0.22461 0.913085,0.541992 1.274414,0.952149 0.361328,0.410156 0.610351,0.942382 0.74707,1.596679 l 0.512695,-0.08789 c 0,-0.03906 0.0049,-0.19043 0.01465,-0.454102 0.0098,-0.263672 0.03906,-0.585937 0.08789,-0.966797 0.04882,-0.380859 0.12207,-0.791015 0.219726,-1.230469 0.107422,-0.449218 0.25879,-0.86914 0.454102,-1.259765 h -8.759765 -9.7998 -0.0146 v 0.541992 c 0.55664,0 1.00585,0.07325 1.34765,0.219727 0.3418,0.136718 0.60059,0.307617 0.77637,0.512695 0.18555,0.205078 0.30762,0.429687 0.36621,0.673828 0.0684,0.234376 0.10254,0.449219 0.10254,0.644531 v 8.938477 h -2.54443 v 0.541992 c 0.52734,0 0.95703,0.06348 1.28906,0.190429 0.33203,0.126953 0.59082,0.288086 0.77637,0.483399 0.19531,0.185546 0.32714,0.390625 0.3955,0.615234 0.0371,0.106737 0.064,0.208961 0.0835,0.309083 v 0.69873 c 0,0.908204 -0.15625,1.743164 -0.46875,2.504883 -0.3125,0.751953 -0.7373,1.401367 -1.27441,1.948242 -0.52734,0.546875 -1.14258,0.97168 -1.8457,1.274414 -0.70313,0.302735 -1.4502,0.454102 -2.24121,0.454102 -0.87891,0 -1.69434,-0.175781 -2.44629,-0.527344 -0.74219,-0.351562 -1.38672,-0.878906 -1.9336,-1.582031 -0.54687,-0.712891 -0.97656,-1.59668 -1.28906,-2.651368 -0.30273,-1.064452 -0.4541,-2.304687 -0.4541,-3.720703 0,-1.494141 0.1123,-2.841797 0.33691,-4.042968 0.22461,-1.201173 0.50781,-2.265625 0.84961,-3.19336 0.3418,-0.927734 0.71289,-1.723632 1.11328,-2.387695 0.40039,-0.673828 0.77637,-1.230469 1.12793,-1.669922 0.35157,-0.439454 0.64942,-0.771485 0.89356,-0.996094 0.24414,-0.224606 0.38574,-0.351559 0.4248,-0.380859 z"
+       id="jufsigil"
+       transform="matrix(1.5859591,0,0,1.5859591,192.35953,84.708768)">
+      <title
+         id="title1">JUF Sigil</title>
+    </path>
+  </g>
+</svg>

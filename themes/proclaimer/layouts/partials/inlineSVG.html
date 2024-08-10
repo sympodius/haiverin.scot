@@ -1,0 +1,51 @@
+{{- /*
+Renders an SVG file inline.
+
+@context {page} page The current page.
+@context {string} svgFile The SVG file resource.
+
+@example: {{ partial "inlineSVG.html" (dict "svgFile" $svgFileResouce "page" .) }}
+*/}}
+
+{{- /*
+  This partial converts SVG files to an inline
+  equivalent. It attempts to remove some extraneous 
+  information. If there are gradient stops, it will try
+  to convert the first and last colours to direct html 
+  attributes instead of being embedded in style strings.
+  It will also add a class name based on the image filename.
+*/}}
+
+{{- $page := .page }}
+{{- $svgFile := .svgFile }}
+
+{{- $class := print (path.BaseName $svgFile) "-icon" }}
+{{- $matchSVG := `<svg (.*)?` }}
+{{- $matchXML := `<\?xml version="1.0" encoding="UTF-8"\?>` }}
+{{- $matchInkscape := `<!-- Created with Inkscape \(http://www.inkscape.org/\) -->` }}
+{{- $matchStop := `style="stop-color:#(.*)?;stop-opacity:1;"` }}
+{{- $matchStopSimp := `style="stop-color:#(.*)?"` }}
+{{- $addClass := printf `<svg class="%s" ${1}` $class }}
+{{- $fixStop := printf `stop-color="#${1}"` }}
+{{- $randomStr := delimit (shuffle (split (md5 $class) "" )) "" }}
+{{- $matchLGId := `<linearGradient id="` }}
+{{- $makeUniqueLGId := printf `<linearGradient id="%s` $randomStr }}
+{{- $matchXLinkHref := `xlink:href="#` }}
+{{- $makeUniqueXLinkHref := printf `xlink:href="#%s` $randomStr }}
+{{- $matchFillURL := `fill:url(#` }}
+{{- $makeUniqueFillURL := printf `fill:url(#%s` $randomStr }}
+{{- $matchStrokeURL := `stroke:url(#` }}
+{{- $makeUniqueStrokeURL := printf `stroke:url(#%s` $randomStr }}
+{{- $removeXML := printf `` }}
+{{- $removeInkscape := printf `` }}
+{{- $outStr := readFile (print "assets/" $svgFile) }}
+{{- $outStr = replaceRE $matchStop $fixStop $outStr }}
+{{- $outStr = replaceRE $matchStopSimp $fixStop $outStr }}
+{{- $outStr = replaceRE $matchXML $removeXML $outStr }}
+{{- $outStr = replaceRE $matchInkscape $removeInkscape $outStr }}
+{{- $outStr = replaceRE $matchSVG $addClass $outStr }}
+{{- $outStr = replaceRE $matchLGId $makeUniqueLGId $outStr }}
+{{- $outStr = replaceRE $matchXLinkHref $makeUniqueXLinkHref $outStr }}
+{{- $outStr = replace $outStr $matchFillURL $makeUniqueFillURL }}
+{{- $outStr = replace $outStr $matchStrokeURL $makeUniqueStrokeURL }}
+{{- $outStr | safeHTML }}

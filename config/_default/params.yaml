@@ -1,0 +1,52 @@
+author:
+  name: John Urquhart Ferguson
+  email: enquiries@haiverin.scot
+  post: Haiverin, PO Box 10101, Glasgow, G71 9DN, UK
+
+description: A Scot shouting nonsense into the void.
+images:
+- /social-logo.svg
+social:
+  facebook_admin: john.u.ferguson
+    
+enableSearch: true
+searchPagerSize: 5
+
+logo:
+  svg: "images/logo.svg"
+  height: "60px"
+  width: "60px"
+
+colors:
+  logoHigh: "#15C5FE"
+  logoLow: "#A100FA"
+  siteBackground: "#F9F9F9"
+  navA: "#7C8C8C"
+  navAActive: "#0B0D0C"
+  navAHover: "#5C6C6C"
+  a: "#7C8C8C"
+  aActive: "#0B0D0C"
+  aHover: "#5C6C6C"
+  bodyText: "#0B0D0C"
+  h1: "#0B0D0C"
+  summary: "#5C6C6C"
+
+authors:
+- name: John Urquhart Ferguson
+  image: "images/Author - John Urquhart Ferguson.png"
+  bio: "Overly enthusiastic teachers planted the seed of writing in John's mind by making him feel that he was somewhat more talented than he actually was. This drastic overestimation (mixed with misguided encouragement) led John to pursue the creation of new worlds in the hope of meeting their expectations.\n\n
+
+John enjoys programming software that only he is likely to use, keeping an eye out for puffins, and whistling better than one would reasonably expect.\n\n
+
+John's thoughts are often existential (and very occasionally clever), but he writes with a warmness that will melt your heart."
+  website: https://johnurquhartferguson.info
+  instagram: sympodius
+  facebook: john.u.ferguson
+  xtwitter: sympodius
+  github: sympodius
+  reddit: sympodius
+  flickr: fictionality
+  imvdb: john-ferguson
+  email: mail@johnurquhartferguson.info
+  keybase: sympodius
+  

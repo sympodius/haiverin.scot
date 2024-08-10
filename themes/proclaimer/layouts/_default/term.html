@@ -1,0 +1,41 @@
+{{ define "main" }}
+    <div class="list-page-container">
+      <h1>{{ if eq .Data.Plural "tags" }}#{{ replace .Title " " "-" }}{{ else }}{{ .Title }}{{ end }}</h1>
+      {{ .Content -}}
+      {{- $paginator := .Paginate .Pages.ByDate.Reverse }}
+      {{- range $paginator.Pages }}
+        {{- $page := . }}
+        {{- $bannerImages := .Params.images }}
+        {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
+        {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
+      <div class="list-stories-block">
+        <div class="list-story-generic-block">
+          <div class="list-story-generic-block-text">
+            <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle | humanize | title }}</a></h2>
+            <div class="list-story-generic-block-summary hidden">{{ .Summary }}</div>
+            <div class="list-story-generic-block-entry-info">
+            {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+            {{- $dateHuman := .Date | time.Format ":date_long" }}
+              <div class="list-story-generic-block-date"><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></div>
+              <div class="list-story-generic-block-author hidden">{{- with $page.Params.Author }}By {{ $page.Params.Author }}{{ end -}}</div>
+              <div class="list-story-generic-block-reading-time">Reading Time: {{ $page.ReadingTime }} minutes <span class="list-story-generic-block-word-count hidden">({{ $page.FuzzyWordCount }} words)</span></div>
+            </div>
+          </div>
+          <div class="list-story-generic-block-image-rectangle hidden">
+          {{- with $bannerImg -}}
+            {{- $bannerImgWebP := .Fill "220x133 webp" -}}
+            <a href="{{ $page.RelPermalink }}"><img src="{{ $bannerImgWebP.RelPermalink | safeURL }}" alt="Image for Entry, {{ $page.LinkTitle }}"/></a>
+          {{- end -}}
+          </div>
+          <div class="list-story-generic-block-image-square">
+          {{- with $bannerImg -}}
+            {{- $bannerImgWebP := .Fill "92x92 webp" -}}
+            <a href="{{ $page.RelPermalink }}"><img src="{{ $bannerImgWebP.RelPermalink | safeURL }}" alt="Image for Entry, {{ $page.LinkTitle }}"/></a>
+          {{- end -}}
+          </div>
+        </div>
+      </div>
+      {{- end }}
+      {{ template "_internal/pagination.html" . }}
+    </div>
+{{ end }}

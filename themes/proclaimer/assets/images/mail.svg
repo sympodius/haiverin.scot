@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 118.58 79.487" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="mailLinearGradient8">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+  <linearGradient id="mailLinearGradient9" x1="158.25" x2="-661.72" y1="212.79" y2="209.97" gradientUnits="userSpaceOnUse" xlink:href="#mailLinearGradient8"/>
+  <linearGradient id="mailLinearGradient11" x1="296.96" x2="294.62" y1="107.91" y2="412.67" gradientTransform="matrix(2.7139 0 0 2.7139 -586.75 -460.65)" gradientUnits="userSpaceOnUse" xlink:href="#mailLinearGradient8"/>
+ </defs>
+ <g transform="matrix(.14345 0 0 .14345 28.759 4.4218)" style="fill:#a100fa">
+  <path d="m195.76 246.63c4.8324 1.6108 10.47 3.2216 16.913 4.8324 6.4432 0 12.081-1.6108 16.913-4.8324l292.36-161.89c-1.6108-19.33-9.6648-36.243-24.162-50.74-14.497-12.886-32.216-19.33-53.156-19.33h-463.91c-20.94 0-38.659 7.2486-53.156 21.746-14.497 12.886-22.551 28.994-24.162 48.324zm72.486 67.654c-17.719 8.054-36.243 12.081-55.573 12.081s-37.854-4.027-55.573-12.081l-253.7-140.14v227.12c0 22.551 7.2486 41.075 21.746 55.573 14.497 14.497 33.021 21.746 55.573 21.746h463.91c22.551 0 41.075-7.2486 55.573-21.746 14.497-14.497 21.746-33.021 21.746-55.573v-227.12z" style="fill:url(#mailLinearGradient11);stroke-width:3.7968"/>
+  <circle transform="rotate(-90)" cx="-246.22" cy="212.83" r="405.63" style="fill:none;stroke-width:15.347;stroke:url(#mailLinearGradient9)"/>
+ </g>
+</svg>

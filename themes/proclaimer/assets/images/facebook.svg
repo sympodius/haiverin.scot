@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 118.58 79.487" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="facebookLinearGradient8">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+  <linearGradient id="facebookLinearGradient9" x1="158.25" x2="-661.72" y1="212.79" y2="209.97" gradientUnits="userSpaceOnUse" xlink:href="#facebookLinearGradient8"/>
+  <linearGradient id="facebookLinearGradient11" x1="219.42" x2="218.93" y1="-156.67" y2="661.27" gradientTransform="translate(0 4.4683)" gradientUnits="userSpaceOnUse" xlink:href="#facebookLinearGradient8"/>
+ </defs>
+ <g transform="matrix(.14345 0 0 .14345 28.759 4.4218)" style="fill:#a100fa">
+  <path d="m77.698 310.27v296.85-296.85 296.85h161.66v-296.85h121.25l25.086-136.58h-146.33v-47.384q0-52.958 23.692-76.65t78.044-23.692q34.841 0 51.565 2.7873v-124.03q-16.724-4.1809-45.99-8.3618-29.266-2.7873-51.565-2.7873-220.2-2.7873-217.41 221.59v59.927h-91.98v135.18z" style="fill:url(#facebookLinearGradient11);stroke-width:1.3991"/>
+  <circle transform="rotate(-90)" cx="-246.22" cy="212.83" r="405.63" style="fill:none;stroke-width:15.347;stroke:url(#facebookLinearGradient9)"/>
+ </g>
+</svg>

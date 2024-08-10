@@ -1,0 +1,19 @@
+{{- /*
+Renders story sharing links for the given page.
+
+@context {page} page The current page.
+
+@example: {{ partial "storySharingLinks.html" (dict "page" .) }}
+*/}}
+
+{{- $page := .page }}
+{{- $facebook := resources.GetMatch "images/facebook.svg" }}
+{{- $xtwitter := resources.GetMatch "images/xtwitter.svg" }}
+{{- $mail := resources.GetMatch "images/mail.svg" }}
+        <div class="sharing-links print-hidden-flex hidden">
+          <ul>
+            <li><a href="https://www.facebook.com/sharer.php?u={{- $page.Permalink | safeHTML -}}" title="Share via Facebook">{{- if ne $facebook nil -}}{{- partial "inlineSVG.html" (dict "svgFile" $facebook "page" $page) -}}{{- else -}}Share via Facebook{{- end -}}</a></li>
+            <li><a href="https://twitter.com/intent/tweet?url={{- $page.Permalink | safeHTML -}}&text={{- $page.Title | safeHTML -}}" title="Share via X">{{- if ne $xtwitter nil -}}{{- partial "inlineSVG.html" (dict "svgFile" $xtwitter "page" $page) -}}{{- else -}}Share via X{{- end -}}</a></li>
+            <li><a href="mailto:?subject={{- $page.Title | safeHTML -}}&body=Article: {{- $page.Permalink | safeHTML -}}" title="Share via Email">{{- if ne $mail nil -}}{{- partial "inlineSVG.html" (dict "svgFile" $mail "page" $page) -}}{{- else -}}Share via Email{{- end -}}</a></li>
+          </ul>
+        </div>

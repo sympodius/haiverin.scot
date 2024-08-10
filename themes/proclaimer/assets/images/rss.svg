@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 118.58 79.487" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="rssLinearGradient8">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+  <linearGradient id="rssLinearGradient9" x1="158.25" x2="-661.72" y1="212.79" y2="209.97" gradientUnits="userSpaceOnUse" xlink:href="#rssLinearGradient8"/>
+  <linearGradient id="rssLinearGradient11" x1="296.96" x2="294.62" y1="107.91" y2="412.67" gradientTransform="matrix(2.9177 0 0 2.9177 -737.38 -526.57)" gradientUnits="userSpaceOnUse" xlink:href="#rssLinearGradient8"/>
+ </defs>
+ <g transform="matrix(.14345 0 0 .14345 28.759 4.4218)" style="fill:#a100fa">
+  <path d="m463.79 497.19q-1.1204-140.04-68.341-253.2-67.221-113.16-180.38-180.38-113.16-67.221-253.2-68.341v71.702q119.88 1.1204 217.35 58.258 96.35 58.258 154.61 154.61 57.138 97.47 58.258 217.35zm-501.92-358.51v71.702-71.702 71.702q80.665 1.1204 144.53 39.212 64.98 38.092 103.07 103.07 38.092 63.86 39.212 144.53h71.702q-1.1204-99.711-49.295-180.38-47.055-81.786-128.84-128.84-80.665-48.175-180.38-49.295zm143.4 286.81q-1.1204-40.333-35.851-61.619-35.851-20.166-71.702 0-34.731 21.287-35.851 61.619 1.1204 40.333 35.851 61.619 35.851 20.166 71.702 0 34.731-21.287 35.851-61.619z" style="fill:url(#rssLinearGradient11);stroke-width:4.0819"/>
+  <circle transform="rotate(-90)" cx="-246.22" cy="212.83" r="405.63" style="fill:none;stroke-width:15.347;stroke:url(#rssLinearGradient9)"/>
+ </g>
+</svg>

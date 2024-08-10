@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 118.58 79.487" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="imvdbLinearGradient8">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+  <linearGradient id="imvdbLinearGradient9" x1="158.25" x2="-661.72" y1="212.79" y2="209.97" gradientUnits="userSpaceOnUse" xlink:href="#imvdbLinearGradient8"/>
+  <linearGradient id="linearGradient10" x1="2636.4" x2="2663.9" y1="3493.2" y2="-2145.6" gradientUnits="userSpaceOnUse" xlink:href="#imvdbLinearGradient8"/>
+ </defs>
+ <g transform="matrix(.14345 0 0 .14345 28.759 4.4218)">
+  <g transform="matrix(.14597 0 0 -.14597 -172.78 345.71)" style="fill:url(#linearGradient10)">
+   <path d="m160 1096v-95l43-3 42-3 3-312 2-313h-90v-190h470v189l-42 3-43 3v620l43 3 42 3v189h-470z" style="fill:url(#linearGradient10)"/>
+   <path d="m710 1095v-95h70v-630h-70v-190h391l-3 93-3 92-42 3-43 3 1 282c1 276 2 280 16 207 11-56 128-489 179-663 5-16 19-17 157-15l151 3 73 270c40 149 84 317 97 375l25 105v-282l1-283h-80v-190h461l-3 93-3 92-37 3-38 3v629h81l-3 93-3 92h-548l-68-260c-37-143-68-262-69-265s-34 114-74 260l-72 265-272 3-272 2z" style="fill:url(#linearGradient10)"/>
+   <path d="m2110 1095v-95h75l380-820 134 2 134 3 342 810 76 6-6 184-202 3-203 2v-190h35c19 0 35-3 35-6s-31-80-69-172-77-194-86-227c-10-33-20-67-22-75-3-8-13 17-23 55-10 39-48 148-84 244-36 95-66 175-66 177s18 4 40 4h41l-3 93-3 92-262 3-263 2z" style="fill:url(#linearGradient10)"/>
+   <path d="m3270 1097v-96l43-3 42-3v-620l-42-3-43-3v-191l288 5c216 3 299 8 337 19 172 52 273 143 325 293 30 84 38 240 17 322-35 135-115 238-232 300-112 58-153 65-457 70l-278 5zm531-129c50-28 84-79 104-153 38-149-2-342-84-403-32-24-92-42-138-42h-33v633l57-7c31-4 73-16 94-28z" style="fill:url(#linearGradient10)"/>
+   <path d="m4310 1106v-85l28-3 27-3 3-327 2-327-27-3c-28-3-28-3-31-90l-3-88h155c147 0 155 1 161 21 4 11 10 18 13 17 83-44 107-50 191-46 101 5 148 26 205 89 48 53 74 110 85 190 24 176-50 331-186 391-67 29-167 27-238-6l-55-25v379h-330zm475-462c64-69 51-256-21-294-65-35-124 43-124 163 0 69 24 139 52 150 33 13 70 6 93-19z" style="fill:url(#linearGradient10)"/>
+  </g>
+  <circle transform="rotate(-90)" cx="-246.22" cy="212.83" r="405.63" style="fill:none;stroke-width:15.347;stroke:url(#imvdbLinearGradient9)"/>
+ </g>
+</svg>

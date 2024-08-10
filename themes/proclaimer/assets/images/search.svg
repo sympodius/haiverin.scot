@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 62.8 62.781" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="searchLinearGradient" x1="89.024" x2="89.286" y1="72.279" y2="134.13" gradientUnits="userSpaceOnUse">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-58.126 -71.796)">
+  <path d="m99.211 71.796a21.714 21.714 0 0 0-21.714 21.714 21.714 21.714 0 0 0 3.6303 11.985l-23.001 23.001 6.0813 6.0808 22.999-22.999a21.714 21.714 0 0 0 12.005 3.6463 21.714 21.714 0 0 0 21.714-21.714 21.714 21.714 0 0 0-21.714-21.714zm0 5.2002a16.515 16.515 0 0 1 16.515 16.514 16.515 16.515 0 0 1-16.515 16.515 16.515 16.515 0 0 1-16.514-16.515 16.515 16.515 0 0 1 16.514-16.514z" style="fill:url(#searchLinearGradient);stroke-width:.66265"/>
+ </g>
+</svg>

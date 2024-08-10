@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 70.166 47.034" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="crossLinearGradient" x1="97.849" x2="97.839" y1="67.123" y2="123.18" gradientUnits="userSpaceOnUse">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+  <linearGradient id="crossLinearGradient5" x1="122.7" x2="73.164" y1="49.36" y2="98.691" gradientTransform="translate(-96.059 62.479)" gradientUnits="userSpaceOnUse" xlink:href="#crossLinearGradient"/>
+  <linearGradient id="crossLinearGradient7" x1="97.849" x2="97.839" y1="67.123" y2="123.18" gradientUnits="userSpaceOnUse" xlink:href="#crossLinearGradient"/>
+ </defs>
+ <g transform="translate(-62.813 -71.777)">
+  <g style="fill:url(#crossLinearGradient7)">
+   <path transform="rotate(-45)" d="m9.0774 94.228h-14.475v35.137l-35.141 0.0031v14.475h35.137v35.137h14.481v-35.137h35.131l0.003097-14.478h-35.137v-35.137z" style="fill:url(#crossLinearGradient5);stroke-width:.565"/>
+  </g>
+ </g>
+</svg>

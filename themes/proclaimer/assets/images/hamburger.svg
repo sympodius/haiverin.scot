@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="10mm" height="10mm" version="1.1" viewBox="0 0 84.752 56.811" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="hamburgerLinearGradient" x1="97.849" x2="97.839" y1="67.123" y2="123.18" gradientUnits="userSpaceOnUse">
+   <stop style="stop-color:#15c5fe" offset="0"/>
+   <stop style="stop-color:#a100fa" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-55.52 -66.888)">
+  <g style="fill:url(#hamburgerLinearGradient)">
+   <rect x="55.52" y="66.888" width="84.752" height="14.478" style="fill:url(#hamburgerLinearGradient);stroke-width:.565"/>
+   <rect x="55.52" y="88.055" width="84.752" height="14.478" style="fill:url(#hamburgerLinearGradient);stroke-width:.565"/>
+   <rect x="55.52" y="109.22" width="84.752" height="14.478" style="fill:url(#hamburgerLinearGradient);stroke-width:.565"/>
+  </g>
+ </g>
+</svg>

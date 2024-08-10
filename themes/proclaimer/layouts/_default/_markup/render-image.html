@@ -1,0 +1,23 @@
+{{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+{{- $parent := . }}
+{{- $imageWebP := $image.Process "webp" }}
+{{- $maxWidth := 962 }}
+{{- $maxHeight := 520 }}
+{{- with $image }}
+  {{- $overMaxWidth := gt $image.Width $maxWidth }}
+  {{- if $overMaxWidth }}
+    {{- $imageWebP = $imageWebP.Resize "962x" }}
+  {{- end }}
+  {{- $overMaxHeight := gt $imageWebP.Height $maxHeight }}
+  {{- if $overMaxHeight }}
+    {{- $imageWebP = $imageWebP.Resize "x520" }}
+  {{- end }}
+  {{- if $parent.IsBlock }}
+        <figure>
+          <img src="{{- $imageWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end -}}>
+          <figcaption>{{- $parent.Title -}}</figcaption>
+        </figure>
+  {{- else }}
+        <a href="{{- $image.RelPermalink | safeURL -}}"><img src="{{- $imageWebP.RelPermalink | safeURL -}}" {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} {{ with $parent.Title -}}title="{{- . -}}"{{- end -}}></a>
+  {{- end }}
+{{- end }}

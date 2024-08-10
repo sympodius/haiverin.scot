@@ -1,17 +1,135 @@
 <!DOCTYPE html>
 <html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
-  {{ partial "head.html" . }}
+{{ partial "head.html" . }}
 </head>
 <body>
   <header>
-    {{ partial "header.html" . }}
+  {{ partial "header.html" . }}
   </header>
   <main>
-    {{ block "main" . }}{{ end }}
+  {{ block "main" . }}{{ end }}
   </main>
   <footer>
-    {{ partial "footer.html" . }}
+  {{ partial "footer.html" . }}
   </footer>
+  <div id="css-tester"></div>
+  <script>
+    /*
+      clickSearchIcon() and leaveSearchbar() deal with correctly hiding and displaying elements
+      in the use of the search functionality of the top nav bar.
+    */
+    function clickSearchIcon() {
+      const icon = document.getElementById("search-icon-clicker");
+      const searchboxContainer = document.getElementById("search-bar-container");
+      const searchboxInput = document.getElementById("search-query");
+      icon.classList.add("FadeOut");
+      setTimeout(function(){icon.classList.remove("FadeOut");
+                            icon.style.display = "none";
+                            searchboxContainer.style.display = "inline";
+                            searchboxInput.classList.add("FadeIn");
+                            setTimeout(function(){searchboxInput.classList.remove("FadeIn");}, 100);
+                            searchboxInput.focus();
+                           }, 100);
+    }
+    function leaveSearchbar() {
+      const icon = document.getElementById("search-icon-clicker");
+      const searchboxContainer = document.getElementById("search-bar-container");
+      const searchboxInput = document.getElementById("search-query");
+      searchboxInput.classList.add("FadeOut");
+      setTimeout(function(){searchboxInput.classList.remove("FadeOut");
+                            searchboxContainer.style.display = "none";
+                            icon.style.display = "initial";
+                            icon.classList.add("FadeIn");
+                            setTimeout(function(){icon.classList.remove("FadeIn");}, 100);
+                           }, 100);
+    }
+
+
+    /*
+      clickHamburgerIcon() and closeSideMenu() deal with correctly hiding and displaying elements
+      in the use of the side menu from the top nav bar.
+    */
+    function clickHamburgerIcon() {
+      const icon = document.getElementById("hamburger-menu");
+      const chainedElement = document.getElementById("side-menu");
+      icon.classList.add("FadeOut");
+      setTimeout(function(){icon.classList.remove("FadeOut");
+                            icon.style.opacity = "0";
+                            chainedElement.style.display = "inline";
+                            chainedElement.classList.add("FadeIn");
+                            setTimeout(function(){
+                                                  chainedElement.classList.remove("FadeIn");
+                                                  chainedElement.style.opacity = "1";
+                                                  chainedElement.classList.add("menu-riser");
+                                                 }, 100);
+                           }, 100);
+    }
+    function closeSideMenu() {
+      const icon = document.getElementById("hamburger-menu");
+      const chainedElement = document.getElementById("side-menu");
+      chainedElement.classList.add("FadeOut");
+      setTimeout(function(){chainedElement.classList.remove("FadeOut");
+                            chainedElement.style.display = "none";
+                            icon.classList.add("FadeIn");
+                            icon.style.opacity = "1";
+                            setTimeout(function(){icon.classList.remove("FadeIn");
+                            chainedElement.classList.remove("menu-riser");}, 100);
+                           }, 100);
+    }
+    document.addEventListener("click", function(evt) {
+      let menu = document.getElementById('side-menu'),
+        target = evt.target; // Clicked element      
+      do {
+        if ( target == menu ) {
+          // This is a click inside, does nothing, just return.
+          return;
+        }
+        // Go up the DOM
+        target = target.parentNode;
+      } while (target);
+      // This is a click outside.
+      const chainedElement = document.getElementById("side-menu");
+      if ( chainedElement.style.display == "inline" ) {
+        closeSideMenu();
+      }
+    });
+
+
+    /*
+      Your CSS file should set css-tester div to have a width of 3px.
+      If it does not have this width when being displayed, then CSS is not being used.
+      You can then remove/replace elements that you don't want to appear in a non-CSS loaded display.
+    */
+    function testCSS() {
+      const cssTester = document.getElementById("css-tester");
+      if ( cssTester.offsetWidth == 3 ) {
+        cssTester.remove();
+      } else {
+        cssTester.remove();
+        /*
+          Assume site logo SVG inline-importing will be too complex to display properly with CSS turned off, 
+          and replace with img tag of the same svg file.
+          Sadly, this might not be seen unless user hits refresh. Equally, when turning CSS back on, user will
+          need to hit refresh to see original logo again, or navigate to a new page.
+        */
+        const logos = document.getElementsByClassName("logo-icon");
+        console.log(logos.length);
+        for (let i = 0; i < logos.length; i++) {
+          {{- $logo := resources.GetMatch (site.Params.logo.svg | default "images/logo.svg") }}
+	        {{- with $logo }}
+          var logoImgFile = document.createElement("img");
+          logoImgFile.setAttribute("class", "logo-icon");
+          logoImgFile.setAttribute("src", "{{ .RelPermalink }}");
+          logoImgFile.setAttribute("alt", "Site Logo");
+          logoImgFile.setAttribute("height", "{{ site.Params.logo.height | default "60" }}");
+          logoImgFile.setAttribute("width", "{{ site.Params.logo.width | default "60" }}");
+          logos[i].parentElement.replaceChild(logoImgFile, logos[i]);
+          {{- end }}
+        }
+      }
+    }
+    document.getElementsByTagName("BODY")[0].onpageshow = function() {testCSS()};
+  </script>
 </body>
 </html>

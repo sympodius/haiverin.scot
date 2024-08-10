@@ -1,0 +1,23 @@
+{{- $bannerImg := .Page.Resources.GetMatch (.Get "src" | safeURL) }}
+{{- $altText := .Get "alt" }}
+{{- $titleText := $altText }}
+{{- with .Get "title" }}{{ $titleText = . }}{{ end }}
+{{- $maxWidth := 962 }}
+{{- $maxHeight := 520 }}
+{{- with $bannerImg }}
+  {{- $bannerImgWebP := $bannerImg.Process "webp" }}
+  {{- $overMaxWidth := gt $bannerImg.Width $maxWidth }}
+  {{- if $overMaxWidth }}
+    {{- $bannerImgWebP = $bannerImgWebP.Resize "962x" }}
+  {{- end }}
+  {{- $overMaxHeight := gt $bannerImgWebP.Height $maxHeight }}
+  {{- if $overMaxHeight }}
+    {{- $bannerImgWebP = $bannerImgWebP.Resize "x520" }}
+  {{- end }}
+        <div class="banner-image">
+          <figure>
+            <img src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- .RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $altText -}}alt="{{- . -}}"{{- end -}}>
+            <figcaption>{{- $titleText -}}</figcaption>
+          </figure>
+        </div>
+{{- end }}
