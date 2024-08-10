@@ -126,17 +126,15 @@
             {{- $relBannerImgURL := index $relBannerImages 0 | safeURL }}
             {{- $relBannerImg := .Resources.GetMatch $relBannerImgURL }}
             <li>
-              <a href="{{- .RelPermalink -}}">
-                <div class="related-link-container">
-                {{- with $relBannerImg }}
-                  {{- $relBannerImgWebP := .Fill "92x92 webp" }}
-                  <div class="related-link-image">
-                    <img loading="lazy" src="{{- $relBannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/>
-                  </div>
-                {{- end }}
-                  <div class="related-link-title">{{- .LinkTitle -}}</div>
+              <div class="related-link-container">
+              {{- with $relBannerImg }}
+                {{- $relBannerImgWebP := .Fill "92x92 webp" }}
+                <div class="related-link-image">
+                  <a href="{{- .RelPermalink -}}"><img loading="lazy" src="{{- $relBannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a>
                 </div>
-              </a>
+              {{- end }}
+                <div class="related-link-title"><a href="{{- .RelPermalink -}}">{{- .LinkTitle -}}</a></div>
+              </div>
             </li>
           {{ end }}
           </ul>
