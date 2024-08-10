@@ -36,7 +36,7 @@ Contact Info/Socials
           {{- $authorImage := resources.GetMatch .image }}
           {{- with $authorImage }}
             {{- $authorImageWebP := .Fill "92x92 webp" }}
-            <div class="aside-card-image"><img src="{{- $authorImageWebP.RelPermalink | safeURL -}}"  data-ngsrc="{{- $authorImage.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="author-group"
+            <div class="aside-card-image"><img loading="lazy" src="{{- $authorImageWebP.RelPermalink | safeURL -}}"  data-ngsrc="{{- $authorImage.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="author-group"
                  data-nanogallery2-lightbox = '{
                    "viewerGallery": "none",
                    "viewerToolbar": { "display": false },

@@ -24,13 +24,13 @@
           <div class="list-story-generic-block-image-rectangle hidden">
           {{- with $bannerImg -}}
             {{- $bannerImgWebP := .Fill "220x133 webp" -}}
-            <a href="{{ $page.RelPermalink }}"><img src="{{ $bannerImgWebP.RelPermalink | safeURL }}" alt="Image for Entry, {{ $page.LinkTitle }}"/></a>
+            <a href="{{ $page.RelPermalink }}"><img loading="lazy" src="{{ $bannerImgWebP.RelPermalink | safeURL }}" alt="Image for Entry, {{ $page.LinkTitle }}"/></a>
           {{- end -}}
           </div>
           <div class="list-story-generic-block-image-square">
           {{- with $bannerImg -}}
             {{- $bannerImgWebP := .Fill "92x92 webp" -}}
-            <a href="{{ $page.RelPermalink }}"><img src="{{ $bannerImgWebP.RelPermalink | safeURL }}" alt="Image for Entry, {{ $page.LinkTitle }}"/></a>
+            <a href="{{ $page.RelPermalink }}"><img loading="lazy" src="{{ $bannerImgWebP.RelPermalink | safeURL }}" alt="Image for Entry, {{ $page.LinkTitle }}"/></a>
           {{- end -}}
           </div>
         </div>

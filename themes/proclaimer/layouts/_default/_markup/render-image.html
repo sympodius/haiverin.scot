@@ -14,10 +14,10 @@
   {{- end }}
   {{- if $parent.IsBlock }}
         <figure>
-          <img src="{{- $imageWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end -}}>
+          <img loading="lazy" src="{{- $imageWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end -}}>
           <figcaption>{{- $parent.Title -}}</figcaption>
         </figure>
   {{- else }}
-        <a href="{{- $image.RelPermalink | safeURL -}}"><img src="{{- $imageWebP.RelPermalink | safeURL -}}" {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} {{ with $parent.Title -}}title="{{- . -}}"{{- end -}}></a>
+        <a href="{{- $image.RelPermalink | safeURL -}}"><img loading="lazy" src="{{- $imageWebP.RelPermalink | safeURL -}}" {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} {{ with $parent.Title -}}title="{{- . -}}"{{- end -}}></a>
   {{- end }}
 {{- end }}
