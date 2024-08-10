@@ -15,7 +15,7 @@
         <h2>Categories</h2>
         <ul>
         {{- range $name, $taxonomy := . }}
-          <li><a href="/categories/{{- $name -}}/">{{- $name | humanize -}}</a></li>
+          <li><a href="/categories/{{- $name -}}/">{{- $name | humanize | title -}}</a></li>
         {{- end }}
         </ul>
       {{- end }}
@@ -23,7 +23,7 @@
         <h2>Tags</h2>
         <ul>
         {{- range $name, $taxonomy := . }}
-          <li><a href="/tags/{{- $name -}}/">{{- $name | humanize -}}</a></li>
+          <li><a class="lowercase" href="/tags/{{- replace $name " " "-" -}}/">#{{- replace $name " " "-" -}}</a></li>
         {{- end }}
         </ul>
       {{- end }}
