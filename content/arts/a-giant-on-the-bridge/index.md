@@ -6,7 +6,7 @@ author: John Urquhart Ferguson
 description: A review of the Edinburgh Fringe Festival show, A Giant on the Bridge.
 summary: The most thought-provoking and well presented performance of art and ideas that I've ever experienced.
 readingEase: College Students
-gradeLevel: 15
+gradeLevel: 14
 images:
 - images/post-cover.png
 categories:
@@ -18,7 +18,7 @@ tags:
 draft: false
 ---
 
-{{< banner src="images/post-cover.png" alt="Show Poster for A Giant on the Bridge" >}}
+{{< banner src="images/post-cover.png" alt="Show Poster for A Giant on the Bridge. Credit: A Giant on the Bridge" >}}
 
 {{< md-comment >}}
 # Instructions
