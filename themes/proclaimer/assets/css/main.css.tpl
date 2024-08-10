@@ -209,6 +209,10 @@ ul {
     right: 20px;
 }
 
+.search-loading {
+    margin-top: 2rem;
+}
+
 .search-icon-container {
     width: 40px;
     height: 40px;
