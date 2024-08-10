@@ -18,7 +18,7 @@ tags:
 draft: false
 ---
 
-{{< banner src="images/post-cover.png" alt="Show Poster for A Giant on the Bridge. Credit: BoxDog Inc." >}}
+{{< banner src="images/post-cover.png" alt="Poster for A Giant on the Bridge. Credit: BoxDog Inc." >}}
 
 {{< md-comment >}}
 # Instructions
