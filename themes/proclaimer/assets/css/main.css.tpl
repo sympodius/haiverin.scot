@@ -907,7 +907,7 @@ aside {
 
 .top-three {
     padding: 5px;
-    padding-top: 15px;
+    padding-top: 17px;
 }
 
 .top-three:first-child {
@@ -947,12 +947,11 @@ aside {
 
 .top-three-separator {
     position: absolute;
-    padding-top: 2px;
     padding-bottom: 2px;
     height: 0;
-    width: 88%;
+    width: 100%;
     left: 50%;
-    margin-left: -44%;
+    margin-left: -50%;
     margin-top: 2px;
     background: linear-gradient( to right, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
     background-size: 100% 2px;
@@ -1066,11 +1065,6 @@ footer {
 
     .top-three {
 	padding-top: 5px;
-    }
-
-    .top-three-separator {
-	width: 94%;
-	margin-left: -47%;
     }
     
     .list-story-generic-block-text {
@@ -1228,12 +1222,11 @@ footer {
     .top-three-separator-large {
 	display: block;
 	position: absolute;
-	padding-top: 2px;
 	padding-bottom: 2px;
 	height: 0;
-	width: 94%;
+	width: 100%;
 	left: 50%;
-	margin-left: -47%;
+	margin-left: -50%;
 	margin-top: -2px;
 	background: linear-gradient( to right, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
 	background-size: 100% 2px;
