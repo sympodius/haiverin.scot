@@ -10,8 +10,16 @@
         {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
         {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
       <div id="section-pull-banner">
+	<div id="section-pull-top-story-small">
+	  <div id="section-pull-top-summary" class="hidden">
+            {{ .Summary }}
+          </div>
+	  <div class="section-pull-top-title">
+            <a href="{{- $page.RelPermalink -}}">{{- .Title -}}</a>
+          </div>
+	</div>
         {{ with $bannerImg -}}<a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "1536x768 webp" -}}<img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a>{{ end }}
-        <div id="section-pull-top-story">
+        <div id="section-pull-top-story" class="hidden">
           <div id="section-pull-top-summary" class="hidden">
             {{ .Summary }}
           </div>
@@ -20,8 +28,10 @@
           </div>
         </div>
         <div id="section-pull-top-stories">
+	  <div class="top-three-separator-large hidden"></div>
         {{- range after 1 $pages.ByDate.Reverse | first 3 }}
           {{- $page := . }}
+	  <div class="top-three-separator"></div>
           <div class="top-three">
             <a href="{{- $page.RelPermalink -}}">
               <div class="top-three-summary hidden">{{- .Summary -}}</div>

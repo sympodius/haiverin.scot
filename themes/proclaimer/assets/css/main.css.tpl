@@ -513,6 +513,7 @@ figure figcaption {
     text-align: center;
     font-size: 0.8rem;
     font-weight: 400;
+    margin-top: 0.5rem;
 }
 
 figure a {
@@ -858,6 +859,12 @@ aside {
     height: auto;
 }
 
+#section-pull-top-story-small {
+    border: solid 1px var(--summary);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 #section-pull-top-story {
     position: absolute;
     top: 2.5%;
@@ -900,6 +907,7 @@ aside {
 
 .top-three {
     padding: 5px;
+    padding-top: 15px;
 }
 
 .top-three:first-child {
@@ -926,7 +934,7 @@ aside {
     margin-bottom: 0.5rem;
     margin-left: 3rem;
     margin-right: 2rem;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .top-three a {
@@ -935,6 +943,19 @@ aside {
 
 .top-three a:hover {
     color: var(--logo-high);
+}
+
+.top-three-separator {
+    position: absolute;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: 0;
+    width: 88%;
+    left: 50%;
+    margin-left: -44%;
+    margin-top: 2px;
+    background: linear-gradient( to right, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
+    background-size: 100% 2px;
 }
 
 .section-boxes-container {
@@ -1043,10 +1064,15 @@ footer {
         padding-right: 7rem;
     }
 
-    .top-three:first-child {
+    .top-three {
 	padding-top: 5px;
     }
 
+    .top-three-separator {
+	width: 94%;
+	margin-left: -47%;
+    }
+    
     .list-story-generic-block-text {
 	margin-right: 3rem;
     }
@@ -1163,7 +1189,12 @@ footer {
 	padding-left: 65px;
     }
 
+    #section-pull-top-story-small {
+	display: none;
+    }
+
     #section-pull-top-story {
+	display: block;
 	position: absolute;
 	top: 2.5%;
 	left: 1.5%;
@@ -1192,6 +1223,24 @@ footer {
 	background-color: var(--summary);
 	padding: 0;
 	z-index: 5;
+    }
+
+    .top-three-separator-large {
+	display: block;
+	position: absolute;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	height: 0;
+	width: 94%;
+	left: 50%;
+	margin-left: -47%;
+	margin-top: -2px;
+	background: linear-gradient( to right, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
+	background-size: 100% 2px;
+    }
+
+    .top-three-separator {
+	display: none;
     }
 
     .top-three-summary {
