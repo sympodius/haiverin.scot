@@ -849,6 +849,16 @@ aside {
     background-color: var(--site-background);
 }
 
+#section-title {
+    font-weight: 800;
+    color: var(--h1);
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+
 #section-pull-banner {
     position: relative;
     z-index: 0;

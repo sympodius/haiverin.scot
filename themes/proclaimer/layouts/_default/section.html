@@ -2,6 +2,7 @@
 {{- $pages := .Pages }}
 {{- $paginator := .Paginate $pages.ByDate.Reverse }}
     <div class="list-page-container">
+      <div id="section-title">{{ .Title | humanize | title -}}</div>
 
     {{- if not $paginator.HasPrev }}
       {{- range first 1 $pages.ByDate.Reverse }}
