@@ -13,8 +13,8 @@ Renders a menu for the given menu ID.
   {{- with index site.Menus $menuID }}
     <nav class="topnav hidden">
       <div id="side-menu" class="hidden">
-        <div class="menu-close-icon-container" onclick="closeSideMenu()">
-          <button id="menu-close-icon-clicker">
+        <div class="menu-close-icon-container">
+          <button id="menu-close-icon-clicker" aria-label="Close Side Menu" onclick="closeSideMenu()">
           {{- $cross := resources.GetMatch "images/cross.svg" }}
             {{ partial "inlineSVG.html" (dict "svgFile" $cross "page" $page) }}
           </button>
@@ -23,8 +23,8 @@ Renders a menu for the given menu ID.
           {{ partialCached "sidemenu.html" . }}
         </div>
       </div>
-      <div id="hamburger-menu" onclick="clickHamburgerIcon()">
-        <button id="hamburger-icon-clicker">
+      <div id="hamburger-menu">
+        <button id="hamburger-icon-clicker" aria-label="Open Side Menu" onclick="clickHamburgerIcon()">
         {{- $hamburger := resources.GetMatch "images/hamburger.svg" }}
           {{ partial "inlineSVG.html" (dict "svgFile" $hamburger "page" $page) }}
         </button>
@@ -46,8 +46,8 @@ Renders a menu for the given menu ID.
       </div>
       <div class="top-search">
       {{- with site.Params.enableSearch }}
-        <div class="search-icon-container" onclick="clickSearchIcon()">
-          <button id="search-icon-clicker">
+        <div class="search-icon-container">
+          <button id="search-icon-clicker"  aria-label="Reveal Search Box" onclick="clickSearchIcon()">
           {{- $search := resources.GetMatch "images/search.svg" }}
             {{ partial "inlineSVG.html" (dict "svgFile" $search "page" $page) }}
           </button>
