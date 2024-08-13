@@ -478,12 +478,14 @@ article {
 
 .banner-image {
     max-width: 100%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
 }
 
 .banner-image img {
     max-width: 100%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     box-shadow: var(--shadow-elevation-low);
@@ -522,12 +524,22 @@ main {
     margin: auto;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
 figure img {
     transition: 0.5s;
 }
 
 figure {
     max-width: 100%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.5rem;
@@ -536,6 +548,7 @@ figure {
 
 figure img {
     max-width: 100%;
+    height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -625,15 +638,18 @@ aside {
 
 .aside-card-image {
     float: left;
-    padding-right: 30px;
-    padding-bottom: 5px;
+    width: 92px;
+    height: 92px;
+    margin-top: 5px;;
+    margin-right: 30px;
+    margin-bottom: 5px;
 }
 
 .aside-card-image img {
+    width: 100%;
+    height: auto;
+    margin: 0;
     transition: 0.5s;
-}
-
-.aside-card-image img {
     box-shadow: var(--shadow-elevation-low);
 }
 
@@ -679,7 +695,14 @@ aside {
     transition: 0.2s;
     width: 92px;
     height: 92px;
+    min-width: 92px;
     // box-shadow: var(--shadow-elevation-low);
+}
+
+.related-link-image img {
+    width: 100%;
+    height: auto;
+    margin: 0;
 }
 
 .related-link-container:hover .related-link-image {
@@ -814,6 +837,16 @@ aside {
     margin-left: 30px;
 }
 
+.list-story-generic-block-image-rectangle img {
+    margin: 0;
+    min-width: 220px;
+}
+
+.list-story-generic-block-image-square img {
+    margin: 0;
+    min-width: 92px;
+}
+
 .list-story-generic-block-image-square {
     margin-top: 7px;
     margin-right: 0;
@@ -900,6 +933,7 @@ aside {
 #section-pull-banner img {
     width: 100%;
     height: auto;
+    margin: 0;
 }
 
 #section-pull-top-story-small {
@@ -1019,6 +1053,7 @@ aside {
 }
 
 .section-boxes-section-container img {
+    margin: 0;
     width: 100%;
     height: auto;
 }

@@ -103,7 +103,7 @@
               </div>
               <div class="list-story-generic-block-image-square">
               {{- with $bannerImg }}
-                {{- $bannerImgWebP := .Fill "92x92 webp" }}
+                {{- $bannerImgWebP := .Fill "138x138 webp" }}
                 <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/></a>
               {{- end }}
               </div>

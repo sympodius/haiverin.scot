@@ -128,7 +128,7 @@
             <li>
               <div class="related-link-container">
               {{- with $relBannerImg }}
-                {{- $relBannerImgWebP := .Fill "92x92 webp" }}
+                {{- $relBannerImgWebP := .Fill "138x138 webp" }}
                 <div class="related-link-image">
                   <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $relBannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $relBannerImgWebP.Width }}" height="{{ $relBannerImgWebP.Height }}"/></a>
                 </div>
