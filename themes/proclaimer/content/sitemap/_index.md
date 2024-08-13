@@ -5,4 +5,5 @@ sitemap:
 layout: "sitemap"
 build:
   list: never
+description: This is the sitemap, showing the main access routes to content on the site.
 ---

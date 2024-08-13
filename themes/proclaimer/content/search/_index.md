@@ -5,4 +5,5 @@ sitemap:
 layout: "search"
 build:
   list: never
+description: This is the search results page for the site.
 ---

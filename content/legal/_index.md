@@ -6,4 +6,5 @@ sitemap:
 layout: "legal"
 build:
   list: never
+description: A Scot shouting very seriously into the void about the legal stuff on this site.
 ---
