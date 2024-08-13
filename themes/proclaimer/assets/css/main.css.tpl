@@ -822,6 +822,7 @@ aside {
 
 .list-story-generic-block-text {
     margin-right: 1rem;
+    min-width: 135px;
 }
 
 .list-story-generic-block-text h2 {
@@ -844,6 +845,7 @@ aside {
 
 .list-story-generic-block-image-square img {
     margin: 0;
+    max-width: 92px;
     min-width: 92px;
 }
 
