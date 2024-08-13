@@ -30,7 +30,7 @@
                 {{- with $relBannerImg }}
                   {{- $relBannerImgWebP := .Fill "92x92 webp" }}
                   <div class="related-link-image">
-                    <img src="{{- $relBannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/>
+                    <img src="{{- $relBannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $relBannerImgWebP.Width }}" height="{{ $relBannerImgWebP.Height }}"/>
                   </div>
                 {{- end }}
                   <div class="related-link-title">{{- .LinkTitle -}}</div>

@@ -16,7 +16,7 @@
   {{- end }}
         <div class="banner-image">
           <figure>
-            <img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- .RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $altText -}}alt="{{- . -}}"{{- end -}}>
+            <img loading="eager" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- .RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $altText -}}alt="{{- . -}}"{{- end }} width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/>
             <figcaption>{{- $titleText -}}</figcaption>
           </figure>
         </div>

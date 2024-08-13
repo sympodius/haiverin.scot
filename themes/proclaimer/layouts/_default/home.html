@@ -18,7 +18,7 @@
             <a href="{{- $page.RelPermalink -}}">{{- .Title -}}</a>
           </div>
 	</div>
-        {{ with $bannerImg -}}<a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "1536x768 webp" -}}<img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a>{{ end }}
+        {{ with $bannerImg -}}<a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "1536x768 webp" -}}<img loading="eager" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/></a>{{ end }}
         <div id="section-pull-top-story" class="hidden">
           <div id="section-pull-top-summary" class="hidden">
             {{ .Summary }}
@@ -57,7 +57,7 @@
             {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
             {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
             {{- with $bannerImg -}}
-	  <div class="section-boxes-section-banner"><a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "835x468 webp" -}}<img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a></div>
+	  <div class="section-boxes-section-banner"><a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "835x468 webp" -}}<img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/></a></div>
 	    {{- end }}
           {{- end }}
 	  {{- /* Other stories in section including top story --- This is just the first category, and the story title, each appropriately linked */}}
@@ -98,13 +98,13 @@
               <div class="list-story-generic-block-image-rectangle hidden">
               {{- with $bannerImg }}
                 {{- $bannerImgWebP := .Fill "220x133 webp" }}
-                <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a>
+                <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/></a>
               {{- end }}
               </div>
               <div class="list-story-generic-block-image-square">
               {{- with $bannerImg }}
                 {{- $bannerImgWebP := .Fill "92x92 webp" }}
-                <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}"/></a>
+                <a href="{{- $page.RelPermalink -}}"><img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/></a>
               {{- end }}
               </div>
             </div>
