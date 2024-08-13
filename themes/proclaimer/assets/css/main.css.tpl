@@ -871,6 +871,7 @@ aside {
 
 #section-pull-top-story-small {
     border: solid 1px var(--summary);
+    border-bottom: none;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
