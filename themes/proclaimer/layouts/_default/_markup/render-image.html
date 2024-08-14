@@ -3,6 +3,9 @@
 {{- $imageWebP := $image.Process "webp" }}
 {{- $maxWidth := 962 }}
 {{- $maxHeight := 520 }}
+{{- $imageSmallWebP := $image.Process "webp" }}
+{{- $maxWidthSmall := 836 }}
+{{- $maxHeightSmall := 452 }}
 {{- with $image }}
   {{- $overMaxWidth := gt $image.Width $maxWidth }}
   {{- if $overMaxWidth }}
@@ -12,9 +15,20 @@
   {{- if $overMaxHeight }}
     {{- $imageWebP = $imageWebP.Resize "x520" }}
   {{- end }}
+
+  {{- $overMaxWidthSmall := gt $image.Width $maxWidthSmall }}
+  {{- if $overMaxWidthSmall }}
+    {{- $imageSmallWebP = $imageSmallWebP.Resize "836x" }}
+  {{- end }}
+  {{- $overMaxHeightSmall := gt $imageSmallWebP.Height $maxHeightSmall }}
+  {{- if $overMaxHeightSmall }}
+    {{- $imageSmallWebP = $imageSmallWebP.Resize "x452" }}
+  {{- end }}
+
   {{- if $parent.IsBlock }}
         <figure>
-          <img loading="lazy" src="{{- $imageWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} width="{{ $imageWebP.Width }}" height="{{ $imageWebP.Height }}"/>
+          <img class="banner-image-large hidden" loading="lazy" src="{{- $imageWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} width="{{ $imageWebP.Width }}" height="{{ $imageWebP.Height }}"/>
+	  <img class="banner-image-small" loading="lazy" src="{{- $imageSmallWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} width="{{ $imageSmallWebP.Width }}" height="{{ $imageSmallWebP.Height }}"/>
           <figcaption>{{- $parent.Title -}}</figcaption>
         </figure>
   {{- else }}

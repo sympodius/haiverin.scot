@@ -1144,6 +1144,14 @@ footer {
         padding-right: 7rem;
     }
 
+    .section-pull-banner-image-small {
+	display: none;
+    }
+
+    .section-pull-banner-image-medium {
+	display: block;
+    }
+
     .top-three {
 	padding-top: 5px;
     }
@@ -1204,6 +1212,14 @@ footer {
 	font-size: 2.5rem;
     }
 
+    .banner-image-large {
+	display: block;
+    }
+
+    .banner-image-small {
+	display: none;
+    }
+
     .aside-list {
 	max-width: 900px;
     }
@@ -1246,6 +1262,14 @@ footer {
 
 
 @media screen and (min-width: 1580px) {
+    .section-pull-banner-image-medium {
+	display: none;
+    }
+
+    .section-pull-banner-image-large {
+	display: block;
+    }
+
     aside {
 	display: block;
 	max-width: 550px;
