@@ -13,7 +13,7 @@
       {{- errorf "%s" . }}
     {{- else }}
       {{- with . | fingerprint }}
-    <script type="text/javascript" src="{{ $jqueryUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ $jqueryUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
   {{- else }}
@@ -35,7 +35,7 @@
       {{- errorf "%s" . }}
     {{- else }}
       {{- with . | fingerprint }}
-    <script type="text/javascript" src="{{ $nanogallery2JSUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ $nanogallery2JSUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
   {{- else }}
@@ -45,15 +45,15 @@
   {{- with resources.Get "js/jquery.min.js" }}
     {{- if eq hugo.Environment "development" }}
       {{- with . }}
-    <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+    <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
       {{- end }}
     {{- else }}
       {{- with . | resources.Minify | fingerprint }}
-    <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
   {{- else }}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
   {{- end }}
   {{- with resources.Get "css/nanogallery2.min.css" }}
     {{- if eq hugo.Environment "development" }}
@@ -71,15 +71,15 @@
   {{- with resources.Get "js/jquery.nanogallery2.min.js" }}
     {{- if eq hugo.Environment "development" }}
       {{- with . }}
-    <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+    <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
       {{- end }}
     {{- else }}
       {{- with . | resources.Minify | fingerprint }}
-    <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
   {{- else }}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js" defer></script>
   {{- end }}
 {{- end }}
 
