@@ -57,7 +57,7 @@
       {{- errorf "%s" . }}
     {{- else }}
       {{- with . | fingerprint }}
-      <script type="text/javascript" src="{{ $fuseJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{{ $fuseJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
   {{- else }}
@@ -69,7 +69,7 @@
       {{- errorf "%s" . }}
     {{- else }}
       {{- with . | fingerprint }}
-      <script type="text/javascript" src="{{ $markJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{{ $markJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
   {{- else }}
@@ -79,39 +79,39 @@
   {{- with resources.Get "js/fuse.min.js" }}
     {{- if eq hugo.Environment "development" }}
       {{- with . }}
-      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+      <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
       {{- end }}
     {{- else }}
       {{- with . | resources.Minify | fingerprint }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
   {{- else }}
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
   {{- end }}
   {{- with resources.Get "js/mark.min.js" }}
     {{- if eq hugo.Environment "development" }}
       {{- with . }}
-      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+      <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
       {{- end }}
     {{- else }}
       {{- with . | resources.Minify | fingerprint }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
   {{- else }}
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/julkue/mark.js@a283c4c437ff38d2b09c81da1030af9b0191b9f1/dist/mark.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/julkue/mark.js@a283c4c437ff38d2b09c81da1030af9b0191b9f1/dist/mark.min.js" defer></script>
   {{- end }}
 {{- end }}
 
 {{- with resources.Get "js/search.js" }}
   {{- if eq hugo.Environment "development" }}
     {{- with . }}
-      <script type="text/javascript" src="{{ .RelPermalink }}"></script>
+      <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
     {{- end }}
   {{- else }}
     {{- with . | resources.Minify | fingerprint }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
     {{- end }}
   {{- end }}
 {{- end }}
