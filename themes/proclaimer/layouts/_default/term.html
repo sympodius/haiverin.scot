@@ -1,7 +1,7 @@
 {{ define "main" }}
     <div class="list-page-container">
       <article class="more-on">
-        <h1>{{ if eq .Data.Plural "tags" }}#{{ replace .Title " " "-" }}{{ else }}{{ .Title }}{{ end }}</h1>
+        <h1>{{ if eq .Data.Plural "tags" }}#{{ replace .Title " " "-" }}{{ else }}{{ .Title | humanize }}{{ end }}</h1>
         {{ .Content -}}
         {{- $paginator := .Paginate .Pages.ByDate.Reverse }}
         {{- range $paginator.Pages }}

@@ -4,7 +4,7 @@
       {{ .Content }}
       <div class="list-page-terms-container">
       {{- range .Pages.ByTitle }}
-        <div class="list-page-terms"><a href="{{ .RelPermalink }}">{{- if eq $.Title "Tags" -}}#{{- end -}}{{- .LinkTitle -}}</a></div>
+        <div class="list-page-terms lowercase"><a href="{{ .RelPermalink }}">{{- if eq $.Title "Tags" -}}#{{- replace .LinkTitle " " "-" -}}{{- else -}}{{- .LinkTitle | humanize -}}{{- end -}}</a></div>
         {{ .Summary }}
       {{- end }}
       </div>
