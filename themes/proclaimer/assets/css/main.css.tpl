@@ -136,7 +136,6 @@ ul {
 
 
 /* Top nav styling. */
-
 button {
     display: inline-block;
     border: none;
@@ -325,7 +324,9 @@ button:active {
   margin-bottom: -6px;
   height: {{ site.Params.logo.height | default "60" }};
   width: {{ site.Params.logo.width | default "60" }};
-  }.topnav ul {
+}
+
+.topnav ul {
     padding: 0;
     margin: 10px 1rem 10px 1rem;
 }
@@ -414,7 +415,7 @@ button:active {
 /* Single page styling */
 article {
     display: block;
-    max-width: 962px; /*1060px;*/
+    max-width: 962px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -640,7 +641,7 @@ aside {
     float: left;
     width: 92px;
     height: 92px;
-    margin-top: 5px;;
+    margin-top: 5px;
     margin-right: 30px;
     margin-bottom: 5px;
 }
@@ -685,7 +686,6 @@ aside {
 .related-link-container .related-link-title {
     text-decoration: none;
     text-decoration-color: var(--logo-low);
-    // background-image: linear-gradient(to bottom, var(--logo-high) 0%, var(--logo-low) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; 
@@ -696,17 +696,12 @@ aside {
     width: 92px;
     height: 92px;
     min-width: 92px;
-    // box-shadow: var(--shadow-elevation-low);
 }
 
 .related-link-image img {
     width: 100%;
     height: auto;
     margin: 0;
-}
-
-.related-link-container:hover .related-link-image {
-    // box-shadow: var(--shadow-elevation-medium);
 }
 
 .related-link-title {
@@ -716,17 +711,6 @@ aside {
     margin-top: auto;
     margin-bottom: auto;
 }
-
-/*
-.related-link-container:hover .related-link-title {
-    text-decoration: none;
-    text-decoration-color: var(--logo-high);
-    background-image: linear-gradient(to top, var(--logo-high) 0%, var(--logo-low) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-*/
 
 .sharing-links svg {
     width: 1.5rem;
