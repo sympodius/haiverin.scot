@@ -559,7 +559,7 @@ figure figcaption {
     text-align: center;
     font-size: 0.8rem;
     font-weight: 400;
-    margin-top: 0.5rem;
+    margin-top: -0.75rem;
 }
 
 figure a {
