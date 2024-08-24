@@ -122,8 +122,6 @@
           logoImgFile.setAttribute("class", "logo-icon");
           logoImgFile.setAttribute("src", "{{ .RelPermalink }}");
           logoImgFile.setAttribute("alt", "Site Logo");
-          logoImgFile.setAttribute("height", "{{ site.Params.logo.height | default "60" }}");
-          logoImgFile.setAttribute("width", "{{ site.Params.logo.width | default "60" }}");
           logos[i].parentElement.replaceChild(logoImgFile, logos[i]);
           {{- end }}
         }

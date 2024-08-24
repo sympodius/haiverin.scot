@@ -15,40 +15,44 @@
   --summary: {{ site.Params.colors.summary | default "#5C6C6C" }};
   --shadow-color: 0deg 0% 63%;
   --shadow-elevation-low:
-    0.3px 0.5px 0.9px hsl(var(--shadow-color) / 0),
-    0.6px 1.1px 1.9px hsl(var(--shadow-color) / 0.35),
-    1.3px 2.5px 4.2px hsl(var(--shadow-color) / 0.69);
+    0.01875rem 0.03125rem 0.05625rem hsl(var(--shadow-color) / 0),
+    0.0375rem 0.06875rem 0.11875rem hsl(var(--shadow-color) / 0.35),
+    0.08125rem 0.15625rem 0.2625rem hsl(var(--shadow-color) / 0.69);
   --shadow-elevation-medium:
-    0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.23),
-    1.1px 2.2px 3.2px -0.4px hsl(var(--shadow-color) / 0.34),
-    2.5px 5px 7.3px -0.8px hsl(var(--shadow-color) / 0.45),
-    5.6px 11.3px 16.6px -1.2px hsl(var(--shadow-color) / 0.57);
+    0.01875rem 0.03125rem 0.05rem hsl(var(--shadow-color) / 0.23),
+    0.06875rem 0.1375rem 0.2rem -0.025rem hsl(var(--shadow-color) / 0.34),
+    0.15625rem 0.3125rem 0.45625rem -0.05rem hsl(var(--shadow-color) / 0.45),
+    0.35rem 0.70625rem 1.0375rem -0.075rem hsl(var(--shadow-color) / 0.57);
   --shadow-elevation-high:
-    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
-    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
-    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
-    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
-    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
-    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
-    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
-    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+    0.01875rem 0.03125rem 0.04375rem hsl(var(--shadow-color) / 0.34),
+    0.09375rem 0.18125rem 0.23125rem -0.025rem hsl(var(--shadow-color) / 0.34),
+    0.16875rem 0.3375rem 0.425rem -0.04375rem hsl(var(--shadow-color) / 0.34),
+    0.28125rem 0.55625rem 0.7rem -0.06875rem hsl(var(--shadow-color) / 0.34),
+    0.44375rem 0.89375rem 1.125rem -0.0875rem hsl(var(--shadow-color) / 0.34),
+    0.7rem 1.39375rem 1.75625rem -0.1125rem hsl(var(--shadow-color) / 0.34),
+    1.0625rem 2.11875rem 2.66875rem -0.13125rem hsl(var(--shadow-color) / 0.34),
+    1.5625rem 3.125rem 3.93125rem -0.15625rem hsl(var(--shadow-color) / 0.34);
   --input-border: var(--logo-high);
   --input-focus: var(--logo-low);
     }
 
 
 
-/* Use border-box everywhere for box-sizing. */
+/* Use border-box everywhere for box-sizing, plus other resets. */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 
 
 /* General tag styling. */
 body {
+    min-height: 100vh;
     color: var(--body-text);
     background-color: var(--site-background);
     font-family: "Noto Sans", sans-serif;
@@ -57,7 +61,6 @@ body {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     line-height: 1.5;
-    margin: 0em;
 }
 
 header {
@@ -66,7 +69,7 @@ header {
 }
 
 footer {
-    padding-top:2px;  /* Needed to allow background gradient to be visible */
+    padding-top: 0.125rem;  /* Needed to allow background gradient to be visible */
     background:
         linear-gradient(
             to left,
@@ -77,13 +80,18 @@ footer {
         top
         var(--site-background)
         no-repeat;
-    background-size: 100% 2px;  /* Resize needed when using linear-gradient for background */
+    background-size: 100% 0.125rem;  /* Resize needed when using linear-gradient for background */
     margin-top: 1rem;
 }
 
 /* This is used to check if CSS is disbled by applying it to an empty div tag. */
 #css-tester {
     width: 3px;
+}
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -123,6 +131,8 @@ h6 {
 
 ul {
     margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
 }
 
 .hidden {
@@ -173,25 +183,25 @@ button:active {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 0.625rem;
     margin-top: 0;
 }
 
 #hamburger-menu svg {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .menu-close-icon-container {
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
-    margin-left: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-top: 0.625rem;
+    margin-left: 0.3125rem;
 }
 
 .menu-close-icon-container svg {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .menu-riser {
@@ -214,7 +224,7 @@ button:active {
     display: flex;
     justify-content: flex-end;
     margin-left: auto;
-    padding-right: 20px;
+    padding-right: 1.25rem;
 }
 
 .FadeOut {
@@ -237,8 +247,8 @@ button:active {
 
 #search-bar-container {
     position: absolute;
-    top: 23px;
-    right: 20px;
+    top: 1.4375rem;
+    right: 1.25rem;
 }
 
 .search-loading {
@@ -246,8 +256,8 @@ button:active {
 }
 
 .search-icon-container {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 /* This adds a little colour transition, and shadow animation after the search box appears. */
@@ -256,21 +266,20 @@ button:active {
 }
 
 .searchbar {
-    font-size: 16px;
-    font-size: max(16px, 1em);
+    font-size: 1rem;
     font-family: inherit;
     padding: 0.25em 0.5em;
     background-color: var(--site-background);
-    border: 2px solid var(--input-border);
-    border-radius: 4px;
+    border: 0.125rem solid var(--input-border);
+    border-radius: 0.25rem;
     box-shadow: var(--shadow-elevation-medium);
-    outline: 3px solid transparent;
+    outline: 0.1875rem solid transparent;
 }
 
 .searchbar:not(textarea) {
     line-height: 1;
     height: 2.25rem;
-    outline: 3px solid transparent;
+    outline: 0.1875rem solid transparent;
 }
 
 .searchbar {
@@ -280,12 +289,12 @@ button:active {
 .searchbar:focus {
     border-color: var(--input-focus);
     box-shadow: var(--shadow-elevation-high);
-    outline: 3px solid transparent;
+    outline: 0.1875rem solid transparent;
 }
 
 .top-search svg {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .homelink {
@@ -297,7 +306,7 @@ button:active {
     font-weight: 800;
     color: var(--a);
     padding-right: 0;
-    margin: 10px 0 10px 0;
+    margin: 0.625rem 0 0.625rem 0;
 }
 
 .topnav stop {
@@ -321,14 +330,14 @@ button:active {
 }
 
 .logorollover svg {
-  margin-bottom: -6px;
-  height: {{ site.Params.logo.height | default "60" }};
-  width: {{ site.Params.logo.width | default "60" }};
+  margin-bottom: -0.375rem;
+  height: {{ site.Params.logo.height | default "3.75rem" }};
+  width: {{ site.Params.logo.width | default "3.75rem" }};
 }
 
 .topnav ul {
     padding: 0;
-    margin: 10px 1rem 10px 1rem;
+    margin: 0.625rem 1rem 0.625rem 1rem;
 }
 
 .topnav a {
@@ -369,17 +378,16 @@ button:active {
     position: fixed;
     z-index: 100;
     opacity: 0;
-    top: 5px;
-    left: 5px;
-    font-size: 16px;
-    font-size: max(16px, 1em);
+    top: 0.3125rem;
+    left: 0.3125rem;
+    font-size: 1rem;
     font-family: inherit;
     padding: 0.25em 0.5em;
     background-color: var(--site-background);
-    border: 2px solid var(--logo-high);
-    border-radius: 4px;
+    border: 0.125rem solid var(--logo-high);
+    border-radius: 0.25rem;
     box-shadow: var(--shadow-elevation-medium);
-    outline: 3px solid transparent;
+    outline: 0.1875rem solid transparent;
 }
 
 .side-menu-sections {
@@ -390,7 +398,7 @@ button:active {
 }
 
 .side-menu-sections li {
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 .side-menu-sections .side-menu-categories {
@@ -398,7 +406,7 @@ button:active {
     text-transform: lowercase;
     font-size: 1.6rem;
     font-weight: 300;
-    margin: 0 16px 0 16px;
+    margin: 0 1rem 0 1rem;
 }
 
 .side-menu-categories li {
@@ -415,7 +423,7 @@ button:active {
 /* Single page styling */
 article {
     display: block;
-    max-width: 962px;
+    max-width: 60.125rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -428,7 +436,7 @@ article {
 .summary {
     color: var(--summary);
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -442,11 +450,11 @@ article {
 }
 
 .reading-sizes {
-    margin-left: 30px;
+    margin-left: 1.875rem;
 }
 
 .reading-difficulty {
-    margin-left: 30px;
+    margin-left: 1.875rem;
 }
 
 .sharing-links a {
@@ -465,8 +473,8 @@ article {
 }
 
 .sharing-links li {
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 0.625rem;
+    margin-right: 0.625rem;
 }
 
 .sharing-links li:last-child {
@@ -485,10 +493,9 @@ article {
 }
 
 .banner-image img {
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     box-shadow: var(--shadow-elevation-low);
 }
 
@@ -518,7 +525,7 @@ main {
 }
 
 .single-page-container {
-    max-width: 1536px;
+    max-width: 96rem;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
@@ -585,7 +592,7 @@ figure img:hover {
 
 aside {
     display: block;
-    max-width: 962px;
+    max-width: 60.125rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.5rem;
@@ -594,7 +601,7 @@ aside {
 
 .aside-list {
     display: block;
-    width: 878px;
+    width: 54.875rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.5rem;
@@ -631,7 +638,7 @@ aside {
 
 .aside-card-subtitle {
     color: var(--summary);
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     margin-top: -0.9rem;
     font-size: 1.1rem;
     font-weight: 600;
@@ -639,11 +646,11 @@ aside {
 
 .aside-card-image {
     float: left;
-    width: 92px;
-    height: 92px;
-    margin-top: 5px;
-    margin-right: 30px;
-    margin-bottom: 5px;
+    width: 5.75rem;
+    height: 5.75rem;
+    margin-top: 0.3125rem;
+    margin-right: 1.875rem;
+    margin-bottom: 0.3125rem;
 }
 
 .aside-card-image img {
@@ -693,9 +700,9 @@ aside {
 
 .related-link-image {
     transition: 0.2s;
-    width: 92px;
-    height: 92px;
-    min-width: 92px;
+    width: 5.75rem;
+    height: 5.75rem;
+    min-width: 5.75rem;
 }
 
 .related-link-image img {
@@ -741,22 +748,22 @@ aside {
 
 /* List page styling */
 .list-page-container {
-    max-width: 1536px;
+    max-width: 96rem;
     display: block;
     margin: auto;
 }
 
 .list-page-container h1 {
-    margin-bottom: -20px;
-    margin-left: 15px;
+    margin-bottom: -1.25rem;
+    margin-left: 0.9375rem;
     text-transform: lowercase;
     font-size: 2.5rem;
     font-weight: 300;
 }
 
 #list-page-title {
-    margin-bottom: -20px;
-    margin-left: 0px;
+    margin-bottom: -1.25rem;
+    margin-left: 0;
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 800;
@@ -780,15 +787,15 @@ aside {
 }
 
 #list-page-section-title {
-    margin-bottom: -20px;
-    margin-left: 15px;
+    margin-bottom: -1.25rem;
+    margin-left: 0.9375rem;
     text-transform: uppercase;
     font-size: 2.5rem;
     font-weight: 800;
 }
 
 .list-stories-block {
-    max-width: 962px;
+    max-width: 60.125rem;
     display: block;
     margin-top: 2rem;
 }
@@ -796,8 +803,8 @@ aside {
 .list-story-generic-block {
     display: flex;
     justify-content: space-between;
-    max-width: 962px;
-    min-width: 275px;
+    max-width: 60.125rem;
+    min-width: 17.1875rem;
     margin-right: auto;
     margin-left: 0;
     padding: 1.5rem;
@@ -806,7 +813,7 @@ aside {
 
 .list-story-generic-block-text {
     margin-right: 1rem;
-    min-width: 135px;
+    min-width: 8.4375rem;
 }
 
 .list-story-generic-block-text h2 {
@@ -815,33 +822,33 @@ aside {
 }
 
 .list-story-generic-block-author {
-    margin-left: 30px;
+    margin-left: 1.875rem;
 }
 
 .list-story-generic-block-reading-time {
-    margin-left: 30px;
+    margin-left: 1.875rem;
 }
 
 .list-story-generic-block-image-rectangle img {
     margin: 0;
-    min-width: 220px;
+    min-width: 13.75rem;
 }
 
 .list-story-generic-block-image-square img {
     margin: 0;
-    max-width: 92px;
-    min-width: 92px;
+    max-width: 5.75rem;
+    min-width: 5.75rem;
 }
 
 .list-story-generic-block-image-square {
-    margin-top: 7px;
+    margin-top: 0.4375rem;
     margin-right: 0;
 }
 
 .list-story-generic-block-summary {
     color: var(--summary);
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -853,7 +860,7 @@ aside {
     font-style: italic;
     font-size: 0.8rem;
     font-weight: 400;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 .pagination {
@@ -862,7 +869,7 @@ aside {
     flex-flow: row wrap;
     list-style: none;
     padding-left: 0;
-    margin-top: 100px;
+    margin-top: 6.25rem;
 }
 
 .page-item {
@@ -923,7 +930,7 @@ aside {
 }
 
 #section-pull-top-story-small {
-    border: solid 1px var(--summary);
+    border: solid 0.0625rem var(--summary);
     border-bottom: none;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -966,12 +973,12 @@ aside {
     color: var(--site-background);
     background-color: var(--summary);
     padding: 0;
-    margin-top: -10px;
+    margin-top: -0.625rem;
 }
 
 .top-three {
-    padding: 5px;
-    padding-top: 17px;
+    padding: 0.3125rem;
+    padding-top: 1.0625rem;
 }
 
 .top-three:first-child {
@@ -1011,14 +1018,14 @@ aside {
 
 .top-three-separator {
     position: absolute;
-    padding-bottom: 2px;
+    padding-bottom: 0.125rem;
     height: 0;
     width: 100%;
     left: 50%;
     margin-left: -50%;
-    margin-top: 2px;
+    margin-top: 0.125rem;
     background: linear-gradient( to right, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
-    background-size: 100% 2px;
+    background-size: 100% 0.125rem;
 }
 
 .section-boxes-container {
@@ -1072,7 +1079,7 @@ aside {
 
 .more-on h1 {
     margin-top: 4rem;
-    margin-left: 15px;
+    margin-left: 0.9375rem;
     font-size: 2rem;
 }
 
@@ -1084,7 +1091,7 @@ footer {
 }
 
 .footer-line {
-    max-width: 1536px;
+    max-width: 96rem;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
@@ -1100,7 +1107,7 @@ footer {
 }
     
 .footer-line li {
-    padding-right: 30px;
+    padding-right: 1.875rem;
 }
     
 .footer-line li:last-child {
@@ -1110,7 +1117,7 @@ footer {
 
 
 /* Media query overrides --- all styling before this point assumes a mobile device being used to print to paper. */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25rem) {
     /* Remove top nav sections when screen is too small, and adjust placement of site logo. */
     .topnav-sections {
         display: flex;
@@ -1137,7 +1144,7 @@ footer {
     }
 
     .top-three {
-	padding-top: 5px;
+	padding-top: 0.3125rem;
     }
     
     .list-story-generic-block-text {
@@ -1196,16 +1203,8 @@ footer {
 	font-size: 2.5rem;
     }
 
-    .banner-image-large {
-	display: block;
-    }
-
-    .banner-image-small {
-	display: none;
-    }
-
     .aside-list {
-	max-width: 900px;
+	max-width: 56.25rem;
     }
 
     .aside-list .aside-card-title {
@@ -1219,7 +1218,7 @@ footer {
 	color: var(--site-background);
 	background-color: var(--summary);
 	padding: 0;
-	margin-top: -10px;
+	margin-top: -0.625rem;
     }
 
     .section-pull-top-title {
@@ -1245,7 +1244,7 @@ footer {
 
 
 
-@media screen and (min-width: 1580px) {
+@media screen and (min-width: 98.75rem) {
     .section-pull-banner-image-medium {
 	display: none;
     }
@@ -1256,20 +1255,20 @@ footer {
 
     aside {
 	display: block;
-	max-width: 550px;
+	max-width: 34.375rem;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1.5rem;
-	padding-left: 65px;
+	padding-left: 4.0625rem;
     }
 
     .aside-list {
 	display: block;
-	max-width: 550px;
+	max-width: 34.375rem;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1.5rem;
-	padding-left: 65px;
+	padding-left: 4.0625rem;
     }
 
     #section-pull-top-story-small {
@@ -1311,14 +1310,14 @@ footer {
     .top-three-separator-large {
 	display: block;
 	position: absolute;
-	padding-bottom: 2px;
+	padding-bottom: 0.125rem;
 	height: 0;
 	width: 100%;
 	left: 50%;
 	margin-left: -50%;
-	margin-top: -2px;
+	margin-top: -0.125rem;
 	background: linear-gradient( to right, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
-	background-size: 100% 2px;
+	background-size: 100% 0.125rem;
     }
 
     .top-three-separator {
@@ -1386,8 +1385,8 @@ footer {
 	position: fixed;
 	width: 100%;
 	overflow: hidden;
-	padding-left: 10px;
-	padding-bottom: 2px;  /* Needed to allow background gradient to be visible */
+	padding-left: 0.625rem;
+	padding-bottom: 0.125rem;  /* Needed to allow background gradient to be visible */
 	background:
             linear-gradient(
 		to right,
@@ -1398,7 +1397,7 @@ footer {
             bottom
             var(--site-background)
             no-repeat;
-	background-size: 100% 2px;  /* Resize needed when using linear-gradient for background */
+	background-size: 100% 0.125rem;  /* Resize needed when using linear-gradient for background */
 	box-shadow: var(--shadow-elevation-medium);
 	z-index: 90;
     }
