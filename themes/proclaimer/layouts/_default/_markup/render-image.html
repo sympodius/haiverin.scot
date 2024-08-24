@@ -27,8 +27,7 @@
 
   {{- if $parent.IsBlock }}
         <figure>
-          <img class="banner-image-large hidden" loading="lazy" src="{{- $imageWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} width="{{ $imageWebP.Width }}" height="{{ $imageWebP.Height }}"/>
-	  <img class="banner-image-small" loading="lazy" src="{{- $imageSmallWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} width="{{ $imageSmallWebP.Width }}" height="{{ $imageSmallWebP.Height }}"/>
+          <img class="article-image" loading="lazy" srcset="{{- $imageSmallWebP.RelPermalink | safeURL }} {{ $imageSmallWebP.Width -}}w, {{- $imageWebP.RelPermalink | safeURL }} {{ $imageWebP.Width -}}w" sizes="(min-width: 56.25rem) {{ $imageWebP.Width -}}px, {{ $imageSmallWebP.Width -}}px" src="{{- $imageWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- $image.RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $parent.Text -}}alt="{{- . -}}"{{- end }} width="{{ $imageWebP.Width }}" height="{{ $imageWebP.Height }}"/>
           <figcaption>{{- $parent.Title -}}</figcaption>
         </figure>
   {{- else }}
