@@ -1,6 +1,10 @@
 {{- $bannerImg := .Page.Resources.GetMatch (.Get "src" | safeURL) }}
 {{- $altText := .Get "alt" }}
 {{- $titleText := $altText }}
+{{- $captionText := .Get "caption" }}
+{{- with $captionText }}
+  {{- $titleText = $captionText }}
+{{- end }}
 {{- with .Get "title" }}{{ $titleText = . }}{{ end }}
 {{- $maxWidth := 962 }}
 {{- $maxHeight := 520 }}
