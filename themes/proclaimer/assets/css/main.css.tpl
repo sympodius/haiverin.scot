@@ -1265,6 +1265,7 @@ footer {
 
     #section-pull-top-stories {
 	display: flex;
+	justify-content: flex-start;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -1286,6 +1287,10 @@ footer {
 	margin-top: -0.125rem;
 	background: linear-gradient( to right, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
 	background-size: 100% 0.125rem;
+    }
+
+    .top-three {
+	width: calc(100% / 3);
     }
 
     .top-three-separator {
