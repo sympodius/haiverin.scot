@@ -1227,9 +1227,13 @@ footer {
 	display: block;
 	max-width: 34.375rem;
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: 0;
 	margin-top: 1.5rem;
-	padding-left: 4.0625rem;
+	padding-left: 5rem;
+    }
+
+    .more-on {
+	margin-left: 0;
     }
 
     #section-pull-top-story-small {
@@ -1297,6 +1301,10 @@ footer {
 
     .top-three-title {
 	margin-top: 1rem;
+    }
+
+    .single-page-container {
+	justify-content: space-between;
     }
 }
 
