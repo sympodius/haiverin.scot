@@ -423,7 +423,8 @@ button:active {
 /* Single page styling */
 article {
     display: block;
-    width: 60.125rem;
+    max-width: 60.125rem;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -484,7 +485,7 @@ article {
 main {
     padding: 2rem;
     padding-top: 0;
-    min-width: 19.1729375rem;
+    min-width: 22rem;
 }
 
 .single-page-container {
@@ -769,7 +770,6 @@ aside {
 
 .list-story-generic-block-text {
     margin-right: 1rem;
-    min-width: 8.4375rem;
 }
 
 .list-story-generic-block-text h2 {
