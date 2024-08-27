@@ -423,7 +423,7 @@ button:active {
 /* Single page styling */
 article {
     display: block;
-    max-width: 60.125rem;
+    width: 60.125rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -484,6 +484,7 @@ article {
 main {
     padding: 2rem;
     padding-top: 0;
+    min-width: 19.1729375rem;
 }
 
 .single-page-container {
@@ -555,7 +556,7 @@ figure img:hover {
 
 aside {
     display: block;
-    max-width: 60.125rem;
+    width: 60.125rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.5rem;
@@ -564,22 +565,15 @@ aside {
 
 .aside-list {
     display: block;
-    width: 54.875rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     margin-top: 1.5rem;
     padding-left: 0;
 }
 
 .aside-card {
     box-shadow: var(--shadow-elevation-low);
-    padding: 1rem;
-    margin-bottom: 2rem;
-}
-
-.aside-card-list {
-    box-shadow: var(--shadow-elevation-low);
-    padding: 1rem;
+    padding: 1.5rem;
     margin-bottom: 2rem;
 }
 
@@ -767,7 +761,6 @@ aside {
     display: flex;
     justify-content: space-between;
     max-width: 60.125rem;
-    min-width: 17.1875rem;
     margin-right: auto;
     margin-left: 0;
     padding: 1.5rem;
@@ -1172,7 +1165,7 @@ footer {
     }
 
     .aside-list {
-	max-width: 56.25rem;
+	max-width: 60.125rem;
     }
 
     .aside-list .aside-card-title {
