@@ -892,6 +892,11 @@ aside {
     margin: 0;
 }
 
+.section-pull-banner-image-small, .section-pull-banner-image-medium {
+    border-left: solid 0.0625rem var(--summary);
+    border-right: solid 0.0625rem var(--summary);
+}
+
 #section-pull-top-story-small {
     border: solid 0.0625rem var(--summary);
     border-bottom: none;
