@@ -46,7 +46,7 @@ draft: false
 
 My family has a long tradition of telling each other what we want for our Christmas and birthday presents. Surprises have never been a big thing for us. However, the presents are never the important part; it's the time we spend together.
 
-I thought I should try making more presents for my family --- like I was spending time *on* on them, as well as *with* them. So, I decided to draw everyone a portrait for their birthday.
+I thought I should try making more presents for my family --- like I was spending time *on* them, as well as *with* them. So, I decided to draw everyone a portrait for their birthday.
 
 Drawing is a hobby that I've always enjoyed, but I've never made a real effort to improve. I decided to address this by reading some books to help fill in the blanks.
 
