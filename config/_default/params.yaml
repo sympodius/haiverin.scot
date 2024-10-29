@@ -36,7 +36,7 @@ colors:  # Halloween
   logoHigh: "#FC8B02"
   logoLow: "#A100FA"
   siteBackground: "#0B0D0C"
-  boxBackground: "#220723"
+  boxBackground: "#160416"
   navA: "#7C8C8C"
   navAActive: "#F9F9F9"
   navAHover: "#5C6C6C"
@@ -45,7 +45,7 @@ colors:  # Halloween
   aHover: "#5C6C6C"
   bodyText: "#F9F9F9"
   h1: "#F9F9F9"
-  summary: "#1A8E00"
+  summary: "#7562AD"
 
 authors:
 - name: John Urquhart Ferguson
