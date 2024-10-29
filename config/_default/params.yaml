@@ -17,19 +17,35 @@ logo:
   height: "3.75rem"
   width: "3.75rem"
 
-colors:
-  logoHigh: "#15C5FE"
+# colors:  # Normal
+#  logoHigh: "#15C5FE"
+#  logoLow: "#A100FA"
+#  siteBackground: "#F9F9F9"
+#  boxBackground: "#F9F9F9"
+#  navA: "#7C8C8C"
+#  navAActive: "#0B0D0C"
+#  navAHover: "#5C6C6C"
+#  a: "#7C8C8C"
+#  aActive: "#0B0D0C"
+#  aHover: "#5C6C6C"
+#  bodyText: "#0B0D0C"
+#  h1: "#0B0D0C"
+#  summary: "#5C6C6C"
+
+colors:  # Halloween
+  logoHigh: "#FC8B02"
   logoLow: "#A100FA"
-  siteBackground: "#F9F9F9"
+  siteBackground: "#0B0D0C"
+  boxBackground: "#220723"
   navA: "#7C8C8C"
-  navAActive: "#0B0D0C"
+  navAActive: "#F9F9F9"
   navAHover: "#5C6C6C"
   a: "#7C8C8C"
-  aActive: "#0B0D0C"
+  aActive: "#F9F9F9"
   aHover: "#5C6C6C"
-  bodyText: "#0B0D0C"
-  h1: "#0B0D0C"
-  summary: "#5C6C6C"
+  bodyText: "#F9F9F9"
+  h1: "#F9F9F9"
+  summary: "#1A8E00"
 
 authors:
 - name: John Urquhart Ferguson

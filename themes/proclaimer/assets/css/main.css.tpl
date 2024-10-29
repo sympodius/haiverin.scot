@@ -3,15 +3,16 @@
 :root {
   --logo-high: {{ site.Params.colors.logoHigh | default "#15C5FE" }};
   --logo-low: {{ site.Params.colors.logoLow | default "#A100FA" }};
-  --site-background: {{ site.Params.colors.siteBackground | default "#FFFFFF" }};
+  --site-background: {{ site.Params.colors.siteBackground | default "#F9F9F9" }};
+  --box-background: {{ site.Params.colors.boxBackground | default "#F9F9F9" }};
   --nav-a: {{ site.Params.colors.navA | default "#7C8C8C" }};
   --nav-a-active: {{ site.Params.colors.navAActive | default "#0B0D0C" }};
   --nav-a-hover: {{ site.Params.colors.navAHover | default "#5C6C6C" }};
-  --a: {{ site.Params.colors.a | default "#0B0D0C" }};
-  --a-active: {{ site.Params.colors.aActive | default "#5C6C6C" }};
+  --a: {{ site.Params.colors.a | default "#7C8C8C" }};
+  --a-active: {{ site.Params.colors.aActive | default "#0B0D0C" }};
   --a-hover: {{ site.Params.colors.aHover | default "#5C6C6C" }};
-  --body-text: {{ site.Params.colors.bodyText | default "#7C8C8C" }};
-  --h1: {{ site.Params.colors.h1 | default "#5C6C6C" }};
+  --body-text: {{ site.Params.colors.bodyText | default "#0B0D0C" }};
+  --h1: {{ site.Params.colors.h1 | default "#0B0D0C" }};
   --summary: {{ site.Params.colors.summary | default "#5C6C6C" }};
   --shadow-color: 0deg 0% 63%;
   --shadow-elevation-low:
@@ -574,6 +575,7 @@ aside {
 
 .aside-card {
     box-shadow: var(--shadow-elevation-low);
+    background-color: var(--box-background);
     padding: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -755,6 +757,7 @@ aside {
 .list-stories-block {
     max-width: 60.125rem;
     display: block;
+    background-color: var(--box-background);
     margin-top: 2rem;
 }
 
@@ -895,6 +898,7 @@ aside {
     border-bottom: none;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    background-color: var(--box-background);
 }
 
 #section-pull-top-story {
@@ -902,7 +906,7 @@ aside {
     top: 2.5%;
     left: 1.5%;
     width: 97%;
-    background-color: var(--site-background);
+    background-color: var(--box-background);
     box-shadow: var(--shadow-elevation-medium);
     padding: 1%;
     z-index: 10;
@@ -996,6 +1000,7 @@ aside {
 .section-boxes-section-container {
     margin-top: 2rem;
     padding: 1.5rem;
+    background-color: var(--box-background);
     box-shadow: var(--shadow-elevation-low);
 }
 
@@ -1238,6 +1243,7 @@ footer {
 
     #section-pull-top-story-small {
 	display: none;
+	background-color: var(--box-background);
     }
 
     #section-pull-top-story {
@@ -1246,7 +1252,7 @@ footer {
 	top: 2.5%;
 	left: 1.5%;
 	width: 97%;
-	background-color: var(--site-background);
+	background-color:var(--box-background);
 	box-shadow: var(--shadow-elevation-medium);
 	padding: 1%;
 	z-index: 10;
