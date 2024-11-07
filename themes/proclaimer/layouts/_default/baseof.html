@@ -97,6 +97,35 @@
 
 
     /*
+      Logic for the dark-mode toggle button in the side menu.
+      Check local storage first for a user selected preference.
+      If none found, try to use system choice.
+    */
+    const darkModeToggleBtn = document.getElementById("side-menu-toggle-dark-theme");
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme == "dark") {
+      document.documentElement.classList.toggle("dark-mode");
+    } else if (currentTheme == "light") {
+      document.documentElement.classList.toggle("light-mode");
+    }
+    darkModeToggleBtn.addEventListener("click", function () {
+      if (prefersDarkScheme.matches) {
+        document.documentElement.classList.toggle("light-mode");
+        var theme = document.documentElement.classList.contains("light-mode")
+          ? "light"
+          : "dark";
+      } else {
+        document.documentElement.classList.toggle("dark-mode");
+        var theme = document.documentElement.classList.contains("dark-mode")
+          ? "dark"
+          : "light";
+      }
+      localStorage.setItem("theme", theme);
+    });
+
+
+    /*
       Your CSS file should set css-tester div to have a width of 3px.
       If it does not have this width when being displayed, then CSS is not being used.
       You can then remove/replace elements that you don't want to appear in a non-CSS loaded display.

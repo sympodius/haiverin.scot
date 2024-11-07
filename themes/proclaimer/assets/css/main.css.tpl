@@ -37,6 +37,119 @@
   --input-focus: var(--logo-low);
     }
 
+:root.dark-mode {
+  --logo-high: {{ site.Params.colors.logoHighDark | default "#15C5FE" }};
+  --logo-low: {{ site.Params.colors.logoLowDark | default "#A100FA" }};
+  --site-background: {{ site.Params.colors.siteBackgroundDark | default "#0B0D0C" }};
+  --box-background: {{ site.Params.colors.boxBackgroundDark | default "#061E26" }};
+  --nav-a: {{ site.Params.colors.navADark | default "#7C8C8C" }};
+  --nav-a-active: {{ site.Params.colors.navAActiveDark | default "#F9F9F9" }};
+  --nav-a-hover: {{ site.Params.colors.navAHoverDark | default "#5C6C6C" }};
+  --a: {{ site.Params.colors.aDark | default "#7C8C8C" }};
+  --a-active: {{ site.Params.colors.aActiveDark | default "#F9F9F9" }};
+  --a-hover: {{ site.Params.colors.aHoverDark | default "#5C6C6C" }};
+  --body-text: {{ site.Params.colors.bodyTextDark | default "#F9F9F9" }};
+  --h1: {{ site.Params.colors.h1Dark | default "#F9F9F9" }};
+  --summary: {{ site.Params.colors.summaryDark | default "#7562AD" }};
+  --shadow-color: 0deg 0% 37%;
+  --shadow-elevation-low:
+    0.01875rem 0.03125rem 0.05625rem hsl(var(--shadow-color) / 0),
+    0.0375rem 0.06875rem 0.11875rem hsl(var(--shadow-color) / 0.35),
+    0.08125rem 0.15625rem 0.2625rem hsl(var(--shadow-color) / 0.69);
+  --shadow-elevation-medium:
+    0.01875rem 0.03125rem 0.05rem hsl(var(--shadow-color) / 0.23),
+    0.06875rem 0.1375rem 0.2rem -0.025rem hsl(var(--shadow-color) / 0.34),
+    0.15625rem 0.3125rem 0.45625rem -0.05rem hsl(var(--shadow-color) / 0.45),
+    0.35rem 0.70625rem 1.0375rem -0.075rem hsl(var(--shadow-color) / 0.57);
+  --shadow-elevation-high:
+    0.01875rem 0.03125rem 0.04375rem hsl(var(--shadow-color) / 0.34),
+    0.09375rem 0.18125rem 0.23125rem -0.025rem hsl(var(--shadow-color) / 0.34),
+    0.16875rem 0.3375rem 0.425rem -0.04375rem hsl(var(--shadow-color) / 0.34),
+    0.28125rem 0.55625rem 0.7rem -0.06875rem hsl(var(--shadow-color) / 0.34),
+    0.44375rem 0.89375rem 1.125rem -0.0875rem hsl(var(--shadow-color) / 0.34),
+    0.7rem 1.39375rem 1.75625rem -0.1125rem hsl(var(--shadow-color) / 0.34),
+    1.0625rem 2.11875rem 2.66875rem -0.13125rem hsl(var(--shadow-color) / 0.34),
+    1.5625rem 3.125rem 3.93125rem -0.15625rem hsl(var(--shadow-color) / 0.34);
+  --input-border: var(--logo-high);
+  --input-focus: var(--logo-low);
+    }
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  :root {
+    --logo-high: {{ site.Params.colors.logoHighDark | default "#15C5FE" }};
+    --logo-low: {{ site.Params.colors.logoLowDark | default "#A100FA" }};
+    --site-background: {{ site.Params.colors.siteBackgroundDark | default "#0B0D0C" }};
+    --box-background: {{ site.Params.colors.boxBackgroundDark | default "#061E26" }};
+    --nav-a: {{ site.Params.colors.navADark | default "#7C8C8C" }};
+    --nav-a-active: {{ site.Params.colors.navAActiveDark | default "#F9F9F9" }};
+    --nav-a-hover: {{ site.Params.colors.navAHoverDark | default "#5C6C6C" }};
+    --a: {{ site.Params.colors.aDark | default "#7C8C8C" }};
+    --a-active: {{ site.Params.colors.aActiveDark | default "#F9F9F9" }};
+    --a-hover: {{ site.Params.colors.aHoverDark | default "#5C6C6C" }};
+    --body-text: {{ site.Params.colors.bodyTextDark | default "#F9F9F9" }};
+    --h1: {{ site.Params.colors.h1Dark | default "#F9F9F9" }};
+    --summary: {{ site.Params.colors.summaryDark | default "#7562AD" }};
+    --shadow-color: 0deg 0% 37%;
+    --shadow-elevation-low:
+      0.01875rem 0.03125rem 0.05625rem hsl(var(--shadow-color) / 0),
+      0.0375rem 0.06875rem 0.11875rem hsl(var(--shadow-color) / 0.35),
+      0.08125rem 0.15625rem 0.2625rem hsl(var(--shadow-color) / 0.69);
+    --shadow-elevation-medium:
+      0.01875rem 0.03125rem 0.05rem hsl(var(--shadow-color) / 0.23),
+      0.06875rem 0.1375rem 0.2rem -0.025rem hsl(var(--shadow-color) / 0.34),
+      0.15625rem 0.3125rem 0.45625rem -0.05rem hsl(var(--shadow-color) / 0.45),
+      0.35rem 0.70625rem 1.0375rem -0.075rem hsl(var(--shadow-color) / 0.57);
+    --shadow-elevation-high:
+      0.01875rem 0.03125rem 0.04375rem hsl(var(--shadow-color) / 0.34),
+      0.09375rem 0.18125rem 0.23125rem -0.025rem hsl(var(--shadow-color) / 0.34),
+      0.16875rem 0.3375rem 0.425rem -0.04375rem hsl(var(--shadow-color) / 0.34),
+      0.28125rem 0.55625rem 0.7rem -0.06875rem hsl(var(--shadow-color) / 0.34),
+      0.44375rem 0.89375rem 1.125rem -0.0875rem hsl(var(--shadow-color) / 0.34),
+      0.7rem 1.39375rem 1.75625rem -0.1125rem hsl(var(--shadow-color) / 0.34),
+      1.0625rem 2.11875rem 2.66875rem -0.13125rem hsl(var(--shadow-color) / 0.34),
+      1.5625rem 3.125rem 3.93125rem -0.15625rem hsl(var(--shadow-color) / 0.34);
+    --input-border: var(--logo-high);
+    --input-focus: var(--logo-low);
+  }
+  :root.light-mode {
+    --logo-high: {{ site.Params.colors.logoHigh | default "#15C5FE" }};
+    --logo-low: {{ site.Params.colors.logoLow | default "#A100FA" }};
+    --site-background: {{ site.Params.colors.siteBackground | default "#F9F9F9" }};
+    --box-background: {{ site.Params.colors.boxBackground | default "#F9F9F9" }};
+    --nav-a: {{ site.Params.colors.navA | default "#7C8C8C" }};
+    --nav-a-active: {{ site.Params.colors.navAActive | default "#0B0D0C" }};
+    --nav-a-hover: {{ site.Params.colors.navAHover | default "#5C6C6C" }};
+    --a: {{ site.Params.colors.a | default "#7C8C8C" }};
+    --a-active: {{ site.Params.colors.aActive | default "#0B0D0C" }};
+    --a-hover: {{ site.Params.colors.aHover | default "#5C6C6C" }};
+    --body-text: {{ site.Params.colors.bodyText | default "#0B0D0C" }};
+    --h1: {{ site.Params.colors.h1 | default "#0B0D0C" }};
+    --summary: {{ site.Params.colors.summary | default "#5C6C6C" }};
+    --shadow-color: 0deg 0% 63%;
+    --shadow-elevation-low:
+      0.01875rem 0.03125rem 0.05625rem hsl(var(--shadow-color) / 0),
+      0.0375rem 0.06875rem 0.11875rem hsl(var(--shadow-color) / 0.35),
+      0.08125rem 0.15625rem 0.2625rem hsl(var(--shadow-color) / 0.69);
+    --shadow-elevation-medium:
+      0.01875rem 0.03125rem 0.05rem hsl(var(--shadow-color) / 0.23),
+      0.06875rem 0.1375rem 0.2rem -0.025rem hsl(var(--shadow-color) / 0.34),
+      0.15625rem 0.3125rem 0.45625rem -0.05rem hsl(var(--shadow-color) / 0.45),
+      0.35rem 0.70625rem 1.0375rem -0.075rem hsl(var(--shadow-color) / 0.57);
+    --shadow-elevation-high:
+      0.01875rem 0.03125rem 0.04375rem hsl(var(--shadow-color) / 0.34),
+      0.09375rem 0.18125rem 0.23125rem -0.025rem hsl(var(--shadow-color) / 0.34),
+      0.16875rem 0.3375rem 0.425rem -0.04375rem hsl(var(--shadow-color) / 0.34),
+      0.28125rem 0.55625rem 0.7rem -0.06875rem hsl(var(--shadow-color) / 0.34),
+      0.44375rem 0.89375rem 1.125rem -0.0875rem hsl(var(--shadow-color) / 0.34),
+      0.7rem 1.39375rem 1.75625rem -0.1125rem hsl(var(--shadow-color) / 0.34),
+      1.0625rem 2.11875rem 2.66875rem -0.13125rem hsl(var(--shadow-color) / 0.34),
+      1.5625rem 3.125rem 3.93125rem -0.15625rem hsl(var(--shadow-color) / 0.34);
+    --input-border: var(--logo-high);
+    --input-focus: var(--logo-low);
+  }
+}
+
 
 
 /* Use border-box everywhere for box-sizing, plus other resets. */

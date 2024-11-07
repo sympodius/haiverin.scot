@@ -14,6 +14,10 @@
       {{- $sitemapIcon := resources.GetMatch "images/sitemap.svg" }}
         <li><a href="/sitemap" title="Sitemap">{{- if ne $sitemapIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $sitemapIcon "page" $page) }}{{- else -}}Sitemap{{- end }}
             </a></li>
+        <li><button id="side-menu-toggle-dark-theme">
+	    {{- $daynight := resources.GetMatch "images/daynight.svg" }}
+              {{ partial "inlineSVG.html" (dict "svgFile" $daynight "page" $page) }}
+	    </button></li>
       {{- with site.Home.OutputFormats.Get "rss" }}
         {{- $rssIcon := resources.GetMatch "images/rss.svg" }}
         <li><a href="/index.xml" title="{{- $site.Title -}} News Feed">{{- if ne $rssIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $rssIcon "page" $page) }}{{- else -}}RSS Feed{{- end }}
