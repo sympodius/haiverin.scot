@@ -3,8 +3,7 @@
 
 {{- /*
   If using production code, get the third party javascript from CDNs. Otherwise, use a local copy.
-  This makes it easier for me to test the site without an internet connection, and means I don't
-  have to include the external libraries directly in my repo.
+  This makes it easier for me to test the site without an internet connection.
 */}}
 {{- if eq hugo.Environment "production" }}
   {{- $jqueryUrl := "https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" }}
