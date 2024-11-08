@@ -132,27 +132,29 @@
     */
     function testCSS() {
       const cssTester = document.getElementById("css-tester");
-      if ( cssTester.offsetWidth == 3 ) {
-        cssTester.remove();
-      } else {
-        cssTester.remove();
-        /*
-          Assume site logo SVG inline-importing will be too complex to display properly with CSS turned off, 
-          and replace with img tag of the same svg file.
-          Sadly, this might not be seen unless user hits refresh. Equally, when turning CSS back on, user will
-          need to hit refresh to see original logo again, or navigate to a new page.
-        */
-        const logos = document.getElementsByClassName("logo-icon");
-        console.log(logos.length);
-        for (let i = 0; i < logos.length; i++) {
-          {{- $logo := resources.GetMatch (site.Params.logo.svg | default "images/logo.svg") }}
-	        {{- with $logo }}
-          var logoImgFile = document.createElement("img");
-          logoImgFile.setAttribute("class", "logo-icon");
-          logoImgFile.setAttribute("src", "{{ .RelPermalink }}");
-          logoImgFile.setAttribute("alt", "Site Logo");
-          logos[i].parentElement.replaceChild(logoImgFile, logos[i]);
-          {{- end }}
+      if (cssTester !== undefined && cssTester !== null) {
+        if ( cssTester.offsetWidth == 3 ) {
+          cssTester.remove();
+        } else {
+          cssTester.remove();
+          /*
+            Assume site logo SVG inline-importing will be too complex to display properly with CSS turned off, 
+            and replace with img tag of the same svg file.
+            Sadly, this might not be seen unless user hits refresh. Equally, when turning CSS back on, user will
+            need to hit refresh to see original logo again, or navigate to a new page.
+          */
+          const logos = document.getElementsByClassName("logo-icon");
+          console.log(logos.length);
+          for (let i = 0; i < logos.length; i++) {
+            {{- $logo := resources.GetMatch (site.Params.logo.svg | default "images/logo.svg") }}
+	          {{- with $logo }}
+            var logoImgFile = document.createElement("img");
+            logoImgFile.setAttribute("class", "logo-icon");
+            logoImgFile.setAttribute("src", "{{ .RelPermalink }}");
+            logoImgFile.setAttribute("alt", "Site Logo");
+            logos[i].parentElement.replaceChild(logoImgFile, logos[i]);
+            {{- end }}
+          }
         }
       }
     }
