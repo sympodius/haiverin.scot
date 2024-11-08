@@ -5,7 +5,7 @@ author: John Urquhart Ferguson
 description: The credits for the content and technology of the website.
 summary: Who made what?
 readingEase: College Students
-gradeLevel: 12
+gradeLevel: 13
 sitemap:
   priority : 0.1
 layout: "legal"
@@ -24,7 +24,7 @@ The lightbox for images is built using [nanogallery2](https://nanogallery2.nanos
 
 Many of the icons on the site were based on those found at [free-icons](https://free-icons.github.io/free-icons/).
 
-The typeface used throughout *Haiverin.scot* is [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans).
+The typeface used throughout *Haiverin.scot* is [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans), which is Copyright 2022 [The Noto Project Authors](https://github.com/notofonts/latin-greek-cyrillic), and used under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/). 
 
 *Haiverin.scot* uses the *proclaimer* Hugo theme, which was created by *[John Urquhart Ferguson](https://johnurquhartferguson.info)*.
 
