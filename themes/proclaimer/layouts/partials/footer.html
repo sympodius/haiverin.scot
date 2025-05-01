@@ -14,7 +14,7 @@
       {{- $sitemapIcon := resources.GetMatch "images/sitemap.svg" }}
         <li><a href="/sitemap" title="Sitemap">{{- if ne $sitemapIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $sitemapIcon "page" $page) }}{{- else -}}Sitemap{{- end }}
             </a></li>
-        <li><button id="side-menu-toggle-dark-theme">
+        <li><button id="side-menu-toggle-dark-theme" title="Toggle Dark Theme">
 	    {{- $daynight := resources.GetMatch "images/daynight.svg" }}
               {{ partial "inlineSVG.html" (dict "svgFile" $daynight "page" $page) }}
 	    </button></li>
