@@ -20,7 +20,7 @@
 	    </button></li>
       {{- with site.Home.OutputFormats.Get "rss" }}
         {{- $rssIcon := resources.GetMatch "images/rss.svg" }}
-        <li><a href="/index.xml" title="{{- $site.Title -}} News Feed">{{- if ne $rssIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $rssIcon "page" $page) }}{{- else -}}RSS Feed{{- end }}
+        <li><a href="/index.xml" title="{{- $site.Title }} News Feed">{{- if ne $rssIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $rssIcon "page" $page) }}{{- else -}}RSS Feed{{- end }}
             </a></li>
       {{- end }}
       </ul>
