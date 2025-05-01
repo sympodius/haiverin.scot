@@ -1,7 +1,6 @@
 ---
 title: 'A Giant on the Bridge'
 date: 2024-08-09T17:03:38+01:00
-expiryDate: 2024-12-31T11:00:00+01:00
 author: John Urquhart Ferguson
 description: A review of the Edinburgh Fringe Festival show, 'A Giant on the Bridge.'
 summary: The most thought-provoking, well presented performance of art and ideas that I've ever experienced.
@@ -21,6 +20,11 @@ draft: false
 {{< banner src="images/post-cover.png" alt="Poster for A Giant on the Bridge. Credit: BoxDog Inc." >}}
 
 {{< md-comment >}}
+This file originally had an expiry date, but I removed it. This is what it was:
+
+`expiryDate: 2024-12-31T11:00:00+01:00`
+
+
 # Instructions
 
 - [x] Encourage engagement and interaction
