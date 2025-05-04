@@ -16,6 +16,24 @@
   <div id="css-tester"></div>
   <script>
     /*
+      Establish a service worker.
+    */
+    {{ if .Page.IsHome }}
+      // Don't register the service worker until the page has fully loaded.
+      window.addEventListener('load', () => {
+        // Is service worker available?
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/js/sw.js').then(() => {
+            console.log('Service worker registered!');
+          }).catch((error) => {
+            console.warn('Error registering service worker:');
+            console.warn(error);
+          });
+        }
+      });
+    {{ end }}
+
+    /*
       clickSearchIcon() and leaveSearchbar() deal with correctly hiding and displaying elements
       in the use of the search functionality of the top nav bar.
     */
