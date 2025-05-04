@@ -16,10 +16,10 @@ tags:
   - backstage
 draft: false
 ---
+
 {{< banner src="images/post-cover.png" alt="Banner Image" >}}
 
 {{< md-comment >}}
-
 # Instructions
 
 * Encourage engagement and interaction
@@ -37,6 +37,6 @@ draft: false
 * Set the draft to false when you want to publish, then push to GitHub
 * Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
 * Consider what tomorrow's article will be, and try to post a new one once a day (more is fine)
-  {{</ md-comment >}}
+{{</ md-comment >}}
 
 DecapCMS Test Post.
