@@ -20,8 +20,8 @@ collections:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', default: '{{now}}' }
-      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', required: false, hint: 'Optional' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, default: '{{now}}' }
+      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, required: false, hint: 'Optional' }
       - { label: 'Author', name: 'author', widget: 'string', default: 'John Urquhart Ferguson' }
       - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
       - { label: 'Summary', name: 'summary', widget: 'string', hint: 'This is what you write for list page summaries on the site.' }
@@ -82,8 +82,8 @@ collections:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', default: '{{now}}' }
-      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', required: false, hint: 'Optional' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, default: '{{now}}' }
+      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, required: false, hint: 'Optional' }
       - { label: 'Author', name: 'author', widget: 'string', default: 'John Urquhart Ferguson' }
       - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
       - { label: 'Summary', name: 'summary', widget: 'string', hint: 'This is what you write for list page summaries on the site.' }
@@ -144,8 +144,8 @@ collections:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', default: '{{now}}' }
-      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', required: false, hint: 'Optional' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, default: '{{now}}' }
+      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', picker_utc: true, required: false, hint: 'Optional' }
       - { label: 'Author', name: 'author', widget: 'string', default: 'John Urquhart Ferguson' }
       - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
       - { label: 'Summary', name: 'summary', widget: 'string', hint: 'This is what you write for list page summaries on the site.' }
