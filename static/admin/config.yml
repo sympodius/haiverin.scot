@@ -20,19 +20,21 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime', default: '{{now}}' }
-      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', hint: 'Optional' }
+      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', required: false, hint: 'Optional' }
       - { label: 'Author', name: 'author', widget: 'string', default: 'John Urquhart Ferguson' }
       - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
       - { label: 'Summary', name: 'summary', widget: 'string', hint: 'This is what you write for list page summaries on the site.' }
-      - { label: 'Reading Ease', name: 'readingEase', widget: 'string', hint: 'Personified Flesch reading-ease score, should be one of: Professionals, College Graduates, College Students, 10th to 12th Graders, 8th/9th Graders, 7th Graders, 6th Graders, or 5th Graders' }
-      - { label: 'Grade Level', name: 'gradeLevel', widget: 'number', hint: 'Rounded Flesch-Kincaid grade level', value_type: 'int' }
+      - { label: 'Reading Ease', name: 'readingEase', widget: 'string', required: false, hint: 'Personified Flesch reading-ease score, should be one of: Professionals, College Graduates, College Students, 10th to 12th Graders, 8th/9th Graders, 7th Graders, 6th Graders, or 5th Graders' }
+      - { label: 'Grade Level', name: 'gradeLevel', widget: 'number', required: false, hint: 'Rounded Flesch-Kincaid grade level', value_type: 'int' }
       - { label: 'Images Used (for SEO)', name: 'images', widget: 'list', default: ['images/post-cover.png'], allow_add: true, hint: 'A list of comma separated links to images for SEO (first link will be thumbnail)' }
       - { label: 'Categories', name: 'categories', widget: 'list', default: ['musings'], allow_add: true, hint: 'The first category will be used in the breadcrumb for the page, others will generate the side menu' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['musings', 'coding', 'backstage', 'tutorial', 'bookbinding', 'crafts', 'etc, delete as appropriate or add new ones'], allow_add: true, hint: 'These will help in recommending pages to the reader' }
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: 'true' }
       - { label: 'Body', name: 'body', widget: 'markdown', default: '{{< banner src="images/post-cover.png" alt="Banner Image" >}}
   
-  
+
+  {{< md-comment >}}
+
   # Instructions
   
   
@@ -64,7 +66,9 @@ collections:
   
   - [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
   
-  - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)' }
+  - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)
+  
+  {{</ md-comment >}}' }
   - name: 'life'
     label: 'Life'
     folder: 'content/life'
@@ -77,12 +81,12 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime', default: '{{now}}' }
-      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', hint: 'Optional' }
+      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', required: false, hint: 'Optional' }
       - { label: 'Author', name: 'author', widget: 'string', default: 'John Urquhart Ferguson' }
       - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
       - { label: 'Summary', name: 'summary', widget: 'string', hint: 'This is what you write for list page summaries on the site.' }
-      - { label: 'Reading Ease', name: 'readingEase', widget: 'string', hint: 'Personified Flesch reading-ease score, should be one of: Professionals, College Graduates, College Students, 10th to 12th Graders, 8th/9th Graders, 7th Graders, 6th Graders, or 5th Graders' }
-      - { label: 'Grade Level', name: 'gradeLevel', widget: 'number', hint: 'Rounded Flesch-Kincaid grade level', value_type: 'int' }
+      - { label: 'Reading Ease', name: 'readingEase', widget: 'string', required: false, hint: 'Personified Flesch reading-ease score, should be one of: Professionals, College Graduates, College Students, 10th to 12th Graders, 8th/9th Graders, 7th Graders, 6th Graders, or 5th Graders' }
+      - { label: 'Grade Level', name: 'gradeLevel', widget: 'number', required: false, hint: 'Rounded Flesch-Kincaid grade level', value_type: 'int' }
       - { label: 'Images Used (for SEO)', name: 'images', widget: 'list', default: ['images/post-cover.png'], allow_add: true, hint: 'A list of comma separated links to images for SEO (first link will be thumbnail)' }
       - { label: 'Categories', name: 'categories', widget: 'list', default: ['musings'], allow_add: true, hint: 'The first category will be used in the breadcrumb for the page, others will generate the side menu' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['musings', 'coding', 'backstage', 'tutorial', 'bookbinding', 'crafts', 'etc, delete as appropriate or add new ones'], allow_add: true, hint: 'These will help in recommending pages to the reader' }
@@ -90,6 +94,8 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown', default: '{{< banner src="images/post-cover.png" alt="Banner Image" >}}
   
   
+  {{< md-comment >}}
+
   # Instructions
   
   
@@ -121,7 +127,9 @@ collections:
   
   - [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
   
-  - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)' }
+  - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)
+  
+  {{</ md-comment >}}' }
   - name: 'tech'
     label: 'Tech'
     folder: 'content/tech'
@@ -134,12 +142,12 @@ collections:
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime', default: '{{now}}' }
-      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', hint: 'Optional' }
+      - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', required: false, hint: 'Optional' }
       - { label: 'Author', name: 'author', widget: 'string', default: 'John Urquhart Ferguson' }
       - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
       - { label: 'Summary', name: 'summary', widget: 'string', hint: 'This is what you write for list page summaries on the site.' }
-      - { label: 'Reading Ease', name: 'readingEase', widget: 'string', hint: 'Personified Flesch reading-ease score, should be one of: Professionals, College Graduates, College Students, 10th to 12th Graders, 8th/9th Graders, 7th Graders, 6th Graders, or 5th Graders' }
-      - { label: 'Grade Level', name: 'gradeLevel', widget: 'number', hint: 'Rounded Flesch-Kincaid grade level', value_type: 'int' }
+      - { label: 'Reading Ease', name: 'readingEase', widget: 'string', required: false, hint: 'Personified Flesch reading-ease score, should be one of: Professionals, College Graduates, College Students, 10th to 12th Graders, 8th/9th Graders, 7th Graders, 6th Graders, or 5th Graders' }
+      - { label: 'Grade Level', name: 'gradeLevel', widget: 'number', required: false, hint: 'Rounded Flesch-Kincaid grade level', value_type: 'int' }
       - { label: 'Images Used (for SEO)', name: 'images', widget: 'list', default: ['images/post-cover.png'], allow_add: true, hint: 'A list of comma separated links to images for SEO (first link will be thumbnail)' }
       - { label: 'Categories', name: 'categories', widget: 'list', default: ['musings'], allow_add: true, hint: 'The first category will be used in the breadcrumb for the page, others will generate the side menu' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['musings', 'coding', 'backstage', 'tutorial', 'bookbinding', 'crafts', 'etc, delete as appropriate or add new ones'], allow_add: true, hint: 'These will help in recommending pages to the reader' }
@@ -147,6 +155,8 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown', default: '{{< banner src="images/post-cover.png" alt="Banner Image" >}}
   
   
+  {{< md-comment >}}
+
   # Instructions
   
   
@@ -178,4 +188,6 @@ collections:
   
   - [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
   
-  - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)' }
+  - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)
+  
+  {{</ md-comment >}}' }
