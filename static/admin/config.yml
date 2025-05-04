@@ -31,10 +31,11 @@ collections:
       - { label: 'Categories', name: 'categories', widget: 'list', default: ['musings'], allow_add: true, hint: 'The first category will be used in the breadcrumb for the page, others will generate the side menu' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['musings', 'coding', 'backstage', 'tutorial', 'bookbinding', 'crafts', 'etc, delete as appropriate or add new ones'], allow_add: true, hint: 'These will help in recommending pages to the reader' }
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: 'true' }
-      - { label: 'Body', name: 'body', widget: 'markdown', default: '{{< banner src="images/post-cover.png" alt="Banner Image" >}}
+      - { label: 'Body', name: 'body', widget: 'markdown', default: '
+  {{< banner src="images/post-cover.png" alt="Banner Image" >}}
   
 
-  {{< md-comment >}}
+{{< md-comment >}}
 
   # Instructions
   
@@ -69,7 +70,7 @@ collections:
   
   - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)
   
-  {{</ md-comment >}}' }
+{{</ md-comment >}}' }
   - name: 'life'
     label: 'Life'
     folder: 'content/life'
@@ -81,7 +82,7 @@ collections:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime', default: '{{now}}' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', default: '{{now}}' }
       - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', required: false, hint: 'Optional' }
       - { label: 'Author', name: 'author', widget: 'string', default: 'John Urquhart Ferguson' }
       - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
@@ -92,10 +93,11 @@ collections:
       - { label: 'Categories', name: 'categories', widget: 'list', default: ['musings'], allow_add: true, hint: 'The first category will be used in the breadcrumb for the page, others will generate the side menu' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['musings', 'coding', 'backstage', 'tutorial', 'bookbinding', 'crafts', 'etc, delete as appropriate or add new ones'], allow_add: true, hint: 'These will help in recommending pages to the reader' }
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: 'true' }
-      - { label: 'Body', name: 'body', widget: 'markdown', default: '{{< banner src="images/post-cover.png" alt="Banner Image" >}}
+      - { label: 'Body', name: 'body', widget: 'markdown', default: '
+  {{< banner src="images/post-cover.png" alt="Banner Image" >}}
   
   
-  {{< md-comment >}}
+{{< md-comment >}}
 
   # Instructions
   
@@ -130,7 +132,7 @@ collections:
   
   - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)
   
-  {{</ md-comment >}}' }
+{{</ md-comment >}}' }
   - name: 'tech'
     label: 'Tech'
     folder: 'content/tech'
@@ -142,7 +144,7 @@ collections:
       preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime', default: '{{now}}' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD[T]HH:mm:ssZ', default: '{{now}}' }
       - { label: 'Expiry Date', name: 'expiryDate', widget: 'datetime', required: false, hint: 'Optional' }
       - { label: 'Author', name: 'author', widget: 'string', default: 'John Urquhart Ferguson' }
       - { label: 'Description', name: 'description', widget: 'string', hint: 'This is what you write for SEO.' }
@@ -153,10 +155,11 @@ collections:
       - { label: 'Categories', name: 'categories', widget: 'list', default: ['musings'], allow_add: true, hint: 'The first category will be used in the breadcrumb for the page, others will generate the side menu' }
       - { label: 'Tags', name: 'tags', widget: 'list', default: ['musings', 'coding', 'backstage', 'tutorial', 'bookbinding', 'crafts', 'etc, delete as appropriate or add new ones'], allow_add: true, hint: 'These will help in recommending pages to the reader' }
       - { label: 'Draft', name: 'draft', widget: 'boolean', default: 'true' }
-      - { label: 'Body', name: 'body', widget: 'markdown', default: '{{< banner src="images/post-cover.png" alt="Banner Image" >}}
+      - { label: 'Body', name: 'body', widget: 'markdown', default: '
+  {{< banner src="images/post-cover.png" alt="Banner Image" >}}
   
   
-  {{< md-comment >}}
+{{< md-comment >}}
 
   # Instructions
   
@@ -191,4 +194,4 @@ collections:
   
   - [ ] Consider what tomorrow''s article will be, and try to post a new one once a day (more is fine)
   
-  {{</ md-comment >}}' }
+{{</ md-comment >}}' }
