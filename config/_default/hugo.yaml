@@ -4,6 +4,7 @@ title: Haiverin.scot
 theme: proclaimer
 enableEmoji: true
 enableGitInfo: true
+enableRobotsTXT: true
 
 copyright: John Urquhart Ferguson. All Rights Reservered.
 
