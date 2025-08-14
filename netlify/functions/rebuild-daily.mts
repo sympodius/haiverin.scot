@@ -23,7 +23,7 @@ const rebuildSite = async (triggerTitle: string) => {
     });
 };
 
-// Daily rebuild to potentially switch to seasonal theme.
+// Daily rebuild to potentially switch to seasonal theme
 export default async (request: Request) => {
     await rebuildSite('Daily rebuild');
 };
