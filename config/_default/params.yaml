@@ -46,7 +46,7 @@ colors:  # Standard Theme
   summaryDark: "#7562AD"
 
 
-dateColors:  # Seasonal Themes (cannot span across the yearline)
+dateColors:  # Seasonal Themes (cannot span across the yearline). startDate is first active day. endDate is last active day. Both are MM-DD formatted.
 - name: Halloween
   startDate: 10-01
   endDate: 10-31
