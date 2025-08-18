@@ -1,6 +1,7 @@
 buildDrafts: true
 buildFuture: true
 buildExpired: true
+timeout: 120s
 
 caches:
   assets:
