@@ -197,36 +197,6 @@ dateColors:  # Seasonal Themes (cannot span across the yearline). startDate is f
   h1Dark: "#FDFEFE"
   summaryDark: "#7562AD"
 
-- name: AutoSwitchTestSummer
-  startDate: 08-16
-  endDate: 08-17
-  logoHigh: "#FDFEFE"
-  logoLow: "#1DBBBB"
-  siteBackground: "#05794B"
-  boxBackground: "#5B3A8A"
-  navA: "#FDFEFE"
-  navAActive: "#1F004B"
-  navAHover: "#B0BABA"
-  a: "#5B3A8A"
-  aActive: "#5B3A8A"
-  aHover: "#5B3A8A"
-  bodyText: "#FDFEFE"
-  h1: "#FDFEFE"
-  summary: "#CBBDDF"
-  logoHighDark: "#5B3A8A"
-  logoLowDark: "#05794B"
-  siteBackgroundDark: "#06151A"
-  boxBackgroundDark: "#061E26"
-  navADark: "#7C8C8C"
-  navAActiveDark: "#FDFEFE"
-  navAHoverDark: "#5C6C6C"
-  aDark: "#7C8C8C"
-  aActiveDark: "#FDFEFE"
-  aHoverDark: "#5C6C6C"
-  bodyTextDark: "#FDFEFE"
-  h1Dark: "#FDFEFE"
-  summaryDark: "#7562AD"
-
 
 authors:
 - name: John Urquhart Ferguson
