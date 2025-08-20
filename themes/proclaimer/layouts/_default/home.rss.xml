@@ -46,7 +46,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ .Site.Title }}</title>
-    <link>{{ .Permalink }}</link>
+    <link>{{ .RelPermalink }}</link>
     <description>Recent content on {{ .Site.Title }}</description>
     <generator>Hugo</generator>
     <language>{{ site.Language.LanguageCode }}</language>{{ with $authorEmail }}
@@ -55,15 +55,15 @@
     <copyright>© {{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "2006" | safeHTML }} {{ . }}</copyright>{{ end }}{{ if not .Date.IsZero }}
     <lastBuildDate>{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{- with .OutputFormats.Get "RSS" }}
-    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .RelPermalink .MediaType | safeHTML }}
     {{- end }}
     {{- range $pages }}
     <item>
       <title>{{ .Title }}</title>
-      <link>{{ .Permalink }}</link>
+      <link>{{ .RelPermalink }}</link>
       <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
-      <guid>{{ .Permalink }}</guid>
+      <guid>{{ .RelPermalink }}</guid>
       <description>{{ .Summary | transform.XMLEscape | safeHTML }}</description>
     </item>
     {{- end }}
