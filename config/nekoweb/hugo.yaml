@@ -1,0 +1,5 @@
+baseURL: https://haiverin.nekoweb.org/
+enableRobotsTXT: true
+
+minify:
+  minifyOutput: true
