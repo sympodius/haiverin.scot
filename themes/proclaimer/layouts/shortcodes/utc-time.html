@@ -1,0 +1,17 @@
+<span class="utcTime"></span>{{- /* This comment removes trailing newlines. */ -}}
+
+<script type="text/javascript">
+  const utcElements = document.getElementsByClassName("utcTime");
+
+  function displayUTC() {
+    let now = new Date();
+    let utcTime = now.getUTCHours().toString().padStart(2, "0") + ":" + now.getUTCMinutes().toString().padStart(2, "0") + ":" + now.getUTCSeconds().toString().padStart(2, "0");
+
+    for (let i = 0; i < utcElements.length; i++) {
+      utcElements[i].innerHTML = utcTime;
+    }
+  }
+
+  displayUTC();
+  var intervalID = window.setInterval(displayUTC, 1000);
+</script>{{- /* This comment removes trailing newlines. */ -}}
