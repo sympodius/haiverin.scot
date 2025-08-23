@@ -9,6 +9,8 @@ copyright: John Urquhart Ferguson. All Rights Reservered.
 
 markup:
   goldmark:
+    renderer:
+      unsafe: true
     parser:
       wrapStandAloneImageWithinParagraph: false
 
