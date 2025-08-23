@@ -1,0 +1,85 @@
+<form id="beatsToUTC" onsubmit="convertBeatsToUTC(); return false;" style="margin-top: 1rem; margin-bottom: 1rem;">
+  <label for="beatsIn">.beats:</label><br>
+  <input id="beatsIn" placeholder="Enter .beats (eg, @792)" class="inputbar" style="width: 15rem;">
+  <button type="button" onclick="convertBeatsToUTC()" class="inputbutton" form="beatsToUTC" style="width: 10rem;">Convert to UTC</button>
+  <output name="utcOut" for="beatsIn" id="utcOut"></output>
+</form>
+
+<form id="utcToBeats" onsubmit="convertUTCToBeats(); return false;" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+  <label for="utcIn">UTC:</label><br>
+  <input id="utcIn" placeholder="Enter UTC time as hh:mm:ss" class="inputbar" style="width: 15rem;">
+  <button type="button" onclick="convertUTCToBeats()" class="inputbutton" form="utcToBeats" style="width: 10rem;">Convert to <em>.beats</em></button>
+  <output name="beatsOut" for="utcIn" id="beatsOut"></output>
+</form>
+
+<script type="text/javascript">
+  function utcToBeats(utcHours, utcMinutes, utcSeconds) {
+    let beatHours = utcHours;
+    if (beatHours == 23) {
+      beatHours = 0;
+    } else {
+      beatHours++;
+    }
+    return Math.round(((((beatHours * 60) + utcMinutes) * 60) + utcSeconds) / 86.4);
+  }
+
+  function convertUTCToBeats() {
+    let timeIn = document.getElementById("utcIn").value;
+    let result;
+    let hours = -1;
+    let minutes = -1;
+    let seconds = -1;
+    const regex = /^\d{2}:\d{2}:\d{2}$/;  // Regex to match format: "hh:mm:ss"
+
+    if ( !regex.test(timeIn) ) {
+      result = "Input not valid";
+    } else {
+      hours = Number.parseInt(timeIn.substring(0, 2));
+      minutes = Number.parseInt(timeIn.substring(3, 5));
+      seconds = Number.parseInt(timeIn.substring(6, 8));
+    }
+
+    if ( hours > 23 || hours < 0 || minutes > 59 || minutes < 0 || seconds > 59 || seconds < 0 ) {
+      result = "Input not valid";
+    } else {
+      result = "<em>Result:</em> <strong>@" + utcToBeats(hours, minutes, seconds).toString() + "</strong>";
+    }
+    
+    document.getElementById("beatsOut").innerHTML = result;
+  }
+
+  function beatsToUTC(beats) {
+    beats = Math.min(999, Math.max(0, beats));
+    let seconds = beats * 86.4;
+    let hours = Math.floor(seconds / 3600);
+    let minutes = Math.floor((seconds - (hours * 3600)) / 60)
+    if (hours == 0) {
+      hours = 24;
+    }
+    seconds = Math.floor(seconds % 60);
+    return (hours - 1).toString().padStart(2, "0") + ":" + minutes.toString().padStart(2, "0") + ":" + seconds.toString().padStart(2, "0");
+  }
+
+  function convertBeatsToUTC() {
+    let timeIn = document.getElementById("beatsIn").value;
+    let result;
+    const regex = /^\d{3}$/;  // Regex to match format: "ddd"
+
+    if (timeIn.substring(0, 1) == "@") {
+      timeIn = timeIn.substring(1, timeIn.length);
+    }
+
+    if ( !regex.test(timeIn) ) {
+      result = "Input not valid";
+    } else {
+      let beats = Number.parseInt(timeIn);
+      if (isNaN(beats) || beats < 0 || beats > 999) {
+        result = "Input not valid";
+      } else {
+        result = "<em>Result:</em> <strong>" + beatsToUTC(beats).toString() + "</strong>";
+      }
+    }
+    
+    document.getElementById("utcOut").innerHTML = result;
+  }
+</script>{{- /* This comment removes trailing newlines. */ -}}

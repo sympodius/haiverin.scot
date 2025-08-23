@@ -1,0 +1,27 @@
+<span class="beatTime"></span>{{- /* This comment removes trailing newlines. */ -}}
+
+<script type="text/javascript">
+  const beatElements = document.getElementsByClassName("beatTime");
+
+  function utcToBeats(utcHours, utcMinutes, utcSeconds) {
+    let beatHours = utcHours;
+    if (beatHours == 23) {
+      beatHours = 0;
+    } else {
+      beatHours++;
+    }
+    return Math.round(((((beatHours * 60) + utcMinutes) * 60) + utcSeconds) / 86.4);
+  }
+
+  function displayBeats() {
+    let now = new Date();
+    let beats = utcToBeats(now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds());
+
+    for (let i = 0; i < beatElements.length; i++) {
+      beatElements[i].innerHTML = "@" + beats;
+    }
+  }
+
+  displayBeats();
+  var intervalID = window.setInterval(displayBeats, 1000);
+</script>{{- /* This comment removes trailing newlines. */ -}}
