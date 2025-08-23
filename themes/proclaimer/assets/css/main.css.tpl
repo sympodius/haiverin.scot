@@ -331,6 +331,69 @@ ul {
     text-transform: lowercase;
 }
 
+pre code { white-space: pre-wrap; }
+
+.inputbar {
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--body-text);
+    padding: 0.25em 0.5em;
+    background-color: var(--site-background);
+    border: 0.125rem solid var(--input-border);
+    border-radius: 0.25rem;
+    box-shadow: var(--shadow-elevation-low);
+    outline: 0.1875rem solid transparent;
+    margin-right: 0.5em;
+}
+
+.inputbar:not(textarea) {
+    line-height: 1;
+    height: 2.25rem;
+    outline: 0.1875rem solid transparent;
+}
+
+.inputbar {
+    transition: 0.2s;
+}
+
+.inputbar:focus {
+    border-color: var(--input-focus);
+    box-shadow: var(--shadow-elevation-medium);
+    outline: 0.1875rem solid transparent;
+}
+
+.inputbar::placeholder {
+    opacity: 0.95;
+    font-style: italic;
+}
+
+.inputbutton {
+    font-size: 1rem;
+    font-family: inherit;
+    line-height: normal;
+    color: var(--body-text);
+    padding: 0.25em 0.5em;
+    margin-right: 2em;
+    background-color: var(--site-background);
+    border: 0.125rem solid var(--logo-low);
+    border-radius: 0.25rem;
+    box-shadow: var(--shadow-elevation-low);
+    outline: 0.1875rem solid transparent;
+    transition: background 0 ease-in-out, transform 0.2s ease, box-shadow 0.2s ease-in-out;
+}
+
+.inputbutton:hover {
+    border: 0.125rem solid var(--logo-high);
+    box-shadow: var(--shadow-elevation-medium);
+    outline: 0.1875rem solid transparent;
+}
+
+.inputbutton:active {
+    box-shadow: var(--shadow-elevation-low);
+    outline: 0.1875rem solid transparent;
+    transform: scale(0.975);
+}
+
 
 
 /* Top nav styling. */
