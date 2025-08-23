@@ -26,7 +26,7 @@ tags:
 draft: false
 ---
 
-{{< banner src="images/post-cover.png" alt="Traditional Clock Face Incorporating .beat time. Credit: John Urquhart Ferguson" >}}
+{{< banner src="images/post-cover.png" alt="Traditional Clock Face Incorporating .beat time (assuming clock is set to UTC time zone). Credit: John Urquhart Ferguson" >}}
 
 {{< md-comment >}}
 # Instructions
