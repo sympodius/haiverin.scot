@@ -31,6 +31,14 @@
     let seconds = -1;
     const regex = /^\d{2}:\d{2}:\d{2}$/;  // Regex to match format: "hh:mm:ss"
 
+    if (timeIn.length == 4) {
+      timeIn = timeIn.substring(0, 2) + ":" + timeIn.substring(2, 4) + ":00";
+    }
+
+    if (timeIn.length == 5) {
+      timeIn = timeIn + ":00";
+    }
+
     if ( !regex.test(timeIn) ) {
       result = "Input not valid";
     } else {
