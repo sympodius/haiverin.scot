@@ -124,6 +124,9 @@
             {{- $relBannerImages := .Params.images }}
             {{- $relBannerImgURL := index $relBannerImages 0 | safeURL }}
             {{- $relBannerImg := .Resources.GetMatch $relBannerImgURL }}
+            {{- if not $relBannerImg }}
+              {{- $relBannerImg = resources.GetMatch "images/ClearBanner.png" -}}
+            {{- end -}}
             <li>
               <div class="related-link-container">
               {{- with $relBannerImg }}

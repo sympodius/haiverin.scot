@@ -9,6 +9,9 @@
         {{- $bannerImages := .Params.images }}
         {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
         {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
+        {{- if not $bannerImg }}
+          {{- $bannerImg = resources.GetMatch "images/ClearBanner.png" -}}
+        {{- end -}}
       <div id="section-pull-banner">
 	<div id="section-pull-top-story-small">
 	  <div id="section-pull-top-summary" class="hidden">
@@ -64,6 +67,9 @@
             {{- $bannerImages := .Params.images }}
             {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
             {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
+            {{- if not $bannerImg }}
+              {{- $bannerImg = resources.GetMatch "images/ClearBanner.png" -}}
+            {{- end -}}
             {{- with $bannerImg -}}
 	  <div class="section-boxes-section-banner"><a href="{{- $page.RelPermalink -}}">{{- $bannerImgWebP := .Fill "835x468 webp" -}}<img loading="lazy" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" alt="Image for Entry, {{ $page.LinkTitle -}}" width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/></a></div>
 	    {{- end }}
@@ -90,6 +96,9 @@
             {{- $bannerImages := .Params.images }}
             {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
             {{- $bannerImg := .Resources.GetMatch $bannerImgURL }}
+            {{- if not $bannerImg }}
+              {{- $bannerImg = resources.GetMatch "images/ClearBanner.png" -}}
+            {{- end -}}
           <div class="list-stories-block">
             <div class="list-story-generic-block">
               <div class="list-story-generic-block-text">
