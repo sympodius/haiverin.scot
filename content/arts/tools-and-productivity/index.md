@@ -46,7 +46,7 @@ draft: false
 
 In December 2016, I took stock of whether I'd achieved my yearly writing goals. I had not.
 
-I considered how to improve things, and settled on the notion that my tools were not good enough. As a classic [yak shaver](https://en.wiktionary.org/wiki/yak_shaving), I determined that I needed to improve my writing software; setup web publishing; publish to more formats; get a portable writing computer; get a better keyboard; purchase a writing bag; create a marketing strategy; and select better fonts for both writing and publishing. You know... because that's more efficient that sitting down and writing.
+I considered how to improve things, and settled on the notion that my tools were not good enough. As a classic [yak shaver](https://en.wiktionary.org/wiki/yak_shaving), I determined that I needed to improve my writing software; setup web publishing; publish to more formats; get a portable writing computer; get a better keyboard; purchase a writing bag; create a marketing strategy; and select better fonts for both writing and publishing. You know... because that's more efficient than sitting down and writing.
 
 I was at least efficient enough to get a working version of this vision within the first month of 2017. However, I then spent most of the year tweaking it, starting from scratch, tweaking the new version, and then starting from scratch a second time.
 
@@ -56,9 +56,9 @@ I thought it might be interesting to log my tool journey, and then discuss its e
 
 ## The Writing Setup 
 
-I decided that I wanted a portable writing setup. I had rose-tinted visions of sitting in a café, writing master-works, and drinking tea. I also thought, since I travel around a lot, it would make it easier to write on the move.
+I decided that I wanted a portable writing setup. I had rose-tinted visions of sitting in a café, writing master-works, and drinking tea. Also, since I travel around a lot, it would make it easier to write on the move.
 
-When I say 'portable' I mean that in two ways: Portable in the sense of a small computer I could take with me for writing; and portable in the sense of having a system that allows me to change computer and pick up where I left off.
+When I say 'portable' I mean that in two ways: portable in the sense of a small computer I could take with me for writing; and portable in the sense of having a system that allows me to change computer and pick up where I left off.
 
 
 ### The Beginnings
@@ -81,23 +81,23 @@ The characters, places, and research files contain more specific and organised n
 
 The preface, dedication, and chapter files all contain text that will make its way to readers. These files are precisely formatted and have metadata headers at the beginning. This is necessary for processing by the programs I've written. Each of these files also links to a separate notes document for things that I don't want published.
 
-This layout, naming, and formatting of files is all necessary for the Writing Setup to work. The programs I have written are not especially robust, so a story that is not organised this way will not work. I don't have much interest in making the system more robust though: The way it is now forces me to keep all my files tidy.
+This layout, naming, and formatting of files is all necessary for the Writing Setup to work. The programs I have written are not especially robust, so a story that is not organised this way will not work. I don't have much interest in making the system more robust though; the current setup forces me to keep all my files tidy.
 
 However, it would make sense to automate the process of starting a new story. This is on my to-do list.
 
-It took me the better part of a week to come up with this system of laying out, naming, and formatting my story files. I studied my past projects in Scrivener to replicate all the features I used. I was pretty happy with it and now needed to figure out ways to output the story content to other formats.
+It took me the better part of a week to come up with this system of laying out, naming, and formatting my story files. I studied my past projects in Scrivener to replicate all the features I used. I was pretty happy with it, and now needed to figure out ways to output the story content to other formats.
 
-I had already come up with a solution for a writing computer. I managed to install Linux onto a second-hand [Nexus 7](https://en.wikipedia.org/wiki/Nexus_7_(2012)) tablet inside a [keyboard clamshell case](https://web.archive.org/web/20150910212501/https://www.zagg.com/uk/en_uk/keyboards/auto-fit-7-8-10-inch-tablet-keyboard) using a tutorial from [NODE](https://web.archive.org/web/20170105161220/https://n-o-d-e.net/ubuntu_laptop_how.html). It wasn't amazing, but it worked as a proof of concept to get me going. Of course, I could only use programs that worked on Linux. Windows now includes a compatibility layer with Linux, so that meant these things could still work on my other computers as well.
+I had already come up with a solution for a writing computer; installing Linux onto a second-hand [Nexus 7](https://en.wikipedia.org/wiki/Nexus_7_(2012)) tablet inside a [keyboard clamshell case](https://web.archive.org/web/20150910212501/https://www.zagg.com/uk/en_uk/keyboards/auto-fit-7-8-10-inch-tablet-keyboard) using a tutorial from [NODE](https://web.archive.org/web/20170105161220/https://n-o-d-e.net/ubuntu_laptop_how.html). It wasn't amazing, but it worked as a proof of concept to get me going. Of course, I could only use programs that worked on Linux. Windows now includes a compatibility layer with Linux, so that meant these things could still work on my other computers as well.
 
 ![Janky Max. Credit: John Urquhart Ferguson](images/janky-max.jpg "First Writing Computer. Credit: John Urquhart Ferguson")
 
-I spent another couple of weeks learning systems that I thought would be useful: [sed](https://en.wikipedia.org/wiki/Sed), [awk](https://en.wikipedia.org/wiki/AWK), [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), and [grep](https://en.wikipedia.org/wiki/Grep). I then wrote some scripts that utilised these programs to go through my story files and output different formats. These programs were a little slow and [kludgey](https://en.wikipedia.org/wiki/Kludge), but they got the job done.
+I spent another couple of weeks learning systems that I thought would be useful: [sed](https://en.wikipedia.org/wiki/Sed); [awk](https://en.wikipedia.org/wiki/AWK); [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)); and [grep](https://en.wikipedia.org/wiki/Grep). I then wrote some scripts that utilised these programs to go through my story files and output different formats. These programs were a little slow and [kludgey](https://en.wikipedia.org/wiki/Kludge), but they got the job done.
 
 Other parts of my writing setup are less specific to writing, but I already knew them and felt they would be useful. These included the [LaTeX](https://www.latex-project.org/) typesetting system and the [Git](https://en.wikipedia.org/wiki/Git) version control system.
 
 An important part of the setup was the ability to publish directly to the web. Being the yak shaver that I am, this meant making an entirely new [site](/tech/why-i-built-this-website-in-hugo/). I won't get into that too much here, but it took a while to get that going.
 
-I now had a working version of my system: A portable computer (that was pretty janky); a single program to work from (Emacs); the ability to publish online (and multiple other formats); and the general feeling that maybe it was time to do some actual writing. So, I used my system to complete a story called *Soulstice*.
+I now had a working version of my system: a portable computer (that was pretty janky); a single program to work from (Emacs); the ability to publish online (and multiple other formats); and the general feeling that maybe it was time to do some actual writing. So, I used my system to complete a story called *Soulstice*.
 
 
 ### The Rewrite
@@ -146,4 +146,4 @@ Is my writing better than it was a year ago? I'm not sure. I do this because I e
 
 I've certainly been reading more about how to be a better writer. There are some things I agree with, but others seem wrong and weird to me.
 
-Is spending time cultivating tools more efficient that getting on with the actual task? It's hard to quantify. I very much enjoyed developing my Writing Setup, and after I finished, my writing output did seem to increase. Could I have achieved the same effect (or better) by not wasting time on this stuff, and forcing myself to write more some other way? I guess I'll never know. But I do know that my Writing Setup has made me happy. I was happy in creating it, and feel comfortable in its use. When I sit down with it now, settling in to visit my characters, locations and stories, it feels like home.
+Is spending time cultivating tools more efficient than getting on with the actual task? It's hard to quantify. I very much enjoyed developing my Writing Setup, and after I finished, my writing output did seem to increase. Could I have achieved the same effect (or better) by not wasting time on this stuff, and forcing myself to write more some other way? I guess I'll never know. But I do know that my Writing Setup has made me happy. I was happy in creating it, and feel comfortable in its use. When I sit down with it now---settling in to visit my characters, locations and stories---it feels like home.
