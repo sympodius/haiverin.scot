@@ -66,13 +66,13 @@ Yet, this problem still exists. I still chat with people all over the world, and
 
 {{< center >}}<span style="font-size: x-large;">current <em>.beat time</em> is <strong>{{< beat-time >}}</strong></span>{{</ center >}}
 
-<span style="font-size: large;">current <em>UTC time</em> is <strong>{{< utc-time >}}</strong></span>
+<span style="font-size: large;">current <em>UTC</em> is <strong>{{< utc-time >}}</strong></span>
 
 {{< beat-time-converter >}}
 
 But here we must raise an important point: why not just use UTC?
 
-For one thing, it does away with any concept of AM/PM... but then UTC times are usually given in the 24-hour time standard.
+For one thing, it does away with any concept of AM/PM... but then UTC is usually given in the 24-hour time standard.
 
 My main argument for *.beat time* is that it's actually a little more precise for arranging meetings. Now, naturally, UTC works down to the second, so shouldn't it be more accurate? You'd think so, but any time someone arranges a meeting with me in UTC, it's rounded to the nearest five minutes. I think *.beats* being less precise actually makes it more likely that people will stick to times within 86.4 seconds, rather than within 300 seconds. Rounding *.beats* to the nearest five is less likely because that would mean pushing things to the nearest 7.2 minutes, which is too broad a range.
 
