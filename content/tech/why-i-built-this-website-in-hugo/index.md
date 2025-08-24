@@ -2,7 +2,7 @@
 title: 'Why I Built This Website in Hugo'
 date: 2017-11-16T10:30:00+00:00
 author: John Urquhart Ferguson
-description: A description of different types of website creation methods, and why the author chose static site generators, and Hugo in particular, to create this site.
+description: A description of different types of website creation methods, and why the author chose static site generators (and Hugo in particular) to create this site.
 summary: Fast, cheap, and powerful.
 readingEase: 10th to 12th Graders
 gradeLevel: 12
@@ -59,7 +59,7 @@ Before I tell you why I chose Hugo, let us look at how sites today are being mad
 
 
 ## Manual Static Creation
-The simplest way to make a site (and also the original way) is to create it once, in full, then upload it to a web server. Each time a visitor comes to your site, they will see the same thing, unless you go through the time-consuming process of updating the entire site and uploading it again.
+The simplest way to make a site (and the original way) is to create it once, in full, then upload it to a web server. Each time a visitor comes to your site, they will see the same thing, unless you go through the time-consuming process of updating the entire site and uploading it again.
 
 The benefits of this method are its simplicity, cost, and loading speed. It doesn't require databases or other fancy server features (which tend to cost more money), it's secure, and it will load quickly for your visitors.
 
@@ -69,15 +69,15 @@ The downsides are that the sites are time-consuming to update, and not dynamic t
 ## Dynamic Generation
 These sites are more complicated to create, and usually require a database and language processor on the server (which often costs more money). However, these sites have the ability to update themselves based on content from other sources (such as other sites or the site's visitors). This makes it easier to serve content for a specific user, and to have all the content on the site dynamically refactor itself and provide relevant "You might also like..." links to other pages as they are added.
 
-The benefits to this system are that it produces sites that are easier to update (you can often add single items of content through the site itself without needing to update the whole site and upload it manually). The sites are more dynamic, allowing content to be pulled in from their visitors and other sources, menus and links automatically update to display new content, and content can be customised for each visitor.
+One benefit of this system is producing sites that are easier to update (you can often add single items of content through the site itself without needing to update the whole site and upload it manually). The sites are also more dynamic: content can be pulled in from visitors and other sources; menus and links can automatically update to display new content; and content can be customised for each visitor.
 
-The downsides are that these sites are less secure (requiring you to spend time patching the site software). If you use third party sources or visitor content then you must monitor what content appears on your site. Dynamic sites are generally complicated to set up, and they usually cost more because of the databases and other server features that they rely on. These sites also tend to load more slowly because they need to generate their content on the fly. Depending on how good your server is, this could make the site a lot less fun for your readers to use.
+The downsides are numerous. Sites are less secure (requiring you to spend time patching the site software). If you use third party sources or visitor content then you must monitor what content appears on your site. Dynamic sites are generally complicated to set up, and they usually cost more because of the databases and other server features that they rely on. These sites also tend to load more slowly because they need to generate their content on-the-fly. Depending on how good your server is, this could make the site a lot less fun for your readers to use.
 
 
 ## Static Generation
 Between static creation and dynamic generation we have a middle ground. Statically generated sites are generated in one go before they are uploaded to a server. The idea here is to make the sites easier to update, but not require the databases and server scripting languages of dynamic generators. Once the site is uploaded, it will appear the same for each visitor with no auto-generated content.
 
-The benefits then are ease of updating, menu systems and other links being automatically created, no requirement for databases or fancy server features, generally secure, and fast to load.
+The benefits then are: ease of updating; menu systems and other links being automatically created; no requirement for databases or fancy server features; generally secure; and fast to load.
 
 The downsides are that the sites are less dynamic than fully dynamically generated sites, and they aren't tailored to each visitor.
 
@@ -85,8 +85,8 @@ Hugo is in this last category. I wanted a static generator solution because this
 
 There are lots of static site generators around, but I went for Hugo because it seemed to work the way I would expect such a system to work. As such, the learning process was pretty straightforward for me. When I investigated other systems, they seemed much more complicated (and often needlessly so, because Hugo also seemed more powerful and flexible). Hugo is also incredibly fast, and requires only one program file to work (meaning I can archive that file along with the site to make sure I can continue generating the site in the future).
 
-In Hugo, all the files that tell the site how to look, and what content to display are on my computer. When I run the Hugo program, it converts all those files into the site. After the site is initially set up, all you have to do is add content files and Hugo takes care of the rest. It can also be made to integrate beautifully with GitHub pages, meaning you can essentially get a professional site online, with complete control over how it looks and operates, without it costing you a penny. And all operated directly from within Emacs (if that's your bag... I know mine is).
+In Hugo, all the files that tell the site how to look, and what content to display are on my computer. When I run the Hugo program, it converts all those files into the site. After the site is initially set up, all you have to do is add content files and Hugo takes care of the rest. It can also be made to integrate beautifully with GitHub pages and/or Netlify, meaning you can essentially get a professional site online, with complete control over how it looks and operates, without it costing you a penny. And all operated directly from within Emacs (if that's your bag... I know mine is).
 
-Hugo also provides a local live server, meaning that anytime you update the source files, you can immediately see the results in a web browser before you publish it online.
+Hugo also provides a local live server, meaning that anytime you update the source files, you can immediately see the results in a web browser before you publish it online. And, because Hugo is so fast at generating the site, I really do mean *immediately see the results*.
 
 I won't discuss more details about Hugo here, as it is a complex topic, but I hope I have given you enough information to investigate it yourself. If you have the dream to create a powerful and professional site that is totally customised to your needs, loads fast for your users, gives you live feedback during development, and can be deployed without spending any money, then Hugo may well be worth your time to learn.
