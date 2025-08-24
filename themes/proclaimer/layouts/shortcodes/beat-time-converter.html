@@ -1,14 +1,14 @@
 <form id="beatsToUTC" onsubmit="convertBeatsToUTC(); return false;" style="margin-top: 1rem; margin-bottom: 1rem;">
   <label for="beatsIn">.beats:</label><br>
   <input id="beatsIn" placeholder="Enter .beats (eg, @792)" class="inputbar" style="width: 15rem;">
-  <button type="button" onclick="convertBeatsToUTC()" class="inputbutton" form="beatsToUTC" style="width: 10rem;">Convert to UTC</button>
+  <button type="button" onclick="convertBeatsToUTC()" class="inputbutton" form="beatsToUTC" style="width: 10rem;">Convert to UTC</button><br>
   <output name="utcOut" for="beatsIn" id="utcOut"></output>
 </form>
 
 <form id="utcToBeats" onsubmit="convertUTCToBeats(); return false;" style="margin-top: 1rem; margin-bottom: 1.5rem;">
   <label for="utcIn">UTC:</label><br>
   <input id="utcIn" placeholder="Enter UTC time as hh:mm:ss" class="inputbar" style="width: 15rem;">
-  <button type="button" onclick="convertUTCToBeats()" class="inputbutton" form="utcToBeats" style="width: 10rem;">Convert to <em>.beats</em></button>
+  <button type="button" onclick="convertUTCToBeats()" class="inputbutton" form="utcToBeats" style="width: 10rem;">Convert to <em>.beats</em></button><br>
   <output name="beatsOut" for="utcIn" id="beatsOut"></output>
 </form>
 
