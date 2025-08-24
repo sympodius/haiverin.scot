@@ -47,9 +47,9 @@ draft: false
 
 It's been a long time since I wrote a blog post, but the strangeness of 2020 compels me. For me, the strangest thing this year has been the COVID-19 lockdown.
 
-It surprised me that people were willing to tank the world economy to protect strangers. It gave me hope. I didn't think we were still capable of things like that. But we knew it made sense: Hide ourselves away and starve the virus.
+It surprised me that people were willing to tank the world economy to protect strangers. It gave me hope. I didn't think we were still capable of things like that. But we knew it made sense: hide ourselves away and starve the virus.
 
-I suppose some were acting out of fear and self-preservation. Others might have only worried about infecting those closest to them. Still, the collective will was impressive. I saw and heard of many small kindnesses during my lockdown here in the UK. For the first time in my life, I felt the whole world uniting under a common goal --- even if it came from this awful event.
+I suppose some were acting out of fear and self-preservation. Others might have only worried about infecting those closest to them. Still, the collective will was impressive. I saw and heard of many small kindnesses during my lockdown here in the UK. For the first time in my life, I felt the whole world uniting under a common goal---even if it came from this awful event.
 
 As time passed, my belief in that notion diminished. People be peopling.
 
@@ -63,7 +63,7 @@ I looked at my suddenly smaller life and decided to embrace it. Staying here was
 
 This article isn't intended to be uplifting. I'm not saying things got better because we returned to a slower pace of life. The lockdown was hard and stressful.
 
-I'm also not trying to hold up my life as some ideal. I did what I did. I didn't do it because I'm good or bad or better or worse; I did it because I was trying to do the best I could... the same as everyone else.
+I'm also not trying to hold up my life as some ideal. I did what I did, and not because I'm good or bad or better or worse; I did it because I was trying to do the best I could... the same as everyone else.
 
 ![Fair Twins Fair Isle Jumper. Credit: John Urquhart Ferguson](images/fairtwins.jpg "Fair Twins Fair Isle Jumper. Credit: John Urquhart Ferguson")
 
@@ -76,14 +76,14 @@ Two months in, at the end of May, I felt sure we would not be returning until at
 - Improve My Violin Playing
 - Read More Books
 
-I did well with those. I finished knitting my first ever Fair Isle jumper (based on photos from [Ysolda](https://web.archive.org/web/20180917135426/ysolda.com/blogs/journal/a-family-fair-isle)). My violin playing improved to the point that my sister told me I had exceeded the capabilities of my instrument and would need a better one. I also read nine books in three months (the largest amount of fiction I'd ever read in so short a time). I failed on the writing though. I found it difficult to motivate myself for that.
+I did well with those. I finished knitting my first ever Fair Isle jumper (based on photos from [Ysolda](https://web.archive.org/web/20180917135426/ysolda.com/blogs/journal/a-family-fair-isle)). My sister told me that my violin playing had improved to the point of exceeding the capabilities of my current instrument. I also read nine books in three months (the largest amount of fiction I'd ever read in so short a time). I failed on the writing though. I found it difficult to motivate myself for that.
 
-There were other things too: I learned how to solve a Rubik's cube, clapped for the NHS, fixed things around the house, made calligraphy art, wrote letters, stereotypically started my own sour dough bread, learned how to pick locks, made a facsimile of my parents' high school magazine, and restored a Le Creuset cast iron pan.
+There were other things too: I learned how to solve a Rubik's cube; clapped for the NHS; fixed things around the house; made calligraphy art; wrote letters; stereotypically started my own sour dough bread; learned how to pick locks; made a facsimile of my parents' high school magazine; and restored a Le Creuset cast iron pan.
 
-I suppose other things were more ordinary, but still unusual for me: I played online games with friends, took better care of myself, watched copious amounts of television, and processed the passing of friends.
+I suppose other things were more ordinary, but still unusual for me: I played online games with friends; took better care of myself; watched copious amounts of television; and processed the passing of friends.
 
 ![Sour Dough Collection. Credit: John Urquhart Ferguson](images/bread.jpg "'...stereotypically started my own sour dough bread...' Credit: John Urquhart Ferguson")
 
-With the backdrop of horror going on around us all, it seems important to take stock of what we have and what we don't, and how we can make the most of it. That also means how we can help others. I felt the best way I could help others was by only going out when necessary, and trying to make sure the people I employed would have jobs to come back to. I've done my best, and I feel good about that. And it seems important to cling to the good things when there is so much to feel bad about right now.
+With the backdrop of horror going on around us all, it seems important to take stock of what we have and what we don't; and how we can make the most of it. That also means how we can help others. I felt the best way I could help others was by only going out when necessary, and trying to make sure the people I employed would have jobs to come back to. I did my best, and I feel good about that. And it seems important to cling to the good things when there is so much to feel bad about right now.
 
-For me, the first lockdown ended at the start of August 2020. There were still restrictions in place (and more added later, as we faced our second wave), but that was when I started going in to work again. So far, that hasn't changed. I suppose, technically, the lockdown doesn't really end until I can hug friends with abandon, and not have to consider the impact of travelling further than five miles from my home. This will be with us for a while. But I feel those first months might be a unique experience in my lifetime, and I hope I did the best I could with them. Only time will tell.
+For me, the first lockdown ended at the start of August 2020. There were still restrictions in place (and more added later, as we faced our second wave), but that was when I started going into work again. So far, that hasn't changed. I suppose, technically, the lockdown doesn't really end until I can hug friends with abandon, and not have to consider the impact of travelling further than five miles from my home. This will be with us for a while. But I feel those first months might be a unique experience in my lifetime, and I hope I did the best I could with them. Only time will tell.
