@@ -54,7 +54,7 @@ Casting a light on the stories of those hidden in darkness, the show tells of a 
 
 {{< youtube ZqDwf7RKWJQ >}}
 
-As the trailer above shows, every year in Scotland 10,000 people return home from prison to an uncertain future. This piece of theatre could not be more timely, with emergency measures being put in place to allow hundreds more prisoners with short term sentences to be released. While this may help ease some of the strain on our overcrowded prisons, seeing *A Giant on the Bridge* has made me more interested in how those people will be supported once they return home. The challenges facing those who have paid their debt to society should be approached with compassion and humanity, for all our sake.
+As the trailer above shows, every year in Scotland 10,000 people return home from prison to an uncertain future. This piece of theatre could not be more timely, with emergency measures being put in place to allow hundreds more prisoners with short term sentences to be released. While this may help ease some strain on our overcrowded prisons, seeing *A Giant on the Bridge* has made me more interested in how those people will be supported once they return home. The challenges facing those who have paid their debt to society should be approached with compassion and humanity, for all our sake.
 
 If you want to explore this highly relevant issue, and consider how identity, family, community, and restoration are all affected by our justice system, I highly recommend seeking out this piece of spell-binding theatre.
 
