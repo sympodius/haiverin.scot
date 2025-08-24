@@ -72,6 +72,8 @@ Since this realisation, I've tried to spend most of my time on things that I enj
 
 ![Family Portrait Birthday Cards (Graphite on Paper). Credit: John Urquhart Ferguson](images/portrait-photos.png "Family Portrait Birthday Cards (Graphite on Paper). Credit: John Urquhart Ferguson")
 
-When I factor all these things into my decisions, it has a big impact on how I spend my time. When I first started thinking about things this way, I worried that I would become more selfish---saying no to things that I didn't want to do, or being less charitable. But, oddly, I've found the opposite to be true. I have a theory why this might be, and what I think it comes down to... is love.
+When I factor all these things into my decisions, it has a big impact on how I spend my time. When I first started thinking about things this way, I worried that I would become more selfish---saying no to things that I didn't want to do, or being less charitable. But, oddly, I've found the opposite to be true.
 
-When I try to minimise the things in my life that I don't enjoy, and maximise the things that make me happy, I'm showing myself love. And, when I make things for people or choose to spend my time with them, it's because of love as well. What you spend your time on may be the best measure of what is really important to you. So spend your time wisely, and give it to what you love. That way we can all increase the value of our lives.
+I have a theory why this might be: I think it's about love.
+
+When I try to minimise the things in my life that I don't enjoy, and maximise the things that make me happy, I'm showing myself love. And when I make things for people or choose to spend my time with them, that's because of love as well. What you spend your time on may be the best measure of what is really important to you. So spend your time wisely, and give it to what you love. That way we can all increase the value of our lives.
