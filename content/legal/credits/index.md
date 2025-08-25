@@ -28,4 +28,4 @@ The typeface used throughout *Haiverin.scot* is [Noto Sans](https://fonts.google
 
 *Haiverin.scot* uses the *proclaimer* Hugo theme, which was created by *[John Urquhart Ferguson](https://johnurquhartferguson.info)*.
 
-All other programming (HTML, CSS, JavaScript, Go Template, Elisp), art, and design was produced by *[John Urquhart Ferguson](https://johnurquhartferguson.info)*.
+All other programming (HTML, CSS, JavaScript, Go Template, Elisp, et cetera), art, and design was produced by *[John Urquhart Ferguson](https://johnurquhartferguson.info)*.
