@@ -27,5 +27,12 @@ With any luck, you'll leave here with a little more knowledge than when you arri
 Poke around and enjoy yourself. It's a blog!
 
 
+## Contact
+
+{{< email-form >}}
+
+
+
+
 
 
