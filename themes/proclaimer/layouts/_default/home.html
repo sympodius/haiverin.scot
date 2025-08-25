@@ -40,6 +40,7 @@
         </div>
         <div id="section-pull-top-stories">
 	  <div class="top-three-separator-large hidden"></div>
+	  <div class="top-three-separator-reverse"></div>
         {{- range after 1 $pages.ByDate.Reverse | first 3 }}
           {{- $page := . }}
 	  <div class="top-three-separator"></div>

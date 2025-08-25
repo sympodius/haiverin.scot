@@ -1239,8 +1239,20 @@ aside {
     width: 100%;
     left: 50%;
     margin-left: -50%;
-    margin-top: 0.125rem;
+    margin-top: 0.14rem;
     background: linear-gradient( to right, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
+    background-size: 100% 0.125rem;
+}
+
+.top-three-separator-reverse {
+    position: absolute;
+    padding-bottom: 0.125rem;
+    height: 0;
+    width: 100%;
+    left: 50%;
+    margin-left: -50%;
+    margin-top: 0.025rem;
+    background: linear-gradient( to right, var(--logo-low) 0%, var(--logo-high) 100% ) left bottom var(--site-background) no-repeat;
     background-size: 100% 0.125rem;
 }
 
@@ -1548,6 +1560,10 @@ footer {
     }
 
     .top-three-separator {
+	display: none;
+    }
+
+    .top-three-separator-reverse {
 	display: none;
     }
 
