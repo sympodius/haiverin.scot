@@ -1,0 +1,16 @@
+<span class="localTimeZone"></span>{{- /* This comment removes trailing newlines. */ -}}
+
+<script type="text/javascript">
+  const localTimeZoneElements = document.getElementsByClassName("localTimeZone");
+
+  function displayLocalTimeZone() {
+    let now = new Date();
+    let localTimeZone = now.toTimeString().slice(8, );
+
+    for (let i = 0; i < localTimeZoneElements.length; i++) {
+      localTimeZoneElements[i].innerHTML = localTimeZone;
+    }
+  }
+
+  displayLocalTimeZone();
+</script>{{- /* This comment removes trailing newlines. */ -}}
