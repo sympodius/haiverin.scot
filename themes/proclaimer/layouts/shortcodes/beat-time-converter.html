@@ -20,7 +20,7 @@
     } else {
       beatHours++;
     }
-    return Math.round(((((beatHours * 60) + utcMinutes) * 60) + utcSeconds) / 86.4);
+    return Math.floor(((((beatHours * 60) + utcMinutes) * 60) + utcSeconds) / 86.4);
   }
 
   function convertUTCToBeats() {
