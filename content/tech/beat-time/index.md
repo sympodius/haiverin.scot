@@ -62,11 +62,13 @@ In the late 1990s, this conclusion was shared by Swiss watchmaker, Swatch. In a 
 
 I was always rather taken with the idea of *.beat time* (which happened to be introduced just as I got the Internet in 1998), and I was a little disappointed that it didn't take off. I remember it being used on a few sites back then, and in some chatting apps, but it never really became mainstream.
 
-Yet, this problem still exists. I still chat with people all over the world, and I still find it hard to coordinate meeting times. The *.beat time* concept still seems like a pretty good solution to me. I suppose if the might of Swatch couldn't make it happen, I probably won't succeed; but I'd still like to keep the concept alive. As such, I've added the current *.beat time* below. You can keep this window in view and check *.beats* whenever you like. And if you want to set up a meeting with someone using *.beat time*, then you can use the little converter I've coded up alongside it. I've got the current Coordinated Universal Time (UTC/GMT) there as well so that you can work things out according to your local time. There are some smartwatch apps around that will display *.beat time* as well. Check your app store.
+Yet, this problem still exists. I still chat with people all over the world, and I still find it hard to coordinate meeting times. The *.beat time* concept still seems like a pretty good solution to me. I suppose if the might of Swatch couldn't make it happen, I probably won't succeed; but I'd still like to keep the concept alive. As such, I've added the current *.beat time* below. You can keep this window in view and check *.beats* whenever you like. And if you want to set up a meeting with someone using *.beat time*, then you can use the little converter I've coded up alongside it. I've also included the current Coordinated Universal Time (UTC) and your local time so that you can work things out more easily. There are some smartwatch apps around that will display *.beat time* as well. Check your app store.
 
 {{< center >}}<span style="font-size: x-large;">current <em>.beat time</em> is <strong>{{< beat-time >}}</strong></span>{{</ center >}}
 
-<span style="font-size: large;">current <em>UTC</em> is <strong>{{< utc-time >}}</strong></span>
+<span style="font-size: large;">current <em>UTC (Coordinated Universal Time)</em> is <strong>{{< utc-time >}}</strong></span>
+
+<span style="font-size: large;">current <em>{{< local-time-zone >}}</em> is <strong>{{< local-time >}}</strong></span>
 
 {{< beat-time-converter >}}
 
