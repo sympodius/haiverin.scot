@@ -1,0 +1,17 @@
+<span class="localTime"></span>{{- /* This comment removes trailing newlines. */ -}}
+
+<script type="text/javascript">
+  const localTimeElements = document.getElementsByClassName("localTime");
+
+  function displayLocalTime() {
+    let now = new Date();
+    let localTime = now.toTimeString().slice(0, 8);
+
+    for (let i = 0; i < localTimeElements.length; i++) {
+      localTimeElements[i].innerHTML = localTime;
+    }
+  }
+
+  displayLocalTime();
+  var intervalID = window.setInterval(displayLocalTime, 1000);
+</script>{{- /* This comment removes trailing newlines. */ -}}
