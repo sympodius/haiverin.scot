@@ -1358,6 +1358,7 @@ footer {
     
 .footer-line li {
     padding-right: 1.875rem;
+    padding-bottom: 1rem;
 }
     
 .footer-line li:last-child {
