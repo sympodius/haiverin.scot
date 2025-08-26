@@ -100,7 +100,7 @@ function currentBeatTime() {
   let minutes = now.getUTCMinutes();
   let seconds = now.getUTCSeconds();
     
-  return Math.round(((((hours * 60) + minutes) * 60) + seconds) / 86.4);
+  return Math.floor(((((hours * 60) + minutes) * 60) + seconds) / 86.4);
 }
 ```
 
@@ -110,7 +110,7 @@ function currentBeatTime() {
 ```emacs-lisp {linenos=inline style=nord}
 (defun beat-time-from-UTC-construct (utc-hours utc-minutes utc-seconds)
   "Given a time in UTC hours, minutes, and seconds, return the .beat time."
-  (round (/ (+ (* (+ (* (if (= utc-hours 23) 0 (+ utc-hours 1)) 60) utc-minutes) 60) utc-seconds) 86.4)))
+  (floor (/ (+ (* (+ (* (if (= utc-hours 23) 0 (+ utc-hours 1)) 60) utc-minutes) 60) utc-seconds) 86.4)))
 
 (defun beat-time-string-from-UTC-construct-strings (utc-hours utc-minutes utc-seconds)
   "Given a UTC time (broken down into hours minutes and seconds), give the corresponding .beat time."
