@@ -333,18 +333,6 @@ ul {
 
 pre code { white-space: pre-wrap; }
 
-/* Hide page link QR code by default */
-.qr-code-page-link {
-  display: none;
-}
-
-/* Show page link QR code when printing */
-@media print {
-  .qr-code-page-link {
-    display: block; 
-  }
-}
-
 .inputbar {
     font-size: 1rem;
     font-family: inherit;
@@ -1340,18 +1328,10 @@ footer {
     padding: 2rem;
 }
 
-.footer-line {
-    max-width: 96rem;
-    display: flex;
-    justify-content: center;
-    flex-flow: row wrap;
-    margin: auto;
-}
-    
 .footer-line ul {
     display: flex;
-    justify-content: center;
     flex-flow: row wrap;
+    justify-content: center;
     list-style: none;
     padding: 0;
 }
@@ -1669,5 +1649,17 @@ footer {
 	background-size: 100% 0.125rem;  /* Resize needed when using linear-gradient for background */
 	box-shadow: var(--shadow-elevation-medium);
 	z-index: 90;
+    }
+
+    .footer-line {
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 96rem;
+	justify-content: center;
+	margin: auto;
+    }
+    
+    .qr-code-page-link {
+	display: none; 
     }
 }
