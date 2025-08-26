@@ -333,6 +333,18 @@ ul {
 
 pre code { white-space: pre-wrap; }
 
+/* Hide page link QR code by default */
+.qr-code-page-link {
+  display: none;
+}
+
+/* Show page link QR code when printing */
+@media print {
+  .qr-code-page-link {
+    display: block; 
+  }
+}
+
 .inputbar {
     font-size: 1rem;
     font-family: inherit;

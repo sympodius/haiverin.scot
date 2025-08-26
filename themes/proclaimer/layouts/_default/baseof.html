@@ -8,6 +8,16 @@
   {{ partial "header.html" . }}
   </header>
   <main>
+  {{ with images.QR .Permalink }}
+    <img
+      src="{{ .RelPermalink }}"
+      width="{{ .Width }}"
+      height="{{ .Height }}"
+      alt="QR code linking to {{ $.Permalink }}"
+      class="qr-code-page-link"
+      loading="lazy"
+    >
+  {{ end }}
   {{ block "main" . }}{{ end }}
   </main>
   <footer>
