@@ -51,6 +51,13 @@ Contact Info/Socials
           {{- with .bio }}
             <div class="aside-card-text">{{- . | $page.RenderString (dict "display" "block") -}}</div>
           {{- end }}
+          {{- with .vcard }}
+	    {{- with images.QR . }}
+	      <div class="aside-card-vcard">
+                <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" title="Author vCard{{- with $authorName }} for {{ $authorName }}{{- end }}" alt="Author vCard{{- with $authorName }} for {{ $authorName }}{{- end }}">
+              </div>
+	    {{- end }}
+	  {{- end }}
           </div>
           <ul class="print-hidden-flex hidden">
             {{- with .website }}<li><a href="{{- . -}}" title="Website">{{- if ne $websiteIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $websiteIcon "page" .) }}{{- else -}}Website{{- end -}}</a></li>{{ end }}

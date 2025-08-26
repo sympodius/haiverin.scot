@@ -888,6 +888,10 @@ aside {
     box-shadow: var(--shadow-elevation-medium);
 }
 
+.aside-card-vcard {
+    text-align: center;
+}
+
 .aside-card .terms-container ul {
     display: flex;
     justify-content: flex-start;
