@@ -206,15 +206,7 @@ authors:
 John enjoys programming software that only he is likely to use, keeping an eye out for puffins, and whistling better than one would reasonably expect.\n\n
 
 John's thoughts are often existential (and very occasionally clever), but he writes with a warmness that will melt your heart."
-#  vcard: "BEGIN:VCARD\n
-#VERSION:2.1\n
-#N;CHARSET=UTF-8:Ferguson;John;Urquhart;Dr;PhD\n
-#FN;CHARSET=UTF-8:John Urquhart Ferguson, PhD\n
-#ORG;CHARSET=UTF-8:Haiverin.scot\n
-#TITLE;CHARSET=UTF-8:Webmaster\n
-#EMAIL;TYPE=Home:mail@johnurquhartferguson.info\n
-#URL;TITLE:https://www.johnurquhartferguson.info\n
-#END:VCARD"
+#  vcard: "BEGIN:VCARD\nVERSION:2.1\nN;CHARSET=UTF-8:Ferguson;John;Urquhart;Dr;PhD\nFN;CHARSET=UTF-8:John Urquhart Ferguson, PhD\nORG;CHARSET=UTF-8:Haiverin.scot\nTITLE;CHARSET=UTF-8:Webmaster\nEMAIL;TYPE=HOME:mail@johnurquhartferguson.info\nURL;TITLE:https://www.johnurquhartferguson.info\nEND:VCARD"
   website: https://johnurquhartferguson.info
   instagram: sympodius
   facebook: john.u.ferguson
