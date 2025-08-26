@@ -51,11 +51,11 @@
 */}}
 {{- if eq hugo.Environment "production" }}
   {{- $fuseJsUrl := "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" }}
-  {{- with resources.GetRemote $fuseJsUrl }}
+  {{- with try (resources.GetRemote $fuseJsUrl) }}
     {{- with .Err }}
       {{- errorf "%s" . }}
     {{- else }}
-      {{- with . | fingerprint }}
+      {{- with (resources.GetRemote $fuseJsUrl) | fingerprint }}
       <script type="text/javascript" src="{{ $fuseJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
@@ -63,11 +63,11 @@
     {{- errorf "Unable to get remote resource %q" $fuseJsUrl }}
   {{- end }}
   {{- $markJsUrl := "https://cdn.jsdelivr.net/gh/julkue/mark.js@a283c4c437ff38d2b09c81da1030af9b0191b9f1/dist/mark.min.js" }}
-  {{- with resources.GetRemote $markJsUrl }}
+  {{- with try (resources.GetRemote $markJsUrl) }}
     {{- with .Err }}
       {{- errorf "%s" . }}
     {{- else }}
-      {{- with . | fingerprint }}
+      {{- with (resources.GetRemote $markJsUrl) | fingerprint }}
       <script type="text/javascript" src="{{ $markJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
       {{- end }}
     {{- end }}
