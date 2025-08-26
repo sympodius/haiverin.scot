@@ -902,6 +902,7 @@ aside {
 
 .aside-card .terms-container li {
     padding-right: 1.5rem;
+    padding-bottom: 1rem;
 }
 
 .related-entries {
@@ -1304,7 +1305,7 @@ aside {
 }
 
 .section-boxes-section-container li {
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
 }
 
 .section-boxes-section-container li:last-child {
@@ -1312,7 +1313,7 @@ aside {
 }
 
 .section-boxes-category-title-spacer {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.66rem;
 }
 
 .section-boxes-category {
