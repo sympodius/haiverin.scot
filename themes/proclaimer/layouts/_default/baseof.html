@@ -8,9 +8,10 @@
   {{ partial "header.html" . }}
   </header>
   <main>
-  {{ with images.QR .Permalink }}
+  {{ with images.QR .Permalink (dict "targetDir" "images/qr") }}
+    {{- $qrCodeImageWebP := .Fill (printf "%dx%d webp" .Width .Height) }}  
     <img
-      src="{{ .RelPermalink }}"
+      src="{{- $qrCodeImageWebP.RelPermalink | safeURL -}}"
       width="{{ .Width }}"
       height="{{ .Height }}"
       alt="QR code linking to {{ $.Permalink }}"

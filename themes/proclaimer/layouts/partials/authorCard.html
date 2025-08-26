@@ -52,9 +52,10 @@ Contact Info/Socials
             <div class="aside-card-text">{{- . | $page.RenderString (dict "display" "block") -}}</div>
           {{- end }}
           {{- with .vcard }}
-	    {{- with images.QR . }}
+	    {{- with images.QR . (dict "targetDir" "images/qr") }}
+	      {{- $qrCodeImageWebP := .Fill (printf "%dx%d webp" .Width .Height) }}
 	      <div class="aside-card-vcard">
-                <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" title="Author vCard{{- with $authorName }} for {{ $authorName }}{{- end }}" alt="Author vCard{{- with $authorName }} for {{ $authorName }}{{- end }}">
+                <img src="{{- $qrCodeImageWebP.RelPermalink | safeURL -}}" width="{{ .Width }}" height="{{ .Height }}" title="Author vCard{{- with $authorName }} for {{ $authorName }}{{- end }}" alt="Author vCard{{- with $authorName }} for {{ $authorName }}{{- end }}">
               </div>
 	    {{- end }}
 	  {{- end }}
