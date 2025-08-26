@@ -79,7 +79,7 @@
           <ul>
           {{- range $sectionPages.ByDate.Reverse | first 3 }}
             {{- $page := . }}
-            <li>{{- with $page.GetTerms "categories" -}}<a class="section-boxes-category" href="{{- (index . 0).RelPermalink -}}">{{- (index . 0).LinkTitle | humanize | title -}}</a>{{- end -}}<br><a class="section-boxes-title" href="{{- $page.RelPermalink -}}">{{- $page.Title -}}</a></li>
+            <li>{{- with $page.GetTerms "categories" -}}<a class="section-boxes-category" href="{{- (index . 0).RelPermalink -}}">{{- (index . 0).LinkTitle | humanize | title -}}</a>{{- end -}}<br><div class="section-boxes-category-title-spacer"></div><a class="section-boxes-title" href="{{- $page.RelPermalink -}}">{{- $page.Title -}}</a></li>
           {{- end }}
           </ul>
         </div>

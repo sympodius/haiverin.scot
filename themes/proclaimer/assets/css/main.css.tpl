@@ -1304,11 +1304,15 @@ aside {
 }
 
 .section-boxes-section-container li {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 
 .section-boxes-section-container li:last-child {
     padding-bottom: 0;
+}
+
+.section-boxes-category-title-spacer {
+    margin-bottom: 0.5rem;
 }
 
 .section-boxes-category {
