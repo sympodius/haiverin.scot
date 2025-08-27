@@ -1,0 +1,5 @@
+baseURL: https://haiverin.neocities.org/
+enableRobotsTXT: true
+
+minify:
+  minifyOutput: true
