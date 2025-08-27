@@ -1,5 +1,5 @@
 # Workflow for building and deploying a Hugo site to Neocities (using deploy-to-neocities)
-name: Deploy Hugo site to neocities
+name: Deploy Hugo site to Neocities
 
 on:
   # Runs on pushes targeting the default branch
