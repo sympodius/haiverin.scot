@@ -27,47 +27,49 @@
 {{- $bodyTextDark := site.Params.colors.bodyTextDark | default "#F9F9F9" -}}
 {{- $h1Dark := site.Params.colors.h1Dark | default "#F9F9F9" -}}
 {{- $summaryDark := site.Params.colors.summaryDark | default "#7562AD" -}}
-{{- /* See if any seasonal themes should be active today. First valid theme is accepted. */ -}}
-{{- range site.Params.dateColors -}}
-  {{- $year := string now.Year -}}
-  {{- $month := string (printf "%02d" (int now.Month)) -}}
-  {{- $day := string (printf "%02d" now.Day) -}}
-  {{- $simpleNowTime := time.AsTime (printf "%s-%s-%s" $year $month $day) -}}
-  {{- /* Shifting days by 24 hours to make comparisons easier, but still keep params file sensible */ -}}
-  {{- $startTime := (time.AsTime (printf "%s-%s" $year .startDate)).Add (time.ParseDuration "-1s") -}}
-  {{- $endTime := (time.AsTime (printf "%s-%s" $year .endDate)).Add (time.ParseDuration "23h59m59s") -}}
-  {{- if $startTime.Before $simpleNowTime -}}
-    {{- if $endTime.After $simpleNowTime -}}
-      {{- /* Seasonal light theme or defaults */ -}}
-      {{- $logoHigh = .logoHigh | default "#15C5FE" -}}
-      {{- $logoLow = .logoLow | default "#A100FA" -}}
-      {{- $siteBackground = .siteBackground | default "#F9F9F9" -}}
-      {{- $boxBackground = .boxBackground | default "#F9F9F9" -}}
-      {{- $navA = .navA | default "#7C8C8C" -}}
-      {{- $navAActive = .navAActive | default "#0B0D0C" -}}
-      {{- $navAHover = .navAHover | default "#5C6C6C" -}}
-      {{- $a = .a | default "#7C8C8C" -}}
-      {{- $aActive = .aActive | default "#0B0D0C" -}}
-      {{- $aHover = .aHover | default "#5C6C6C" -}}
-      {{- $bodyText = .bodyText | default "#0B0D0C" -}}
-      {{- $h1 = .h1 | default "#0B0D0C" -}}
-      {{- $summary = .summary | default "#5C6C6C" -}}
-      {{- /* Seasonal dark theme or defaults */ -}}
-      {{- $logoHighDark = .logoHighDark | default "#15C5FE" -}}
-      {{- $logoLowDark = .logoLowDark | default "#A100FA" -}}
-      {{- $siteBackgroundDark = .siteBackgroundDark | default "#0B0D0C" -}}
-      {{- $boxBackgroundDark = .boxBackgroundDark | default "#061E26" -}}
-      {{- $navADark = .navADark | default "#7C8C8C" -}}
-      {{- $navAActiveDark = .navAActiveDark | default "#F9F9F9" -}}
-      {{- $navAHoverDark = .navAHoverDark | default "#5C6C6C" -}}
-      {{- $aDark = .aDark | default "#7C8C8C" -}}
-      {{- $aActiveDark = .aActiveDark | default "#F9F9F9" -}}
-      {{- $aHoverDark = .aHoverDark | default "#5C6C6C" -}}
-      {{- $bodyTextDark = .bodyTextDark | default "#F9F9F9" -}}
-      {{- $h1Dark = .h1Dark | default "#F9F9F9" -}}
-      {{- $summaryDark = .summaryDark | default "#7562AD" -}}
-      {{- /* Don't search more if valid seasonal theme found */ -}}
-      {{- break -}}
+{{- /* See if any seasonal themes should be active today. First valid theme is accepted. Only do this on main site and while developing (not mirror sites like NekoWeb/NeoCities) */ -}}
+{{- if eq hugo.Environment "production" | or (eq hugo.Environment "development") -}}
+  {{- range site.Params.dateColors -}}
+    {{- $year := string now.Year -}}
+    {{- $month := string (printf "%02d" (int now.Month)) -}}
+    {{- $day := string (printf "%02d" now.Day) -}}
+    {{- $simpleNowTime := time.AsTime (printf "%s-%s-%s" $year $month $day) -}}
+    {{- /* Shifting days by 24 hours to make comparisons easier, but still keep params file sensible */ -}}
+    {{- $startTime := (time.AsTime (printf "%s-%s" $year .startDate)).Add (time.ParseDuration "-1s") -}}
+    {{- $endTime := (time.AsTime (printf "%s-%s" $year .endDate)).Add (time.ParseDuration "23h59m59s") -}}
+    {{- if $startTime.Before $simpleNowTime -}}
+      {{- if $endTime.After $simpleNowTime -}}
+        {{- /* Seasonal light theme or defaults */ -}}
+        {{- $logoHigh = .logoHigh | default "#15C5FE" -}}
+        {{- $logoLow = .logoLow | default "#A100FA" -}}
+        {{- $siteBackground = .siteBackground | default "#F9F9F9" -}}
+        {{- $boxBackground = .boxBackground | default "#F9F9F9" -}}
+        {{- $navA = .navA | default "#7C8C8C" -}}
+        {{- $navAActive = .navAActive | default "#0B0D0C" -}}
+        {{- $navAHover = .navAHover | default "#5C6C6C" -}}
+        {{- $a = .a | default "#7C8C8C" -}}
+        {{- $aActive = .aActive | default "#0B0D0C" -}}
+        {{- $aHover = .aHover | default "#5C6C6C" -}}
+        {{- $bodyText = .bodyText | default "#0B0D0C" -}}
+        {{- $h1 = .h1 | default "#0B0D0C" -}}
+        {{- $summary = .summary | default "#5C6C6C" -}}
+        {{- /* Seasonal dark theme or defaults */ -}}
+        {{- $logoHighDark = .logoHighDark | default "#15C5FE" -}}
+        {{- $logoLowDark = .logoLowDark | default "#A100FA" -}}
+        {{- $siteBackgroundDark = .siteBackgroundDark | default "#0B0D0C" -}}
+        {{- $boxBackgroundDark = .boxBackgroundDark | default "#061E26" -}}
+        {{- $navADark = .navADark | default "#7C8C8C" -}}
+        {{- $navAActiveDark = .navAActiveDark | default "#F9F9F9" -}}
+        {{- $navAHoverDark = .navAHoverDark | default "#5C6C6C" -}}
+        {{- $aDark = .aDark | default "#7C8C8C" -}}
+        {{- $aActiveDark = .aActiveDark | default "#F9F9F9" -}}
+        {{- $aHoverDark = .aHoverDark | default "#5C6C6C" -}}
+        {{- $bodyTextDark = .bodyTextDark | default "#F9F9F9" -}}
+        {{- $h1Dark = .h1Dark | default "#F9F9F9" -}}
+        {{- $summaryDark = .summaryDark | default "#7562AD" -}}
+        {{- /* Don't search more if valid seasonal theme found */ -}}
+        {{- break -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
