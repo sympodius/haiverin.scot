@@ -32,7 +32,7 @@
     */
     function clickSearchIcon() {
     {{- if eq hugo.Environment "production" }}
-      sa_event("click_search_icon", { page: ".RelPermalink" });
+      sa_event("click_search_icon", { page: "{{- .RelPermalink -}}" });
     {{- end }}
       const icon = document.getElementById("search-icon-clicker");
       const searchboxContainer = document.getElementById("search-bar-container");
@@ -51,7 +51,7 @@
       const searchboxContainer = document.getElementById("search-bar-container");
       const searchboxInput = document.getElementById("search-query");
     {{- if eq hugo.Environment "production" }}
-      sa_event("leave_searchbar", { page: ".RelPermalink", search_term: searchboxInput.innerHTML });
+      sa_event("leave_searchbar", { page: "{{- .RelPermalink -}}", search_term: searchboxInput.innerHTML });
     {{- end }}
       searchboxInput.classList.add("FadeOut");
       setTimeout(function(){searchboxInput.classList.remove("FadeOut");
