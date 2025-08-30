@@ -25,13 +25,15 @@
   {{ partial "footer.html" . }}
   </footer>
   <div id="css-tester"></div>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     /*
       clickSearchIcon() and leaveSearchbar() deal with correctly hiding and displaying elements
       in the use of the search functionality of the top nav bar.
     */
     function clickSearchIcon() {
+    {{- if eq hugo.Environment "production" }}
+      sa_event("click_search_icon", { page: ".RelPermalink" });
+    {{- end }}
       const icon = document.getElementById("search-icon-clicker");
       const searchboxContainer = document.getElementById("search-bar-container");
       const searchboxInput = document.getElementById("search-query");
@@ -48,6 +50,9 @@
       const icon = document.getElementById("search-icon-clicker");
       const searchboxContainer = document.getElementById("search-bar-container");
       const searchboxInput = document.getElementById("search-query");
+    {{- if eq hugo.Environment "production" }}
+      sa_event("leave_searchbar", { page: ".RelPermalink", search_term: searchboxInput.innerHTML });
+    {{- end }}
       searchboxInput.classList.add("FadeOut");
       setTimeout(function(){searchboxInput.classList.remove("FadeOut");
                             searchboxContainer.style.display = "none";
@@ -173,7 +178,13 @@
     document.getElementsByTagName("BODY")[0].onpageshow = function() {testCSS()};
   </script>
 
-  <!-- 100% privacy-first analytics -->
+{{- if eq hugo.Environment "production" }}
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Simple Analytics -->
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+  <script async src="https://scripts.simpleanalyticscdn.com/auto-events.js"></script>
+{{- end }}
 </body>
 </html>
