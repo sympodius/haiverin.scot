@@ -32,7 +32,7 @@
     */
     function clickSearchIcon() {
     {{- if eq hugo.Environment "production" }}
-      sa_event("click_search_icon", { page: "{{- .RelPermalink -}}" });
+      sa_event("click_search_icon");
     {{- end }}
       const icon = document.getElementById("search-icon-clicker");
       const searchboxContainer = document.getElementById("search-bar-container");
@@ -47,12 +47,12 @@
                            }, 100);
     }
     function leaveSearchbar() {
+    {{- if eq hugo.Environment "production" }}
+      sa_event("leave_searchbar");
+    {{- end }}
       const icon = document.getElementById("search-icon-clicker");
       const searchboxContainer = document.getElementById("search-bar-container");
       const searchboxInput = document.getElementById("search-query");
-    {{- if eq hugo.Environment "production" }}
-      sa_event("leave_searchbar", { page: "{{- .RelPermalink -}}", search_term: searchboxInput.innerHTML });
-    {{- end }}
       searchboxInput.classList.add("FadeOut");
       setTimeout(function(){searchboxInput.classList.remove("FadeOut");
                             searchboxContainer.style.display = "none";
@@ -68,6 +68,9 @@
       in the use of the side menu from the top nav bar.
     */
     function clickHamburgerIcon() {
+    {{- if eq hugo.Environment "production" }}
+      sa_event("click_hamburger");
+    {{- end }}
       const icon = document.getElementById("hamburger-menu");
       const chainedElement = document.getElementById("side-menu");
       icon.classList.add("FadeOut");
@@ -83,6 +86,9 @@
                            }, 100);
     }
     function closeSideMenu() {
+    {{- if eq hugo.Environment "production" }}
+      sa_event("close_sidemenu");
+    {{- end }}
       const icon = document.getElementById("hamburger-menu");
       const chainedElement = document.getElementById("side-menu");
       chainedElement.classList.add("FadeOut");
@@ -109,6 +115,9 @@
       const chainedElement = document.getElementById("side-menu");
       if ( chainedElement.style.display == "inline" ) {
         closeSideMenu();
+      {{- if eq hugo.Environment "production" }}
+        sa_event("side_menu_passive_close");
+      {{- end }}
       }
     });
 
@@ -123,8 +132,14 @@
     const currentTheme = localStorage.getItem("theme");
     if (currentTheme == "dark") {
       document.documentElement.classList.toggle("dark-mode");
+    {{- if eq hugo.Environment "production" }}
+      sa_event("dark_mode_auto_set");
+    {{- end }}
     } else if (currentTheme == "light") {
       document.documentElement.classList.toggle("light-mode");
+    {{- if eq hugo.Environment "production" }}
+      sa_event("light_mode_auto_set");
+    {{- end }}
     }
     darkModeToggleBtn.addEventListener("click", function () {
       if (prefersDarkScheme.matches) {
@@ -139,6 +154,9 @@
           : "light";
       }
       localStorage.setItem("theme", theme);
+    {{- if eq hugo.Environment "production" }}
+      sa_event("dark_light_mode_toggle", { mode_selected: theme });
+    {{- end }}
     });
 
 
@@ -160,6 +178,9 @@
             Sadly, this might not be seen unless user hits refresh. Equally, when turning CSS back on, user will
             need to hit refresh to see original logo again, or navigate to a new page.
           */
+        {{- if eq hugo.Environment "production" }}
+          sa_event("css_not_used");
+        {{- end }}
           const logos = document.getElementsByClassName("logo-icon");
           console.log(logos.length);
           for (let i = 0; i < logos.length; i++) {
