@@ -2,34 +2,34 @@
 title: "A Typewriter's Next Chapter"
 date: 2025-09-02T20:21:45+01:00
 author: John Urquhart Ferguson
-description: This is what you write for SEO.
-summary: This is what you write for list page summaries on the site.
+description: The procedure and motivation for restoring a 1957 Olivetti Lettera 22 typewriter.
+summary: Restoring a 1957 Olivetti Lettera 22 typewriter to its former glory.
 readingEase: 7th Graders
 gradeLevel: 6
 images:
 - images/post-cover.png
 categories:
-- musings
+- restorations
 tags:
+- restorations
 - musings
-- coding
-- backstage
 - tutorial
-- bookbinding
+- typewriters
 - crafts
-- etc, delete as appropriate or add new ones
+- olivetti
+- lettera 22
 draft: true
 ---
 
-{{< banner src="images/post-cover.png" alt="Banner Image" >}}
+{{< banner src="images/post-cover.png" alt="Before and after for an Olivetti Lettera 22 carrying case restoration. Credit: John Urquhart Ferguson" >}}
 
 {{< md-comment >}}
 # Instructions
 
 - [ ] Encourage engagement and interaction
-- [ ] Keep all blog entries as leaf bundles (for example, `hugo new content tech/blog-entry-name` with no .md creates a leaf bundle in the tech section)
-- [ ] Create a banner image (post-cover.png) in your leaf bundle that has a ratio of 1.85:1, and is no smaller than: 962x520 pixels (Ideally 1536x830 or greater)
-- [ ] Still manually add banner image into page content, first thing before anything else using the banner shortcode
+- [x] Keep all blog entries as leaf bundles (for example, `hugo new content tech/blog-entry-name` with no .md creates a leaf bundle in the tech section)
+- [x] Create a banner image (post-cover.png) in your leaf bundle that has a ratio of 1.85:1, and is no smaller than: 962x520 pixels (Ideally 1536x830 or greater)
+- [x] Still manually add banner image into page content, first thing before anything else using the banner shortcode
 - [ ] Add any other images you use to the images front matter array (this is purely to help with OpenGraph generation)
 - [ ] You can use up to two more images in the blog entry, but try not to use any more (unless this is a listicle). Only the banner is essential
 - [ ] Try to write 1000 words. The closer to this number, the better, but don't go over (75% of the public prefers reading articles under 1,000 words)
@@ -42,6 +42,12 @@ draft: true
 - [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
 - [ ] Consider what tomorrow's article will be, and try to post a new one once a day (more is fine)
 {{</ md-comment >}}
+
+I believe this is the first time that I've publicly written about typewriters. People who only know me a little might be surprised at my interest in them, given that I have a [strong computing background](https://theses.gla.ac.uk/2760/) (including when it comes to [writing](https://github.com/sympodius/org-novelist)). However, I am a great believer in building things that will last, and I have a particular fondness for analogue creation methods. I also believe strongly in buying and maintaining well built things, rather than regularly replacing poorly made ones.
+
+Recently, I decided to gift a typewriter to a talented author friend of mine. In order to make it as useful as possible, I wanted it to be a manual typewriter (so that no power would be needed), and for it to look and work like new. Since the production of high quality manual typewriters ended decades ago, this was no small task.
+
+My research showed that there had been two typewriter factories near where I'd grown up: Olivetti and Remington. The Olivetti one was much closer to my childhood home (6 km as opposed to 19 km) and I felt that might make the gift more meaningful. The most iconic typewriter to be produced at the [Olivetti Glasgow plant](https://oztypewriter.blogspot.com/2015/05/inside-olivetti-typewriter-factory.html) was most certainly the [Lettera 22](https://en.wikipedia.org/wiki/Olivetti_Lettera_22), so that's what I decided to go for.
 
 1. Why did you do this? What led to this? What is this? How did you select the particular typewriter, etc? what looked good about it?
 2. What is this post going to show, and what is it not going to show?
