@@ -47,7 +47,9 @@ I believe this is the first time that I've publicly written about typewriters. P
 
 Recently, I decided to gift a typewriter to a talented author friend of mine. In order to make it as useful as possible, I wanted it to be a manual typewriter (so that no power would be needed), and for it to look and work like new. Since the production of high quality manual typewriters ended decades ago, this was no small task.
 
-My research showed that there had been two typewriter factories near where I'd grown up: Olivetti and Remington. The Olivetti one was much closer to my childhood home (6 km as opposed to 19 km) and I felt that might make the gift more meaningful. The most iconic typewriter to be produced at the [Olivetti Glasgow plant](https://oztypewriter.blogspot.com/2015/05/inside-olivetti-typewriter-factory.html) was most certainly the [Lettera 22](https://en.wikipedia.org/wiki/Olivetti_Lettera_22), so that's what I decided to go for.
+My research showed that there had been two typewriter factories near where I'd grown up: Olivetti and Remington. The Olivetti one was much closer to my childhood home (6 km as opposed to 19 km) and I felt that might make the gift more meaningful. Olivetti had plants all over the world, many producing the same models, but the most iconic typewriter to be produced (non-exclusively) at the [Olivetti Glasgow plant](https://oztypewriter.blogspot.com/2015/05/inside-olivetti-typewriter-factory.html) was most certainly the [Lettera 22](https://en.wikipedia.org/wiki/Olivetti_Lettera_22), so that's what I decided to go for.
+
+Of course, the first thing I tried was to find a Glasgow made Olivetti Lettera 22 that was already in excellent condition and required not work whatsoever. But fate is rarely so generous. I also specifically wanted one with the leather strapped carrying bag, and a tabulator function. The only machine being sold at the time that satisfied all these conditions 
 
 1. Why did you do this? What led to this? What is this? How did you select the particular typewriter, etc? what looked good about it?
 2. What is this post going to show, and what is it not going to show?
