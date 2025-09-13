@@ -3,7 +3,7 @@ title: 'A Giant on the Bridge'
 date: 2024-08-09T17:03:38+01:00
 author: John Urquhart Ferguson
 description: A review of the Edinburgh Fringe Festival show, 'A Giant on the Bridge.'
-summary: The most thought-provoking, well presented performance of art and ideas that I've ever experienced.
+summary: The most thought-provoking, well presented performance of art and ideas I've ever seen.
 readingEase: 10th to 12th Graders
 gradeLevel: 14
 images:
