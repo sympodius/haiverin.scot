@@ -43,8 +43,10 @@
 	  <div class="top-three-separator-reverse"></div>
         {{- range after 1 $pages.ByDate.Reverse | first 3 }}
           {{- $page := . }}
-	  <div class="top-three-separator"></div>
-          <div class="top-three">
+	  {{- $firstRangePage := index (slice (first 4 $pages.ByDate.Reverse)) 0 1 -}}
+	  {{- $lastRangePage := index (slice (first 4 $pages.ByDate.Reverse)) 0 3 -}}
+          <div class="top-three-separator"></div>
+          <div class="top-three{{- if $page.Eq $firstRangePage }} first-top-three{{ else if $page.Eq $lastRangePage }} last-top-three{{- end -}}">
             <a href="{{- $page.RelPermalink -}}">
               <div class="top-three-summary hidden">{{- .Summary -}}</div>
               <div class="top-three-title">{{- .Title -}}</div>

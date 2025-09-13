@@ -1561,6 +1561,29 @@ footer {
 
     .top-three {
 	width: calc(100% / 3);
+	position: relative;
+    }
+
+    .first-top-three  {
+	margin-right: -0.75rem;
+    }
+
+    .last-top-three {
+	margin-left: 0.6rem;
+    }
+
+    .top-three::before {
+	position: absolute;
+	height: 50%;
+	width: 0.125rem;
+	background: linear-gradient( to top, var(--logo-high) 0%, var(--logo-low) 100% ) left bottom var(--site-background) no-repeat;
+	margin-top: 2rem;
+	content: '';
+    }
+    
+    .first-top-three::before {
+	content: '';
+	background: none;
     }
 
     .top-three-separator {
