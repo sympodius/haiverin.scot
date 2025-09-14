@@ -30,15 +30,15 @@ draft: false
 - [x] Keep all blog entries as leaf bundles (for example, `hugo new content tech/blog-entry-name` with no .md creates a leaf bundle in the tech section)
 - [x] Create a banner image (post-cover.png) in your leaf bundle that has a ratio of 1.85:1, and is no smaller than: 962x520 pixels (Ideally 1536x830 or greater)
 - [x] Still manually add banner image into page content, first thing before anything else using the banner shortcode
-- [ ] Add any other images you use to the images front matter array (this is purely to help with OpenGraph generation)
+- [x] Add any other images you use to the images front matter array (this is purely to help with OpenGraph generation)
 - [ ] You can use up to two more images in the blog entry, but try not to use any more (unless this is a listicle). Only the banner is essential
 - [ ] Try to write 1000 words. The closer to this number, the better, but don't go over (75% of the public prefers reading articles under 1,000 words)
 - [ ] Reading time should not exceed seven minutes
-- [ ] Make sure to include a description and summary for the blog entry as these are used on the site and in SEO
-- [ ] Make an appropriate choice of tags in the front matter. These will help in recommending pages to the reader
-- [ ] Make an appropriate choice of categories in the front matter. The first category will be used in the breadcrumb for the page, others will generate the side menuth
-- [ ] Use Emacs to generate the reading ease and grade level (this should happen automatically when saving the file in my Emacs configuration). These are just for fun, incidentally, and appear to have no impact on audience engagement
-- [ ] Set the draft to false when you want to publish, then push to GitHub
+- [x] Make sure to include a description and summary for the blog entry as these are used on the site and in SEO
+- [x] Make an appropriate choice of tags in the front matter. These will help in recommending pages to the reader
+- [x] Make an appropriate choice of categories in the front matter. The first category will be used in the breadcrumb for the page, others will generate the side menu
+- [x] Use Emacs to generate the reading ease and grade level (this should happen automatically when saving the file in my Emacs configuration). These are just for fun, incidentally, and appear to have no impact on audience engagement
+- [x] Set the draft to false when you want to publish, then push to GitHub
 - [ ] Drop a video announcing this post on Instagram etc, and post anywhere else you can as well. Reels and videos work better for engagement
 - [ ] Consider what tomorrow's article will be, and try to post a new one once a day (more is fine)
 {{</ md-comment >}}
@@ -344,7 +344,7 @@ I used my awl to evenly space out holes that I could sew through, making sure th
 
 ![New zip crosser on an Olivetti Lettera 22 typewriter carrying case. Credit: John Urquhart Ferguson](images/Olivetti22RestorationZipCrossover.png "New zip crossover in place. Credit: John Urquhart Ferguson")
 
-With both zips in place and working, I glued down the inside lining. Once that was dry, I then glued the 'hinge' to the back of the main case body. This required using proper clamps to form a form a good seal. This was all done with textile glue. I left this for 24 hours to fully adhere.
+With both zips in place and working, I glued down the inside lining. Once that was dry, I then glued the 'hinge' to the back of the main case body. This required using proper clamps to form a good seal. This was all done with textile glue. I left this for 24 hours to fully adhere.
 
 The following day, I then saddle stitched the 'hinges' back onto the main body, using the original holes. It was a straight line down, but because I was now going through the lining (a choice I made), I had a lot of difficulty in matching the entrance and exit holes. Mostly I would put the needle into the case from the outside holes, then try to match the other needle to the point the first one had come in from. This, of course, was after I had gingerly felt around with the needle to make sure I was finding an existing holes and not creating a new one somewhere mid-hole. I'm not sure I managed it every time, but I did my best. Again, this was very time consuming and fiddly work.
 
@@ -400,7 +400,7 @@ This didn't really work.
 
 I mean, it helped a bit, but not much. In the end, I decided to just let the Klucel G dry, then punch all the holes for doing more saddle stitch. I did this with an awl and, again, had to be very careful to line up the holes on both sides of the leather to match when it would be wrapped around the metal handles. This was quite difficult, and I ended up lightly threading through previous holes in order to prevent drift as I did later ones.
 
-With this done, I applied more Klucel G, put the new leather on the handles, and just starting sewing it on real tight in order to make it conform. Again, I used a thread about five times longer than the handle in an attempt to avoid having to start a new one half way along. Amazingly, this worked pretty well. At the corners, it was definitely a lot more effort and it was a little sore on my hands. I was having to pull the leather thread so tight that it was cutting into my skin. Once I draw a little blood and decided I'd need to wear work gloves for some of those parts to protect my hands.
+With this done, I applied more Klucel G, put the new leather on the handles, and just starting sewing it on real tight in order to make it conform. Again, I used a thread about five times longer than the handle in an attempt to avoid having to start a new one half way along. Amazingly, this worked pretty well. At the corners, it was definitely a lot more effort and it was a little sore on my hands. I was having to pull the leather thread so tight that it was cutting into my skin. Once I drew a little blood and decided I'd need to wear work gloves for some of those parts to protect my hands.
 
 Apart from maintaining the super tightness, and making sure the shape was being formed correctly, it was really just back to saddle stitch like I'd been doing all through the project. I did end up starting a little of the other end of the handle with temporary stitches, though. I was worried it wouldn't conform correctly otherwise. These stitches were removed when I eventually got to that end, but I still think it was the right move.
 
