@@ -1,6 +1,6 @@
 ---
 title: "A Typewriter's Next Chapter"
-date: 2025-09-02T20:21:45+01:00
+date: 2025-09-14T09:42:00+01:00
 author: John Urquhart Ferguson
 description: The procedure and motivation for restoring a 1957 Olivetti Lettera 22 typewriter.
 summary: Restoring a 1957 Olivetti Lettera 22 typewriter to its former glory.
@@ -18,7 +18,7 @@ tags:
 - crafts
 - olivetti
 - lettera 22
-draft: true
+draft: false
 ---
 
 {{< banner src="images/post-cover.png" alt="Before and after for an Olivetti Lettera 22 carrying case restoration. Credit: John Urquhart Ferguson" >}}
