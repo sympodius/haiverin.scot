@@ -8,6 +8,29 @@ readingEase: 8th/9th Graders
 gradeLevel: 10
 images:
 - images/post-cover.png
+- images/Olivetti22RestorationDirtAndMissingPaint.png
+- images/Olivetti22RestorationGunkAndDegradedZippers.png
+- images/Olivetti22RestorationDismantled.png
+- images/Olivetti22RestorationMachineInternalGunk.png
+- images/Olivetti22RestorationMarginRelease.png
+- images/Olivetti22RestorationMainSpring.png
+- images/Olivetti22RestorationInternalBodyShellGunk.png
+- images/Olivetti22RestorationShinyCollage.png
+- images/Olivetti22RestorationOldFeetNewFeet.png
+- images/Olivetti22RestorationCleanCarriage.png
+- images/Olivetti22RestorationCleanKeys.png
+- images/Olivetti22RestorationCleanBack.png
+- images/Olivetti22RestorationCleanTypewriter.png
+- images/Olivetti22RestorationGunkOnCarryingCase.png
+- images/Olivetti22RestorationCleaningCase.png
+- images/Olivetti22RestorationZipCrossover.png
+- images/Olivetti22RestorationNewZipper.png
+- images/Olivetti22RestorationCaseFlap.png
+- images/Olivetti22RestorationDeterioratingHandles.png
+- images/Olivetti22RestorationFinishedCaseBack.png
+- images/Olivetti22RestorationFinishedCaseFront.png
+- images/Olivetti22RestorationMachineFinal.png
+- images/Olivetti22RestorationCaseFinal.png
 categories:
 - restorations
 tags:
