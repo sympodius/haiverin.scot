@@ -1,6 +1,6 @@
 ---
 title: 'Shooting for Suck-cess'
-date: 2025-09-28T17:00:00+01:00
+date: 2025-09-28T16:00:00+01:00
 author: John Urquhart Ferguson
 description: A short treatise on the virtues of trying new things, with the conclusion being that the more things we try, the easier it will be to assimilate new skills and have greater success in life as a unique generalist.
 summary: Learning to try anything.
