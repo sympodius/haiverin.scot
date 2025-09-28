@@ -325,6 +325,47 @@ ul {
     padding-left: 2.5rem;
 }
 
+blockquote {
+  font-size: 1.1rem;
+  width: 95%;
+  margin: 50px auto;
+  color: var(--summary);
+  padding: 1.2em 30px 1.2em 40px;
+  border-left-width: 8px;
+  border-left-style: solid;
+  border-left-color: var(--logo-low);
+  box-shadow: var(--shadow-elevation-low);
+  line-height: 1.6;
+  position: relative;
+  background: var(--box-background);
+}
+
+blockquote::before {
+  content: "\201C";
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  color: var(--logo-high);
+}
+
+blockquote::after {
+  content: ""; /*"\201D";
+  font-size: 4em;
+  position: absolute;
+  right: 10px;
+  bottom: -40px;
+  color: var(--logo-high);*/
+}
+
+blockquote span {
+  display: block;
+  color: var(--h1);
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
 .hidden {
     display: none;
 }
