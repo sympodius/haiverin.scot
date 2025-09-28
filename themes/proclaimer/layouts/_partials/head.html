@@ -197,6 +197,7 @@
   {{- end }}
 
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+  <link rel="canonical" href="{{- printf "%s%s" (strings.TrimRight "/" (site.Params.canonicalBaseURL | default (absURL ""))) .RelPermalink -}}" />
   {{ partial "opengraph.html" . }}
   {{ partial "twitter_cards.html" . }}
   {{ partial "schema.html" . }}
