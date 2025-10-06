@@ -1,0 +1,93 @@
+#+TITLE: John's journal at haiverin.scot
+
+#+NICK: sympodius
+
+#+DESCRIPTION: 📐 Developer :: 📖 Writer :: 🦄 Creator of Org Novelist :: 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish :: John enjoys writing, programming software that only he is likely to use, keeping an eye out for puffins, and whistling better than one would reasonably expect.
+
+#+AVATAR: https://www.haiverin.scot/images/Author%20-%20John%20Urquhart%20Ferguson.png
+
+#+LINK: https://www.haiverin.scot
+
+#+CONTACT: enquiries@haiverin.scot
+
+#+FOLLOW: Adsan's junkyard https://adsan.dev/social.org
+#+FOLLOW: alephoto85's "The house with laughing windows" https://www.alessandroliguori.it/social.org
+#+FOLLOW: Andros' journal (Creator of Org Social) https://andros.dev/static/social.org
+#+FOLLOW: ArneBab's journal (Roleplayer and Free Software Enthusiast) https://www.draketo.de/social.org
+#+FOLLOW: Baldo's journal (small black panther) https://baldo.cat/social.org
+#+FOLLOW: Cherry's journal (Neovim User) https://cherryramatis.xyz/social.org
+#+FOLLOW: Comacero's journal https://comacero.eu/social.org
+#+FOLLOW: Emillo's feed (GNU/Linux User) https://emillo.net/social.org
+#+FOLLOW: Eoin's Org-Social journal https://eoin.site/social.org
+#+FOLLOW: John Hamelink's journal https://johnhame.link/social.org
+#+FOLLOW: Konrad Hinsen's journal (Researcher at Centre National de la Recherche Scientifique) https://khinsen.net/social.org
+#+FOLLOW: Leandro's blog https://cybervalley.org/org-social-leandro/org-social.org
+#+FOLLOW: Luniki's journal https://luniki.de/social.org
+#+FOLLOW: Mester social https://codeberg.org/mester/CosasSociales/raw/branch/main/social.org
+#+FOLLOW: Nick Anderson's journal https://cmdln.org/social.org
+#+FOLLOW: Notxor tiene un blog https://notxor.nueva-actitud.org/social.org
+#+FOLLOW: Omid's blog (Music and Computing) https://omidmash.de/social.org
+#+FOLLOW: RaZZlom's journal http://gemini.quietplace.xyz/~razzlom/social.org
+#+FOLLOW: Ross A. Baker's journal (Software Engineer) https://rossabaker.com/social.org
+#+FOLLOW: Sacha Chua's journal https://sachachua.com/social.org
+#+FOLLOW: Shad's journal https://wsgregory.us/docs/social.org
+#+FOLLOW: Shom's journal https://shom.dev/social.org
+#+FOLLOW: Terrón's journal (small grey and white lynx) https://terroncete.cat/social.org
+
+* Posts
+
+**
+:PROPERTIES:
+:ID: 2025-10-06T13:46:34+0100
+:LANG: en
+:TAGS: blog-post haiverin.scot drawing musings crafts time-management family portraits
+:CLIENT: org-social.el
+:MOOD: 💰
+:END:
+
+What is the currency of life?
+
+My blog post on [[https://www.haiverin.scot/arts/currency-of-life/][haiverin.scot]] tries to answer that question.
+
+Expect to read about art, drawing, and the true measure of love.
+
+**
+:PROPERTIES:
+:ID: 2025-10-06T13:52:13+0100
+:LANG: en
+:TAGS: blog-post haiverin.scot beat-time swatch-internet-time beats internet-time programming coding JavaScript emacs-lisp elisp emacs swatch tutorial
+:CLIENT: org-social.el
+:MOOD: 🕜
+:END:
+
+A little history of Swatch Internet Time? Maybe even some Emacs time converter tools just for funsies?
+
+My blog post about [[https://www.haiverin.scot/tech/beat-time/][.beat time]] on [[https://www.haiverin.scot][haiverin.scot]] might be what you need if you found either of the above intriguing.
+
+If not... quite right: I'm not in charge of you.
+
+**
+:PROPERTIES:
+:ID: 2025-10-06T13:56:25+0100
+:LANG: en
+:TAGS: blog-post haiverin.scot restorations musings tutorial typewriters crafts olivetti lettera-22
+:CLIENT: org-social.el
+:MOOD: 🪛
+:END:
+
+After many requests from people on Reddit, I wrote an insanely long blog post about restoring an Olivetti Lettera 22 typewriter. I think you'd need to be pretty into typewriters to get anything out of this one.
+
+All the same, if you think that sounds good then head over to [[https://www.haiverin.scot/arts/a-typewriters-next-chapter/][the blog post]] and see for yourself.
+
+**
+:PROPERTIES:
+:ID: 2025-10-06T14:01:32+0100
+:LANG: en
+:TAGS: blog-post haiverin.scot motivation musings self-improvement suck-cess pareto-principle diy
+:CLIENT: org-social.el
+:MOOD: 🏹
+:END:
+
+I wrote a short treatise on the virtues of trying new things, with the conclusion being that the more things we try, the easier it will be to assimilate new skills and have greater success in life as a unique generalist.
+
+If that sounds interesting to you, have a read of [[https://www.haiverin.scot/life/shooting-for-suck-cess/][Shooting For Suck-cess]] over at [[https://www.haiverin.scot][haiverin.scot]].
