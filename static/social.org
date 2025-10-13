@@ -20,6 +20,7 @@
 #+FOLLOW: Emillo's feed (GNU/Linux User) https://emillo.net/social.org
 #+FOLLOW: Eoin's Org-Social journal https://eoin.site/social.org
 #+FOLLOW: John Hamelink's journal https://johnhame.link/social.org
+#+FOLLOW: John's journal at haiverin.scot https://haiverin.scot/social.org
 #+FOLLOW: Konrad Hinsen's journal (Researcher at Centre National de la Recherche Scientifique) https://khinsen.net/social.org
 #+FOLLOW: Leandro's blog https://cybervalley.org/org-social-leandro/org-social.org
 #+FOLLOW: Luniki's journal https://luniki.de/social.org
@@ -91,3 +92,47 @@ All the same, if you think that sounds good then head over to [[https://www.haiv
 I wrote a short treatise on the virtues of trying new things, with the conclusion being that the more things we try, the easier it will be to assimilate new skills and have greater success in life as a unique generalist.
 
 If that sounds interesting to you, have a read of [[https://www.haiverin.scot/life/shooting-for-suck-cess/][Shooting For Suck-cess]] over at [[https://www.haiverin.scot][haiverin.scot]].
+
+**
+:PROPERTIES:
+:ID: 2025-10-13T13:14:42+0100
+:LANG: en
+:TAGS: 
+:CLIENT: org-social.el
+:REPLY_TO: https://andros.dev/static/social.org#2025-10-07T12:13:22+0200
+:MOOD: 
+:END:
+
+Thanks, [[org-social:https://andros.dev/static/social.org][andros]] 🙂. Do you do any drawing yourself?
+
+**
+:PROPERTIES:
+:ID: 2025-10-13T13:18:37+0100
+:LANG: en
+:TAGS: 
+:CLIENT: org-social.el
+:REPLY_TO: https://andros.dev/static/social.org#2025-10-07T12:16:37+0200
+:MOOD: 
+:END:
+
+Absolutely, [[org-social:https://andros.dev/static/social.org][andros]]. I even find that when I'm trying to be creative, writing by hand is actually more beneficial than being at a computer. Especially with fountain pens and good paper/notebooks.
+
+**
+:PROPERTIES:
+:ID: 2025-10-13T14:40:43+0100
+:LANG: en
+:TAGS: 
+:CLIENT: org-social.el
+:REPLY_TO: https://emillo.net/social.org#2025-10-09T23:11:07+0200
+:MOOD: 
+:END:
+
+Thanks for reading, [[org-social:https://emillo.net/social.org][emillo]]!
+
+I have three typewriters of my own as well. A first and second generation Hermes 3000, and a Hermes Baby (the metal kind with the `wing' ribbon covers). I've yet to name any of them, though I have named some of my fountain pens (which I had a much larger problem with until I banned myself from buying them). If you've mainly got Olivetti and Olympia typewriters, it sounds like you must have a pretty strong collection.
+
+Thanks very much for your kind comments about the restoration. It took way longer than the other typewriters (though they were all in considerably better condition to begin with).
+
+I used to think that things were built better in the past because mass manufacturing had yet come to be. However, I'm less inclined to believe that now. When I learned about just how insanely popular the old cast-iron Singer sewing machines were (to the point that maybe one in every five households in the world had one), yet many are still working great to this day... I had to acknowledge that mass production might not be the issue. I think it would be easy to say that `corporate greed' is the real problem, but I also think it's partly that we're willing to spend money on stuff that's not as good because it's a bit cheaper.
+
+I'm afraid four-track was just a little before my time. I do have a decent vinyl collection though. And I still use my original Zune every day (that I bought in 2006) 😂
