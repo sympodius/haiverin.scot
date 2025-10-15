@@ -16,7 +16,7 @@ draft: false
 
 *Haiverin* (or *havering*, in English) is [Scots](https://en.wikipedia.org/wiki/Scots_language) for 'speaking nonsense.' Haiverin.scot was started to give the little known Scottish writer, [John Urquhart Ferguson](https://johnurquhartferguson.info), a place to expound on the things he cares about. Whether anyone else cares about them is tenuous, but there we are.
 
-In the [Arts](/arts) section, you will find John's thoughts on artistic stuff: Pretty pictures and the like.
+In the [Arts](/arts) section, you will find John's thoughts on artistic stuff: pretty pictures and the like.
 
 The [Tech](/tech) section is where you'll see John's super-expert opinions on science and technology. He's got a PhD, you know?
 
