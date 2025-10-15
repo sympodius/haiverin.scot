@@ -17,20 +17,15 @@ markup:
 outputs:
   home:
     - html
-    - amp
     - rss
     - json
   section:
     - html
-    - amp
     - rss
   taxonomy:
     - html
-    - amp
-    - rss
   term:
     - html
-    - amp
     - rss
 
 imaging:
