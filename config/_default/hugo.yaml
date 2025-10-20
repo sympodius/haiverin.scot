@@ -13,6 +13,11 @@ markup:
       unsafe: true
     parser:
       wrapStandAloneImageWithinParagraph: false
+    renderHooks:
+      image:
+        enableDefault: true
+      link:
+        enableDefault: true
 
 outputs:
   home:
