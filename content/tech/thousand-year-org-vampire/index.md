@@ -77,7 +77,7 @@ And then it occurred to me that I should, of course, be playing it in my favouri
 - Org Mode allows the creation of check-mark lists
 - Org Mode makes it incredibly fast to move sections, subsections, and list items around
 
-With this vast power to hand, I went about creating a template file for playing *Thousand Year Old Vampire*, and in a moment of whimsy I titled it "*Thousand Year* ***Org*** *Vampire*":
+With this vast power to hand, I went about creating a template file for playing *Thousand Year Old Vampire*, and in a moment of whimsy I titled it *Thousand Year* ***Org*** *Vampire*:
 
 ```orgmode {linenos=inline style=dracula}
 #+TITLE: Thousand Year Org Vampire
