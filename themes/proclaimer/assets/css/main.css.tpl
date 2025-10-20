@@ -279,6 +279,10 @@ footer {
     width: 3px;
 }
 
+:target {
+    scroll-margin-top: 7.5rem;
+}
+
 p {
     margin-top: 1rem;
     margin-bottom: 1rem;
