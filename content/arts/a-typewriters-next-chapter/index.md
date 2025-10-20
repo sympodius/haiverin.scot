@@ -40,7 +40,7 @@ tags:
 - typewriters
 - crafts
 - olivetti
-- lettera 22
+- lettera-22
 draft: false
 ---
 
