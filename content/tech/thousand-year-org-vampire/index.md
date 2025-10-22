@@ -543,7 +543,7 @@ I hope you've enjoyed this tutorial on literate programming, and about playing *
 
 ## Footnotes
 [^Dungeon Master]: A Dungeon Master is the person who would normally tell you what was happening in your game world.
-[^Oulipo]: Short for Ouvroir de littérature potentielle (Workshop of Potential Literature). It was originally a collective of French writers and mathematicians who put playful, artificial constraints on their creative efforts in order to produce more unique works.
+[^Oulipo]: Short for Ouvroir de littérature potentielle (Workshop of Potential Literature). It was originally a collective of French writers and mathematicians who put playful, artificial constraints on their creative efforts in order to produce more diverse works.
 [^Org Mode Formatting]: [The official Org Mode site](https://orgmode.org/) has an overview of text formatting options and other information about Org Mode.
 [^Randomness]: As a side note, this random function is probably a little less random than we might hope and is technically a pseudorandom number generator. Getting truly random numbers from a program is actually a [surprisingly complex topic](https://en.wikipedia.org/wiki/Random_number_generation), but it would be overkill to worry about that for this particular application.
 [^TYOV.org]: Download the completed file: [ThousandYearOrgVampire.org](ThousandYearOrgVampire.org)
