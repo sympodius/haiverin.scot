@@ -54,7 +54,7 @@ As for all you 'Yes' people, let me tell you about solo RPGs. As the name would 
 
 I've recently been enjoying a solo RPG called *[Thousand Year Old Vampire](https://timhutchings.itch.io/tyov)*, by [Tim Hutchings](https://thousandyearoldvampire.com/). In it, you take on the role of a recently sired vampire, and play out their life for the next several centuries. Since it's getting near Halloween and vampires are spooky, I thought I'd tell you all about it.
 
-I was particularly drawn to *TYOV* because each prompt is resolved by writing out experiences. To me, that sounded like a very fun writing exercise! However, one does not just respond to prompts with abandon: you have to stick by the mechanics of the game, incorporating specific traits and instructions into your responses. Not only that, but you have to be somewhat strategic about your writing to get to the end of the game. If you're a fan of writing with the [Oulipo](https://en.wikipedia.org/wiki/Oulipo) method, then this game could be the perfect thing. It's definitely a unique and challenging way to flex those storytelling muscles.
+I was particularly drawn to *TYOV* because each prompt is resolved by writing out experiences. To me, that sounded like a very fun writing exercise! However, one does not just respond to prompts with abandon: you have to stick by the mechanics of the game, incorporating specific traits and instructions into your responses. Not only that, but you have to be somewhat strategic about your writing to get to the end of the game. If you're a fan of writing with the [Oulipo](https://en.wikipedia.org/wiki/Oulipo)[^Oulipo] method, then this game could be the perfect thing. It's definitely a unique and challenging way to flex those storytelling muscles.
 
 Perhaps my favourite part of the game is how it forces you to manage memories. With your vampire being so old, you can only hold so many memories in your head at once, so some will have to be moved to a diary; but even that is limited. Eventually, you will need to choose which memories to hold onto, and which to cast aside forever. It's a beautifully dark reminder that our consequences will be remembered far longer than our actions. As such, we should be working toward the best future for all, and worry less about our personal legacies.
 
@@ -175,7 +175,7 @@ Additionally, Org Mode lets me write the experiences and descriptions with nice 
 
 If you've played *TYOV* before, then there are two things to be aware: the first is that I number experiences according to the prompt, with the number after the decimal point indicating which variant of the prompt is being resolved; the second is that I found I could simply mark memories as being *diary* entries or *forgotten*, rather than explicitly moving them into 'Diary' or 'Forgotten' sections. Although I think both these decisions make the game much faster and simpler to manage, I mention them here because I feel they might be non-obvious at first.
 
-At this point, I'd say I was already onto a definite win and had found a very convenient way to play *TYOV*. However, Org Mode is even more powerful that just this simple setup. Org Mode also allows us to do literate programming.
+At this point, I'd say I was already onto a definite win and had found a very convenient way to play *TYOV*. However, Org Mode is even more powerful than just this simple setup. Org Mode also allows us to do literate programming.
 
 Literate programming was a concept conceived by one of the true giants of Computer Science, [Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth). The idea was that you could write a computer program in the order that made the most sense when explaining it to a human, using lots of normal descriptive text. Then, when a computer needed to understand it, the code blocks inside the text would be stripped out, put back into the order the computer needed them in, then run as a program. While it never really took the world by storm, I've always rather enjoyed writing code this way. In any case, Org Mode supports literate programming, and in a rather more powerful form than Knuth originally conceived.
 
@@ -433,7 +433,7 @@ You might also have noticed the *noweb* code blocks. Those give us access to two
 
 The last thing we do is send a message to the user about which prompt is next. Because this is the last thing evaluated in the code block, this will also form the results block for us to look at again whenever we need to.
 
-If you followed all that, well done! That is probably the most complicated bit of logic that we'll be doing in the whole file. The rest is just coding up the variable-setting code blocks (which are all quite straightforward). Let's take a look at *get-lowest-prompt* to start off with (and let's put that in the *Worker Functions* section):
+If you followed all that, well done! That is probably the most complicated bit of logic in the whole file. The rest is just coding up the variable-setting code blocks (which are all quite straightforward). Let's take a look at *get-lowest-prompt* to start off with (and let's put that in the *Worker Functions* section):
 
 ```emacs-lisp {linenos=inline style=dracula}
 #+name: get-lowest-prompt
@@ -543,6 +543,7 @@ I hope you've enjoyed this tutorial on literate programming, and about playing *
 
 ## Footnotes
 [^Dungeon Master]: A Dungeon Master is the person who would normally tell you what was happening in your game world.
+[^Oulipo]: Short for Ouvroir de littérature potentielle (Workshop of Potential Literature). It was originally a collective of French writers and mathematicians who put playful, artificial constraints on their creative efforts in order to produce more unique works.
 [^Org Mode Formatting]: [The official Org Mode site](https://orgmode.org/) has an overview of text formatting options and other information about Org Mode.
 [^Randomness]: As a side note, this random function is probably a little less random than we might hope and is technically a pseudorandom number generator. Getting truly random numbers from a program is actually a [surprisingly complex topic](https://en.wikipedia.org/wiki/Random_number_generation), but it would be overkill to worry about that for this particular application.
 [^TYOV.org]: Download the completed file: [ThousandYearOrgVampire.org](ThousandYearOrgVampire.org)
