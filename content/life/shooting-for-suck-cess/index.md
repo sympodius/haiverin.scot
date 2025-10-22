@@ -50,7 +50,7 @@ While merely being included at such a young age gave me a sense of achievement, 
 
 Do you know how to drive screws in the correct order to prevent misallignment and strain-cracking? I do, because my Dad taught me.
 
-Do you know how to open a rusted-shut lock by applying WD-40? I do, because my Dad taught me.
+Do you know how to open a lock that's rusted-shut by applying WD-40? I do, because my Dad taught me.
 
 Do you know how to change the blade drive belt on a ride-on lawnmower's cutting deck? I do, because my Dad taught me.
 
