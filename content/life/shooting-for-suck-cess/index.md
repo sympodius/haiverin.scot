@@ -80,7 +80,7 @@ I'm saying, "Have a go; try something new; and don't be content."
 
 Let's become a world of tinkerers and experimentors. Let's push our personal limitations and really see what we're capable of.
 
-It's been my experience that people remember your achievements more than how you achieved them. It doesn't matter than you didn't go to art school if someone likes your painting. It doesn't matter than you don't have an engineering degree if someone likes your invention. And it doesn't matter that you only started learning last year when you've already got a lifetime of skills to build upon.
+It's been my experience that people remember your achievements more than how you achieved them. It doesn't matter that you didn't go to art school if someone likes your painting. It doesn't matter that you don't have an engineering degree if someone likes your invention. And it doesn't matter that you only started learning last year when you've already got a lifetime of skills to build upon.
 
 We can all explore the great wide world of possibilities before us, enriching our lives with new skills and abilities. Some might be a disaster and some might be near-professional, but you won't know until you try.
 
