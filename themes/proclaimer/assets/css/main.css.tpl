@@ -768,6 +768,34 @@ article {
     font-weight: 400;
 }
 
+#author-card-kofi span {
+    padding-left: 0.1rem;
+    position: relative;
+    bottom: 0.4rem;
+}
+
+#author-card-kofi {
+    transition: 0.1s;
+}
+
+#author-card-kofi {
+    text-decoration: none;
+    text-decoration-color: var(--logo-low);
+    background-image: linear-gradient(to bottom, var(--logo-high) 0%, var(--logo-low) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#author-card-kofi:hover {
+    text-decoration: none;
+    text-decoration-color: var(--logo-high);
+    background-image: linear-gradient(to top, var(--logo-high) 0%, var(--logo-low) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .sharing-links a:hover {
     color: var(--a-hover);
 }

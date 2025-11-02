@@ -26,6 +26,7 @@ Contact Info/Socials
 {{- $imvdbIcon := resources.GetMatch "images/imvdb.svg" }}
 {{- $mailIcon := resources.GetMatch "images/mail.svg" }}
 {{- $keybaseIcon := resources.GetMatch "images/keybase.svg" }}
+{{- $kofiIcon := resources.GetMatch "images/kofi.svg" }}
 
     {{- range site.Params.authors }}
       {{- if (eq .name $authorName) }}
@@ -72,6 +73,7 @@ Contact Info/Socials
             {{- with .email }}<li><a href="mailto:{{- . -}}" target="_blank" title="Email">{{- if ne $mailIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $mailIcon "page" .) }}{{- else -}}Email{{- end -}}</a></li>{{ end }}
             {{- with .keybase }}<li><a href="https://keybase.io/{{- . -}}" title="Keybase">{{- if ne $keybaseIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $keybaseIcon "page" .) }}{{- else -}}Keybase{{- end -}}</a></li>{{ end }}
           </ul>
+	  {{- with .kofi }}<div class="print-hidden-flex hidden"><a id="author-card-kofi" href="https://ko-fi.com/{{- . -}}" title="Ko-fi">{{- if ne $kofiIcon nil -}}{{ partial "inlineSVG.html" (dict "svgFile" $kofiIcon "page" .) }}{{- else -}}Ko-fi{{- end -}} <span>Buy me a coffee</span></a></div>{{ end }}
         </div>
       {{- end }}
     {{- end }}
