@@ -148,3 +148,16 @@ I'm afraid four-track was just a little before my time. I do have a decent vinyl
 :END:
 
 Our fountain pen journeys started out very similarly: I started with a LAMY Safari, then a Noodler's Ahab, but after that I got very varied. I have Platinum, Pilot, Visconti, Nakaya, Namiki, Wancher, Montblanc, SCRIBO, Namisu, Parker, Conklin, TWSBI, Waterman's, Shaeffer, Kaweco... and probably others I can't remember off the top of my head 😅
+
+**
+:PROPERTIES:
+:ID: 2025-11-02T10:45:00
+:LANG: en
+:TAGS: blog-post haiverin.scot  thousand-year-old-vampire emacs org-mode literate-programming coding elisp programming emacs-lisp tutorial rpg tim-hutchings
+:CLIENT: org-social.el
+:MOOD: 🧛
+:END:
+
+I wrote a somewhat overly detailed article/tutorial about playing a solo RPG (/Thousand Year Old Vampire/) in Emacs Org Mode.
+
+A niche within a niche within a niche, but if it sounds fun then head on over to [[https://www.haiverin.scot][haiverin.scot]] and read [[https://www.haiverin.scot/tech/thousand-year-org-vampire/][Thousand Year Org Vampire]].
