@@ -1,8 +1,22 @@
-<p>If you would like to get in touch with us, please send us an email at <a href="mailto:enquiries@haiverin.scot" target="_blank" rel="noopener noreferrer">enquiries@haiverin.scot</a>, or use the form below:</p>
+{{- $authorEmail := "" }}
+{{- with site.Params.author }}
+  {{- if reflect.IsMap . }}
+    {{- with .email }}
+      {{- $authorEmail = . }}
+    {{- end }}
+  {{- end }}
+{{- else }}
+  {{- with site.Author.email }}
+    {{- $authorEmail = . }}
+    {{- warnf "The author key in site configuration is deprecated. Use params.author.email instead." }}
+  {{- end }}
+{{- end }}
 
-<form action="mailto:enquiries@haiverin.scot" method="GET" target="_blank">
+<p>If you would like to get in touch with us, please send an email to <a href="mailto:{{- with $authorEmail -}}{{- . -}}{{- end -}}" target="_blank" rel="noopener noreferrer">{{- with $authorEmail -}}{{- . -}}{{- end -}}</a>, or use the form below:</p>
+
+<form action="mailto:{{- with $authorEmail -}}{{- . -}}{{- end -}}" method="GET" target="_blank">
     <div class="field"><label class="label" for="subject">Email Subject:</label><br>
-        <input name="subject" id="subject" type="text" class="inputbar" style="width: 100%; margin-top: 0.5rem; margin-bottom: 1.5rem;" value="Haiverin.scot Website Enquiry"></div>
+        <input name="subject" id="subject" type="text" class="inputbar" style="width: 100%; margin-top: 0.5rem; margin-bottom: 1.5rem;" value="{{- .Site.Title }} Website Enquiry"></div>
     <div class="field"><label class="label" for="body">Email Body:</label><br>
         <textarea class="inputbar" style="width: 100%; height: 10rem; margin-top: 0.5rem; margin-bottom: 1.5rem;" name="body" id="body" placeholder="Write your message here..."></textarea></div>
     <div><input type="submit" value="Create Email" class="inputbutton" style="margin-bottom: 2rem;"></div>
