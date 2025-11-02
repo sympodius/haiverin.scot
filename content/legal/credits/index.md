@@ -22,7 +22,7 @@ The search functionality uses [Fuse.js](https://www.fusejs.io) and [Mark.js](htt
 
 The lightbox for images is built using [nanogallery2](https://nanogallery2.nanostudio.org/).
 
-Many of the icons on the site were based on those found at [free-icons](https://free-icons.github.io/free-icons/).
+Many of the icons on the site were based on those found at [free-icons](https://web.archive.org/web/20250502214542/https://free-icons.github.io/free-icons/) (archived from https://free-icons.github.io/free-icons/ on the 22nd of May 2025).
 
 The typeface used throughout *Haiverin.scot* is [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) (© 2022 [The Noto Project Authors](https://github.com/notofonts/latin-greek-cyrillic)), and used under the [SIL Open Font License, Version 1.1](https://openfontlicense.org/open-font-license-official-text/). 
 
