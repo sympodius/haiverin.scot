@@ -15,9 +15,9 @@ markup:
       wrapStandAloneImageWithinParagraph: false
     renderHooks:
       image:
-        enableDefault: true
+        useEmbedded: fallback
       link:
-        enableDefault: true
+        useEmbedded: fallback
 
 outputs:
   home:
