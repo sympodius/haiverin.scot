@@ -4,7 +4,7 @@ date: 2025-10-20T13:10:51+01:00
 author: John Urquhart Ferguson
 description: A tutorial on playing the Tim Hutchings solo role-playing game, Thousand Year Old Vampire, within Emacs Org Mode. An exploration of literate programming is used to describe the full possibilities available in playing such games within Emacs Org Mode.
 summary: Playing a solo RPG inside Emacs Org Mode.
-readingEase: 8th/9th Graders
+readingEase: 10th to 12th Graders
 gradeLevel: 13
 images:
 - images/post-cover.png
@@ -333,7 +333,7 @@ Now, thinking ahead a little here, I'm pretty sure that there will be other occa
 
 Isn't this a delightful way to code up our ideas? We take a top down approach, and code as we go, trusting that the finer details will be dealt with later when we get around to it.
 
-At this point, I'd say we're leaving the realm of code blocks that the user will call directly. Therefore, let's put theses machine-called functions somewhere else. I've chosen to put them under a heading called *Worker Functions* so that they'll be kept out of the way when I'm playing the game. Before we leave to look at those functions, there really is only one other house keeping function that I think the user might run, so let's quickly add that in now:
+At this point, I'd say we're leaving the realm of code blocks that the user will call directly. Therefore, let's put these machine-called functions somewhere else. I've chosen to put them under a heading called *Worker Functions* so that they'll be kept out of the way when I'm playing the game. Before we leave to look at those functions, there really is only one other house keeping function that I think the user might run, so let's quickly add that in now:
 
 ```emacs-lisp {linenos=inline style=dracula}
 #+name: reset-used-prompts
@@ -374,7 +374,7 @@ Functionally, there is no strong reason to use one method over the other; I just
 - We can call it using `<<set-current-prompt()>>` and `<<set-current-prompt(new-val=1.1)>>` and it will work with the default value or a given value.
 - We can call it the way we actually have: by first copying the code with *noweb* and then calling the function ourselves with `(set-current-prompt 1.1)`.
 
-Again, I just think the versatility and power of literate programming in Org mode is astonishing. And keep in mind that we aren't restricted to doing this all in one programming language. All these things would still work perfectly if we were using multiple programming languages, where each one was better at solving a particular part of the puzzle. In the case of this little project, that's not really necessary, but it's cool to have the option.
+Again, I just think the versatility and power of literate programming in Org mode is astonishing. And keep in mind that we aren't restricted to doing this all in one programming language. All the *noweb* calls would still work perfectly if we were using multiple programming languages, where each one was better at solving a particular part of the puzzle. In the case of this little project, that's not really necessary, but it's cool to have the option.
 
 The code block for *set-used-prompts* is very similar in concept:
 
@@ -425,7 +425,7 @@ Gosh, that code block declaration line looks a tad more complicated than our pre
 
 All the same, let us assume that we will eventually write those code blocks and that they will give us the correct information to populate these variables. The rest of the code is then using these variables to apply the rules of the game about which prompt we need to resolve next. The `move-by` amount is determined by rolling dice (which we'll fake in software later on) and says how many prompts we need to move by, and in which direction. We then add that to the current prompt number, and check that we've not gone lower than the lowest prompt number available.
 
-We're still not done though, because it's possible the new prompt doesn't exist, or that we've resolved it before. Therefore, we need to check against the list of all prompts, and the list of prompts used so far. If we have used a prompt before, then we can see if we have tried all variants of that prompt. If we have, then we just go one prompt up and do all the checks again.
+We're still not done though, because it's possible the new prompt doesn't exist, or that we've resolved it before. Therefore, we need to check against the list of all prompts, and the list of prompts used so far. If we have used a prompt before, we can then check other variants of that prompt. If we have already used all the prompt's variants, then we just go one prompt up and do all the checks again.
 
 One last thing to watch for is that we've not gone higher than the last prompt. If so, we just resolve the last prompt. Since the last prompt is a game-ending prompt, doing this should not mean that we are repeating it.
 
