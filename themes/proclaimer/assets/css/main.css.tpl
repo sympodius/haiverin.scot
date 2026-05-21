@@ -7,9 +7,9 @@
 {{- $topStoriesBackground := site.Params.colors.topStoriesBackground | default "#4C5C5C" -}}
 {{- $inputBackground := site.Params.colors.inputBackground | default "#F9F9F9" -}}
 {{- $inputText := site.Params.colors.inputText | default "#0B0D0C" -}}
-{{- $navA := site.Params.colors.navA | default "#7C8C8C" -}}
+{{- $navA := site.Params.colors.navA | default "#6D7474" -}}
 {{- $navAActive := site.Params.colors.navAActive | default "#0B0D0C" -}}
-{{- $navAHover := site.Params.colors.navAHover | default "#4C5C5C" -}}
+{{- $navAHover := site.Params.colors.navAHover | default "#485757" -}}
 {{- $a := site.Params.colors.a | default "#7C8C8C" -}}
 {{- $aActive := site.Params.colors.aActive | default "#0B0D0C" -}}
 {{- $aHover := site.Params.colors.aHover | default "#4C5C5C" -}}
@@ -26,9 +26,9 @@
 {{- $topStoriesBackgroundDark := site.Params.colors.topStoriesBackgroundDark | default "#B8AFD5" -}}
 {{- $inputBackgroundDark := site.Params.colors.inputBackgroundDark | default "#0B0D0C" -}}
 {{- $inputTextDark := site.Params.colors.inputTextDark | default "#  F9F9F9" -}}
-{{- $navADark := site.Params.colors.navADark | default "#7C8C8C" -}}
+{{- $navADark := site.Params.colors.navADark | default "#747C7C" -}}
 {{- $navAActiveDark := site.Params.colors.navAActiveDark | default "#F9F9F9" -}}
-{{- $navAHoverDark := site.Params.colors.navAHoverDark | default "#4C5C5C" -}}
+{{- $navAHoverDark := site.Params.colors.navAHoverDark | default "#86A0A0" -}}
 {{- $aDark := site.Params.colors.aDark | default "#7C8C8C" -}}
 {{- $aActiveDark := site.Params.colors.aActiveDark | default "#F9F9F9" -}}
 {{- $aHoverDark := site.Params.colors.aHoverDark | default "#4C5C5C" -}}
@@ -67,9 +67,9 @@
         {{- $topStoriesBackground = .topStoriesBackground | default "#4C5C5C" -}}
         {{- $inputBackground = .inputBackground | default "#F9F9F9" -}}
         {{- $inputText = .inputText | default "#0B0D0C" -}}
-        {{- $navA = .navA | default "#7C8C8C" -}}
+        {{- $navA = .navA | default "#6D7474" -}}
         {{- $navAActive = .navAActive | default "#0B0D0C" -}}
-        {{- $navAHover = .navAHover | default "#4C5C5C" -}}
+        {{- $navAHover = .navAHover | default "#485757" -}}
         {{- $a = .a | default "#7C8C8C" -}}
         {{- $aActive = .aActive | default "#0B0D0C" -}}
         {{- $aHover = .aHover | default "#4C5C5C" -}}
@@ -86,9 +86,9 @@
         {{- $topStoriesBackgroundDark = .topStoriesBackgroundDark | default "#B8AFD5" -}}
         {{- $inputBackgroundDark = .inputBackgroundDark | default "#0B0D0C" -}}
         {{- $inputTextDark = .inputTextDark | default "#F9F9F9" -}}
-        {{- $navADark = .navADark | default "#7C8C8C" -}}
+        {{- $navADark = .navADark | default "#747C7C" -}}
         {{- $navAActiveDark = .navAActiveDark | default "#F9F9F9" -}}
-        {{- $navAHoverDark = .navAHoverDark | default "#4C5C5C" -}}
+        {{- $navAHoverDark = .navAHoverDark | default "#86A0A0" -}}
         {{- $aDark = .aDark | default "#7C8C8C" -}}
         {{- $aActiveDark = .aActiveDark | default "#F9F9F9" -}}
         {{- $aHoverDark = .aHoverDark | default "#4C5C5C" -}}
