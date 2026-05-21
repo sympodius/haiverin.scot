@@ -31,7 +31,7 @@
   {{- end }}
         <div class="banner-image">
           <figure>
-            <img class="banner-image" loading="eager" srcset="{{- $bannerImgSmallWebP.RelPermalink | safeURL }} {{ $bannerImgSmallWebP.Width -}}w, {{- $bannerImgWebP.RelPermalink | safeURL }} {{ $bannerImgWebP.Width -}}w" sizes="(min-width: 56.25rem) {{ $bannerImgWebP.Width -}}px, {{ $bannerImgSmallWebP.Width -}}px" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- .RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $altText -}}alt="{{- . -}}"{{- end }} width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}"/>
+            <img class="banner-image" loading="eager" srcset="{{- $bannerImgSmallWebP.RelPermalink | safeURL }} {{ $bannerImgSmallWebP.Width -}}w, {{- $bannerImgWebP.RelPermalink | safeURL }} {{ $bannerImgWebP.Width -}}w" sizes="(min-width: 56.25rem) {{ $bannerImgWebP.Width -}}px, {{ $bannerImgSmallWebP.Width -}}px" src="{{- $bannerImgWebP.RelPermalink | safeURL -}}" data-ngsrc="{{- .RelPermalink | safeURL -}}" data-nanogallery2-lgroup="content-group" data-nanogallery2-lightbox {{ with $altText -}}alt="{{- . -}}"{{- end }} width="{{ $bannerImgWebP.Width }}" height="{{ $bannerImgWebP.Height }}" fetchpriority="high"/>
             <figcaption>{{- $titleText -}}</figcaption>
           </figure>
         </div>
