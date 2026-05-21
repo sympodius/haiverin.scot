@@ -1,11 +1,23 @@
 baseURL: https://www.haiverin.scot/
-languageCode: en
-title: Haiverin.scot
+defaultContentLanguage: en
 theme: proclaimer
 enableEmoji: true
 enableGitInfo: true
 
 copyright: John Urquhart Ferguson. All Rights Reservered.
+
+languages:
+  en:
+    direction: 'left-to-right'
+    disabled: false
+    label: 'English'
+    locale: 'en-GB'
+    title: 'Haiverin.scot'
+    weight: 0
+    pagination:
+      disableAliases: false
+      pagerSize: 5
+      path: page
 
 markup:
   goldmark:
@@ -70,8 +82,3 @@ related:
     weight: 80
   threshold: 80
   toLower: true
-
-pagination:
-  disableAliases: false
-  pagerSize: 5
-  path: page

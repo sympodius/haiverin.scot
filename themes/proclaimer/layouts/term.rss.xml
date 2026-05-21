@@ -49,7 +49,7 @@
     <link>{{ .Permalink }}</link>
     <description>Recent content on {{ .Site.Title }}</description>
     <generator>Hugo</generator>
-    <language>{{ site.Language.LanguageCode }}</language>{{ with $authorEmail }}
+    <language>{{ site.Language.Locale }}</language>{{ with $authorEmail }}
     <managingEditor>{{.}}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with $authorEmail }}
     <webMaster>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with .Site.Copyright }}
     <copyright>© {{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "2006" | safeHTML }} {{ . }}</copyright>{{ end }}{{ if not .Date.IsZero }}
