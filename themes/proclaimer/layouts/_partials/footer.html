@@ -27,5 +27,7 @@
     </div>
 
     <div class="footer-line">
-      {{- with .Site.Copyright }}© {{ (index $site.RegularPages.ByLastmod.Reverse 0).Lastmod.Format "2006" | safeHTML }} {{ . }}{{ end -}}
+      <div class="footer-copyright">
+	{{- with .Site.Copyright }}© {{ (index $site.RegularPages.ByPublishDate 0).PublishDate.Format "2006" | safeHTML }}–{{ now.Format "2006" }} {{ . }}{{ end -}}
+      </div>
     </div>
