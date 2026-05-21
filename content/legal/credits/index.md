@@ -14,6 +14,8 @@ build:
 draft: false
 ---
 
+This is an artisanal human-crafted website.
+
 Unless otherwise stated, all content on *Haiverin.scot* is created by *[John Urquhart Ferguson](https://johnurquhartferguson.info)*.
 
 *Haiverin.scot* is generated using [Hugo](https://gohugo.io).
