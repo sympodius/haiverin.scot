@@ -1,76 +1,106 @@
-{{- /* Set the theme based on the current date, falling back to the standard theme. If standard theme values fail, defaults are provided.  */ -}}
+{{- /* Set the theme based on the current date, falling back to the standard theme. If standard theme values fail, defaults are provided. */ -}}
 {{- /* Standard light theme defaults */ -}}
 {{- $logoHigh := site.Params.colors.logoHigh | default "#15C5FE" -}}
 {{- $logoLow := site.Params.colors.logoLow | default "#A100FA" -}}
 {{- $siteBackground := site.Params.colors.siteBackground | default "#F9F9F9" -}}
 {{- $boxBackground := site.Params.colors.boxBackground | default "#F9F9F9" -}}
+{{- $topStoriesBackground := site.Params.colors.topStoriesBackground | default "#4C5C5C" -}}
+{{- $inputBackground := site.Params.colors.inputBackground | default "#F9F9F9" -}}
+{{- $inputText := site.Params.colors.inputText | default "#0B0D0C" -}}
 {{- $navA := site.Params.colors.navA | default "#7C8C8C" -}}
 {{- $navAActive := site.Params.colors.navAActive | default "#0B0D0C" -}}
-{{- $navAHover := site.Params.colors.navAHover | default "#5C6C6C" -}}
+{{- $navAHover := site.Params.colors.navAHover | default "#4C5C5C" -}}
 {{- $a := site.Params.colors.a | default "#7C8C8C" -}}
 {{- $aActive := site.Params.colors.aActive | default "#0B0D0C" -}}
-{{- $aHover := site.Params.colors.aHover | default "#5C6C6C" -}}
+{{- $aHover := site.Params.colors.aHover | default "#4C5C5C" -}}
 {{- $bodyText := site.Params.colors.bodyText | default "#0B0D0C" -}}
 {{- $h1 := site.Params.colors.h1 | default "#0B0D0C" -}}
-{{- $summary := site.Params.colors.summary | default "#5C6C6C" -}}
+{{- $summary := site.Params.colors.summary | default "#4C5C5C" -}}
+{{- $topThreeA := site.Params.colors.topThreeA | default "#FFFFFF" -}}
+{{- $topThreeAHover := site.Params.colors.topThreeAHover | default "#A8FFFF" -}}
 {{- /* Standard dark theme or defaults */ -}}
 {{- $logoHighDark := site.Params.colors.logoHighDark | default "#15C5FE" -}}
 {{- $logoLowDark := site.Params.colors.logoLowDark | default "#A100FA" -}}
 {{- $siteBackgroundDark := site.Params.colors.siteBackgroundDark | default "#0B0D0C" -}}
 {{- $boxBackgroundDark := site.Params.colors.boxBackgroundDark | default "#061E26" -}}
+{{- $topStoriesBackgroundDark := site.Params.colors.topStoriesBackgroundDark | default "#B8AFD5" -}}
+{{- $inputBackgroundDark := site.Params.colors.inputBackgroundDark | default "#0B0D0C" -}}
+{{- $inputTextDark := site.Params.colors.inputTextDark | default "#  F9F9F9" -}}
 {{- $navADark := site.Params.colors.navADark | default "#7C8C8C" -}}
 {{- $navAActiveDark := site.Params.colors.navAActiveDark | default "#F9F9F9" -}}
-{{- $navAHoverDark := site.Params.colors.navAHoverDark | default "#5C6C6C" -}}
+{{- $navAHoverDark := site.Params.colors.navAHoverDark | default "#4C5C5C" -}}
 {{- $aDark := site.Params.colors.aDark | default "#7C8C8C" -}}
 {{- $aActiveDark := site.Params.colors.aActiveDark | default "#F9F9F9" -}}
-{{- $aHoverDark := site.Params.colors.aHoverDark | default "#5C6C6C" -}}
+{{- $aHoverDark := site.Params.colors.aHoverDark | default "#4C5C5C" -}}
 {{- $bodyTextDark := site.Params.colors.bodyTextDark | default "#F9F9F9" -}}
 {{- $h1Dark := site.Params.colors.h1Dark | default "#F9F9F9" -}}
-{{- $summaryDark := site.Params.colors.summaryDark | default "#7562AD" -}}
+{{- $summaryDark := site.Params.colors.summaryDark | default "#B8AFD5" -}}
+{{- $topThreeADark := site.Params.colors.topThreeADark | default "#000000" -}}
+{{- $topThreeAHoverDark := site.Params.colors.topThreeAHoverDark | default "#1A1A74" -}}
 {{- /* See if any seasonal themes should be active today. First valid theme is accepted. Only do this on main site and while developing (not mirror sites like NekoWeb/NeoCities) */ -}}
 {{- if eq hugo.Environment "production" | or (eq hugo.Environment "development") -}}
-  {{- range site.Params.dateColors -}}
-    {{- $year := string now.Year -}}
-    {{- $month := string (printf "%02d" (int now.Month)) -}}
-    {{- $day := string (printf "%02d" now.Day) -}}
-    {{- $simpleNowTime := time.AsTime (printf "%s-%s-%s" $year $month $day) -}}
-    {{- /* Shifting days by 24 hours to make comparisons easier, but still keep params file sensible */ -}}
-    {{- $startTime := (time.AsTime (printf "%s-%s" $year .startDate)).Add (time.ParseDuration "-1s") -}}
-    {{- $endTime := (time.AsTime (printf "%s-%s" $year .endDate)).Add (time.ParseDuration "23h59m59s") -}}
-    {{- if $startTime.Before $simpleNowTime -}}
-      {{- if $endTime.After $simpleNowTime -}}
+  {{- if ne site.Params.colorsOverride "Standard" -}}
+    {{- $colorsFound := false -}}
+    {{- range site.Params.dateColors -}}
+      {{- if eq .name site.Params.colorsOverride -}}
+        {{- $colorsFound = true -}}
+      {{- else -}}
+        {{- $year := string now.Year -}}
+        {{- $month := string (printf "%02d" (int now.Month)) -}}
+        {{- $day := string (printf "%02d" now.Day) -}}
+        {{- $simpleNowTime := time.AsTime (printf "%s-%s-%s" $year $month $day) -}}
+        {{- /* Shifting days by 24 hours to make comparisons easier, but still keep params file sensible */ -}}
+        {{- $startTime := (time.AsTime (printf "%s-%s" $year .startDate)).Add (time.ParseDuration "-1s") -}}
+        {{- $endTime := (time.AsTime (printf "%s-%s" $year .endDate)).Add (time.ParseDuration "23h59m59s") -}}
+        {{- if $startTime.Before $simpleNowTime -}}
+          {{- if $endTime.After $simpleNowTime -}}
+	    {{- $colorsFound = true -}}
+	  {{- end -}}
+	{{- end -}}
+      {{- end -}}
+      {{- if $colorsFound -}}
         {{- /* Seasonal light theme or defaults */ -}}
         {{- $logoHigh = .logoHigh | default "#15C5FE" -}}
         {{- $logoLow = .logoLow | default "#A100FA" -}}
         {{- $siteBackground = .siteBackground | default "#F9F9F9" -}}
         {{- $boxBackground = .boxBackground | default "#F9F9F9" -}}
+        {{- $topStoriesBackground = .topStoriesBackground | default "#4C5C5C" -}}
+        {{- $inputBackground = .inputBackground | default "#F9F9F9" -}}
+        {{- $inputText = .inputText | default "#0B0D0C" -}}
         {{- $navA = .navA | default "#7C8C8C" -}}
         {{- $navAActive = .navAActive | default "#0B0D0C" -}}
-        {{- $navAHover = .navAHover | default "#5C6C6C" -}}
+        {{- $navAHover = .navAHover | default "#4C5C5C" -}}
         {{- $a = .a | default "#7C8C8C" -}}
         {{- $aActive = .aActive | default "#0B0D0C" -}}
-        {{- $aHover = .aHover | default "#5C6C6C" -}}
+        {{- $aHover = .aHover | default "#4C5C5C" -}}
         {{- $bodyText = .bodyText | default "#0B0D0C" -}}
         {{- $h1 = .h1 | default "#0B0D0C" -}}
-        {{- $summary = .summary | default "#5C6C6C" -}}
+        {{- $summary = .summary | default "#4C5C5C" -}}
+        {{- $topThreeA := site.Params.colors.topThreeA | default "#FFFFFF" -}}
+        {{- $topThreeAHover := site.Params.colors.topThreeAHover | default "#A8FFFF" -}}
         {{- /* Seasonal dark theme or defaults */ -}}
         {{- $logoHighDark = .logoHighDark | default "#15C5FE" -}}
         {{- $logoLowDark = .logoLowDark | default "#A100FA" -}}
         {{- $siteBackgroundDark = .siteBackgroundDark | default "#0B0D0C" -}}
         {{- $boxBackgroundDark = .boxBackgroundDark | default "#061E26" -}}
+        {{- $topStoriesBackgroundDark = .topStoriesBackgroundDark | default "#B8AFD5" -}}
+        {{- $inputBackgroundDark = .inputBackgroundDark | default "#0B0D0C" -}}
+        {{- $inputTextDark = .inputTextDark | default "#F9F9F9" -}}
         {{- $navADark = .navADark | default "#7C8C8C" -}}
         {{- $navAActiveDark = .navAActiveDark | default "#F9F9F9" -}}
-        {{- $navAHoverDark = .navAHoverDark | default "#5C6C6C" -}}
+        {{- $navAHoverDark = .navAHoverDark | default "#4C5C5C" -}}
         {{- $aDark = .aDark | default "#7C8C8C" -}}
         {{- $aActiveDark = .aActiveDark | default "#F9F9F9" -}}
-        {{- $aHoverDark = .aHoverDark | default "#5C6C6C" -}}
+        {{- $aHoverDark = .aHoverDark | default "#4C5C5C" -}}
         {{- $bodyTextDark = .bodyTextDark | default "#F9F9F9" -}}
         {{- $h1Dark = .h1Dark | default "#F9F9F9" -}}
-        {{- $summaryDark = .summaryDark | default "#7562AD" -}}
+        {{- $summaryDark = .summaryDark | default "#B8AFD5" -}}
+        {{- $topThreeADark := site.Params.colors.topThreeADark | default "#000000" -}}
+        {{- $topThreeAHoverDark := site.Params.colors.topThreeAHoverDark | default "#1A1A74" -}}
         {{- /* Don't search more if valid seasonal theme found */ -}}
         {{- break -}}
       {{- end -}}
-    {{- end -}}
+    {{- end  -}}
   {{- end -}}
 {{- end -}}
 
@@ -81,6 +111,9 @@
   --logo-low: {{ $logoLow }};
   --site-background: {{ $siteBackground }};
   --box-background: {{ $boxBackground }};
+  --top-stories-background: {{ $topStoriesBackground }};
+  --input-background: {{ $inputBackground }};
+  --input-text: {{ $inputText }};
   --nav-a: {{ $navA }};
   --nav-a-active: {{ $navAActive }};
   --nav-a-hover: {{ $navAHover }};
@@ -90,6 +123,8 @@
   --body-text: {{ $bodyText }};
   --h1: {{ $h1 }};
   --summary: {{ $summary }};
+  --top-three-a: {{ $topThreeA }};
+  --top-three-a-hover: {{ $topThreeAHover }};
   --shadow-color: 0deg 0% 63%;
   --shadow-elevation-low:
     0.01875rem 0.03125rem 0.05625rem hsl(var(--shadow-color) / 0),
@@ -118,6 +153,9 @@
   --logo-low: {{ $logoLowDark }};
   --site-background: {{ $siteBackgroundDark }};
   --box-background: {{ $boxBackgroundDark }};
+  --top-stories-background: {{ $topStoriesBackgroundDark }};
+  --input-background: {{ $inputBackgroundDark }};
+  --input-text: {{ $inputTextDark }};
   --nav-a: {{ $navADark }};
   --nav-a-active: {{ $navAActiveDark }};
   --nav-a-hover: {{ $navAHoverDark }};
@@ -127,6 +165,8 @@
   --body-text: {{ $bodyTextDark }};
   --h1: {{ $h1Dark }};
   --summary: {{ $summaryDark }};
+  --top-three-a: {{ $topThreeADark }};
+  --top-three-a-hover: {{ $topThreeAHoverDark }};
   --shadow-color: 0deg 0% 37%;
   --shadow-elevation-low:
     0.01875rem 0.03125rem 0.05625rem hsl(var(--shadow-color) / 0),
@@ -157,6 +197,9 @@
     --logo-low: {{ $logoLowDark }};
     --site-background: {{ $siteBackgroundDark }};
     --box-background: {{ $boxBackgroundDark }};
+    --top-stories-background: {{ $topStoriesBackgroundDark }};
+    --input-background: {{ $inputBackgroundDark }};
+    --input-text: {{ $inputTextDark }};
     --nav-a: {{ $navADark }};
     --nav-a-active: {{ $navAActiveDark }};
     --nav-a-hover: {{ $navAHoverDark }};
@@ -166,6 +209,8 @@
     --body-text: {{ $bodyTextDark }};
     --h1: {{ $h1Dark }};
     --summary: {{ $summaryDark }};
+    --top-three-a: {{ $topThreeADark }};
+    --top-three-a-hover: {{ $topThreeAHoverDark }};
     --shadow-color: 0deg 0% 37%;
     --shadow-elevation-low:
       0.01875rem 0.03125rem 0.05625rem hsl(var(--shadow-color) / 0),
@@ -193,6 +238,9 @@
     --logo-low: {{ $logoLow }};
     --site-background: {{ $siteBackground }};
     --box-background: {{ $boxBackground }};
+    --top-stories-background: {{ $topStoriesBackground }};
+    --input-background: {{ $inputBackground }};
+    --input-text: {{ $inputText }};
     --nav-a: {{ $navA }};
     --nav-a-active: {{ $navAActive }};
     --nav-a-hover: {{ $navAHover }};
@@ -202,6 +250,8 @@
     --body-text: {{ $bodyText }};
     --h1: {{ $h1 }};
     --summary: {{ $summary }};
+    --top-three-a: {{ $topThreeA }};
+    --top-three-a-hover: {{ $topThreeAHover }};
     --shadow-color: 0deg 0% 63%;
     --shadow-elevation-low:
       0.01875rem 0.03125rem 0.05625rem hsl(var(--shadow-color) / 0),
@@ -383,9 +433,9 @@ pre code { white-space: pre-wrap; }
 .inputbar {
     font-size: 1rem;
     font-family: inherit;
-    color: var(--body-text);
+    color: var(--input-text);
     padding: 0.25em 0.5em;
-    background-color: var(--site-background);
+    background-color: var(--input-background);
     border: 0.125rem solid var(--input-border);
     border-radius: 0.25rem;
     box-shadow: var(--shadow-elevation-low);
@@ -566,9 +616,9 @@ button:active {
 .searchbar {
     font-size: 1rem;
     font-family: inherit;
-    color: var(--body-text);
+    color: var(--input-text);
     padding: 0.25em 0.5em;
-    background-color: var(--site-background);
+    background-color: var(--input-background);
     border: 0.125rem solid var(--input-border);
     border-radius: 0.25rem;
     box-shadow: var(--shadow-elevation-medium);
@@ -726,6 +776,14 @@ article {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
+
+article p a {
+    text-decoration: underline;
+}
+
+article li a {
+    text-decoration: underline;
 }
 
 .breadcrumbs {
@@ -1279,7 +1337,7 @@ aside {
 #section-pull-top-stories {
     width: 100%;
     color: var(--site-background);
-    background-color: var(--summary);
+    background-color: var(--top-stories-background);
     padding: 0;
     margin-top: -0.625rem;
 }
@@ -1317,11 +1375,11 @@ aside {
 }
 
 .top-three a {
-    color: var(--site-background);
+    color: var(--top-three-a);
 }
 
 .top-three a:hover {
-    color: var(--logo-high);
+    color: var(--top-three-a-hover);
 }
 
 .top-three-separator {
@@ -1432,6 +1490,10 @@ footer {
     padding-right: 0;
 }
 
+.footer-copyright {
+    text-align: center;
+}
+
 
 
 /* Media query overrides --- all styling before this point assumes a mobile device being used to print to paper. */
@@ -1534,7 +1596,7 @@ footer {
 	position: static;
 	width: 100%;
 	color: var(--site-background);
-	background-color: var(--summary);
+	background-color: var(--top-stories-background);
 	padding: 0;
 	margin-top: -0.625rem;
     }
@@ -1643,7 +1705,7 @@ footer {
 	left: 0;
 	width: 100%;
 	color: var(--site-background);
-	background-color: var(--summary);
+	background-color: var(--top-stories-background);
 	padding: 0;
 	z-index: 5;
     }
