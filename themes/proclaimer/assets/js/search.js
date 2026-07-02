@@ -137,7 +137,7 @@ function populateResults(results) {
 	var tags = ""
 	if (value.item.tags) {
 	    value.item.tags.forEach(function (element) {
-		tags = tags + "<a href='/tags/" + element.replace(/\s/g, "-").toLowerCase() + "'>" + "#" + element.replace(/\s/g, "-").toLowerCase() + "</a> "
+		tags = tags + "<a class='searchResultTags' href='/tags/" + element.replace(/\s/g, "-").toLowerCase() + "'>" + "#" + element.replace(/\s/g, "\u2011").toLowerCase() + "</a> "
 	    });
 	}
 	var output = render(templateDefinition, {
@@ -151,6 +151,7 @@ function populateResults(results) {
 	searchResults.innerHTML += output;
 	snippetHighlights.forEach(function (snipvalue, snipkey) {
 	    var instance = new Mark(document.getElementById('summary-' + key));
+	    instance.mark('#' + snipvalue);
 	    instance.mark(snipvalue);
 	});
     });

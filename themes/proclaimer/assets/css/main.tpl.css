@@ -641,6 +641,10 @@ button:active {
     outline: 0.1875rem solid transparent;
 }
 
+.searchResultTags {
+    margin-right: 0.8rem;
+}
+
 .top-search svg {
     width: 2.5rem;
     height: 2.5rem;
@@ -780,6 +784,7 @@ article {
 
 article p a {
     text-decoration: underline;
+    padding-right: 0.05em;
 }
 
 article li a {
