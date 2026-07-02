@@ -28,6 +28,6 @@
 
     <div class="footer-line">
       <div class="footer-copyright">
-	{{- with .Site.Copyright }}© {{ (index $site.RegularPages.ByPublishDate 0).PublishDate.Format "2006" | safeHTML }}–{{ now.Format "2006" }} {{ . }}{{ end -}}
+	{{- with .Site.Copyright }}© {{ $firstYear := (index $site.RegularPages.ByPublishDate 0).PublishDate.Format "2006" }}{{ $thisYear := now.Format "2006" }}{{ if eq $firstYear $thisYear }}{{ $thisYear }} {{ . }}{{ else }}{{ $firstYear }}–{{ $thisYear }} {{ . }}{{ end }}{{ end -}}
       </div>
     </div>
