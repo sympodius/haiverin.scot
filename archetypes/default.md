@@ -4,8 +4,8 @@ date: {{ .Date }}
 author: John Urquhart Ferguson
 description: This is what you write for SEO.
 summary: This is what you write for list page summaries on the site.
-readingEase: College Graduates
-gradeLevel: 24
+readingEase: College Students
+gradeLevel: 19
 images:
 - images/post-cover.png
 categories:
@@ -34,7 +34,7 @@ draft: true
 - [ ] You can use up to two more images in the blog entry, but try not to use any more (unless this is a listicle). Only the banner is essential
 - [ ] Try to write 1000 words. The closer to this number, the better, but don't go over (75% of the public prefers reading articles under 1,000 words)
 - [ ] Reading time should not exceed seven minutes
-- [ ] Make sure to include a description and summary for the blog entry as these are used on the site and in SEO
+- [ ] Make sure to include a description and summary for the blog entry as these are used on the site and in SEO. Ideally the summary should be short and engaging to entice readers. The description is for webcrawlers and should be around 150 characters (no more than 160)
 - [ ] Make an appropriate choice of tags in the front matter. These will help in recommending pages to the reader
 - [ ] Make an appropriate choice of categories in the front matter. The first category will be used in the breadcrumb for the page, others will generate the side menu
 - [ ] Use Emacs to generate the reading ease and grade level (this should happen automatically when saving the file in my Emacs configuration). These are just for fun, incidentally, and appear to have no impact on audience engagement
