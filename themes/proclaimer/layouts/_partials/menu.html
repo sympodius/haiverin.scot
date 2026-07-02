@@ -33,7 +33,7 @@ Renders a menu for the given menu ID.
       <div class="topnav-centered">
         <div class="homelink">
           <div {{ with $logo -}}class="logorollover"{{- end -}}>
-            <a href="/">
+            <a href="/" aria-label="Site logo linking back to home page">
 	      {{- with $logo }}
                 {{ partial "inlineSVG.html" (dict "svgFile" $logo "page" $page) }}{{ else }}{{ site.Title }}
               {{- end }}
