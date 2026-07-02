@@ -22,7 +22,7 @@ tags:
 - nexami-engeo
 - nex
 - nex-rip
-draft: true
+draft: false
 ---
 
 {{< banner src="images/post-cover.png" alt="A stone circle with a grave stone marked 'NEX RIP.' Credit: John Urquhart Ferguson" >}}
