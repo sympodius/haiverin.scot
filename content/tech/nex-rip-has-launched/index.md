@@ -1,6 +1,6 @@
 ---
 title: 'Nex.RIP Has Launched!'
-date: 2026-07-02T11:37:36+01:00
+date: 2026-07-01T11:37:36+01:00
 author: John Urquhart Ferguson
 description: Nex.RIP is live — a music production community with tutorials, open source advocacy, and a novel system for rating software hindrance.
 summary: A behind-the-scenes look at building Nex.RIP and the Hindrex system.
