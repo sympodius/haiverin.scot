@@ -46,62 +46,12 @@
       </script>
   
 {{- /*
-  If using production code, get the third party javascript from CDNs. Otherwise, use a local copy.
-  This makes it easier for me to test the site without an internet connection.
+  Vendored third-party assets (fuse.js, mark.js).
+  Source selection is controlled by the allowCDN.vendor site param; see the
+  vendor/asset.html partial for the rules.
 */}}
-{{- if eq hugo.Environment "production" }}
-  {{- $fuseJsUrl := "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" }}
-  {{- with try (resources.GetRemote $fuseJsUrl) }}
-    {{- with .Err }}
-      {{- errorf "%s" . }}
-    {{- else }}
-      {{- with (resources.GetRemote $fuseJsUrl) | fingerprint }}
-      <script type="text/javascript" src="{{ $fuseJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-      {{- end }}
-    {{- end }}
-  {{- else }}
-    {{- errorf "Unable to get remote resource %q" $fuseJsUrl }}
-  {{- end }}
-  {{- $markJsUrl := "https://cdn.jsdelivr.net/gh/julkue/mark.js@a283c4c437ff38d2b09c81da1030af9b0191b9f1/dist/mark.min.js" }}
-  {{- with try (resources.GetRemote $markJsUrl) }}
-    {{- with .Err }}
-      {{- errorf "%s" . }}
-    {{- else }}
-      {{- with (resources.GetRemote $markJsUrl) | fingerprint }}
-      <script type="text/javascript" src="{{ $markJsUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-      {{- end }}
-    {{- end }}
-  {{- else }}
-    {{- errorf "Unable to get remote resource %q" $markJsUrl }}
-  {{- end }}
-{{- else }}
-  {{- with resources.Get "js/fuse.min.js" }}
-    {{- if eq hugo.Environment "development" }}
-      {{- with . }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
-      {{- end }}
-    {{- else }}
-      {{- with . | resources.Minify | fingerprint }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-      {{- end }}
-    {{- end }}
-  {{- else }}
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" defer></script>
-  {{- end }}
-  {{- with resources.Get "js/mark.min.js" }}
-    {{- if eq hugo.Environment "development" }}
-      {{- with . }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
-      {{- end }}
-    {{- else }}
-      {{- with . | resources.Minify | fingerprint }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-      {{- end }}
-    {{- end }}
-  {{- else }}
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/julkue/mark.js@a283c4c437ff38d2b09c81da1030af9b0191b9f1/dist/mark.min.js" defer></script>
-  {{- end }}
-{{- end }}
+{{ partial "vendor/asset.html" (dict "path" "js/fuse.min.js" "cdnUrl" "https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" "assetType" "script" "defer" true) }}
+{{ partial "vendor/asset.html" (dict "path" "js/mark.min.js" "cdnUrl" "https://cdn.jsdelivr.net/gh/julkue/mark.js@a283c4c437ff38d2b09c81da1030af9b0191b9f1/dist/mark.min.js" "assetType" "script" "defer" true) }}
 
 {{- with resources.Get "js/search.js" }}
   {{- if eq hugo.Environment "development" }}

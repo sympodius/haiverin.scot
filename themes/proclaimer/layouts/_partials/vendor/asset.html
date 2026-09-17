@@ -1,0 +1,52 @@
+{{- /*
+  vendor/asset.html — emit one tag for a vendored third-party asset.
+
+  Args (dict):
+    path      — local copy in the theme's assets/, e.g. "js/jquery.min.js"
+    cdnUrl    — CDN URL of the same asset
+    assetType — "script" or "stylesheet"
+    defer     — bool (script only)
+
+  Rules (site param allowCDN.vendor):
+    false → the local copy is the only source; hard error if it is missing.
+    true  → the CDN is used when reachable at build time (tag emitted with an
+            SRI integrity hash); otherwise the local copy is used instead and
+            a warning is logged. Hard error if neither source is available.
+*/ -}}
+{{- $local := resources.Get .path -}}
+{{- if site.Params.allowCDN.vendor }}
+  {{- $remote := try (resources.GetRemote .cdnUrl) }}
+  {{- if $remote.Err }}
+    {{- if not $local }}
+      {{- errorf "vendor/asset: cannot fetch %q and no local copy of %q" .cdnUrl .path }}
+    {{- else }}
+      {{- warnf "vendor/asset: %s unreachable, using local %q" .cdnUrl .path }}
+    {{- end }}
+    {{- with $local | resources.Minify | fingerprint }}
+      {{- if eq $.assetType "script" }}
+  <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"{{ if $.defer }} defer{{ end }}></script>
+      {{- else }}
+  <link href="{{ .RelPermalink }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    {{- with $remote.Value | resources.Minify | fingerprint }}
+      {{- if eq $.assetType "script" }}
+  <script type="text/javascript" src="{{ $.cdnUrl }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"{{ if $.defer }} defer{{ end }}></script>
+      {{- else }}
+  <link href="{{ $.cdnUrl }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
+      {{- end }}
+    {{- end }}
+  {{- end }}
+{{- else }}
+  {{- if not $local }}
+    {{- errorf "vendor/asset: allowCDN is disabled but no local copy of %q" .path }}
+  {{- end }}
+  {{- with $local | resources.Minify | fingerprint }}
+    {{- if eq $.assetType "script" }}
+  <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"{{ if $.defer }} defer{{ end }}></script>
+    {{- else }}
+  <link href="{{ .RelPermalink }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}

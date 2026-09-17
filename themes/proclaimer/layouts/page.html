@@ -2,85 +2,13 @@
 {{- $page := . }}
 
 {{- /*
-  If using production code, get the third party javascript from CDNs. Otherwise, use a local copy.
-  This makes it easier for me to test the site without an internet connection.
+  Vendored third-party assets (jquery, nanogallery2).
+  Source selection is controlled by the allowCDN.vendor site param; see the
+  vendor/asset.html partial for the rules.
 */}}
-{{- if eq hugo.Environment "production" }}
-  {{- $jqueryUrl := "https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" }}
-  {{- with try (resources.GetRemote $jqueryUrl) }}
-    {{- with .Err }}
-      {{- errorf "%s" . }}
-    {{- else }}
-      {{- with (resources.GetRemote $jqueryUrl) | fingerprint }}
-    <script type="text/javascript" src="{{ $jqueryUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-      {{- end }}
-    {{- end }}
-  {{- else }}
-    {{- errorf "Unable to get remote resource %q" $jqueryUrl }}
-  {{- end }}
-  {{- $nanogallery2CSSUrl := "https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" }}
-  {{- with try (resources.GetRemote $nanogallery2CSSUrl) }}
-    {{- with .Err }}
-      {{- errorf "%s" . }}
-    {{- else }}
-    <link href="{{ $nanogallery2CSSUrl }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
-    {{- end }}
-  {{- else }}
-    {{- errorf "Unable to get remote resource %q" $nanogallery2CSSUrl }}
-  {{- end }}
-  {{- $nanogallery2JSUrl := "https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js" }}
-  {{- with try (resources.GetRemote $nanogallery2JSUrl) }}
-    {{- with .Err }}
-      {{- errorf "%s" . }}
-    {{- else }}
-      {{- with (resources.GetRemote $nanogallery2JSUrl) | fingerprint }}
-    <script type="text/javascript" src="{{ $nanogallery2JSUrl }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-      {{- end }}
-    {{- end }}
-  {{- else }}
-    {{- errorf "Unable to get remote resource %q" $nanogallery2JSUrl }}
-  {{- end }}
-{{- else }}
-  {{- with resources.Get "js/jquery.min.js" }}
-    {{- if eq hugo.Environment "development" }}
-      {{- with . }}
-    <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
-      {{- end }}
-    {{- else }}
-      {{- with . | resources.Minify | fingerprint }}
-    <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-      {{- end }}
-    {{- end }}
-  {{- else }}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" defer></script>
-  {{- end }}
-  {{- with resources.Get "css/nanogallery2.min.css" }}
-    {{- if eq hugo.Environment "development" }}
-      {{- with . }}
-    <link href="{{ .RelPermalink }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
-      {{- end }}
-    {{- else }}
-      {{- with . | resources.Minify }}
-    <link href="{{ .RelPermalink }}" rel="stylesheet" type="text/css" crossorigin="anonymous">
-      {{- end }}
-    {{- end }}
-  {{- else }}
-    <link href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
-  {{- end }}
-  {{- with resources.Get "js/jquery.nanogallery2.min.js" }}
-    {{- if eq hugo.Environment "development" }}
-      {{- with . }}
-    <script type="text/javascript" src="{{ .RelPermalink }}" defer></script>
-      {{- end }}
-    {{- else }}
-      {{- with . | resources.Minify | fingerprint }}
-    <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous" defer></script>
-      {{- end }}
-    {{- end }}
-  {{- else }}
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js" defer></script>
-  {{- end }}
-{{- end }}
+{{ partial "vendor/asset.html" (dict "path" "js/jquery.min.js" "cdnUrl" "https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" "assetType" "script" "defer" true) }}
+{{ partial "vendor/asset.html" (dict "path" "css/nanogallery2.min.css" "cdnUrl" "https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" "assetType" "stylesheet") }}
+{{ partial "vendor/asset.html" (dict "path" "js/jquery.nanogallery2.min.js" "cdnUrl" "https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js" "assetType" "script" "defer" true) }}
 
     <div id="nanogallery2-content-images" data-nanogallery2-lgroup="content-group"
          data-nanogallery2-lightbox = '{

@@ -14,6 +14,22 @@ social:
 enableSearch: true
 searchPagerSize: 5
 
+# allowCDN: build-time source selection for vendored third-party assets.
+#   fonts: true  → Google Fonts CDN, falling back to the local @font-face
+#                  block (with a warning) if unreachable at build time.
+#   fonts: false → local @font-face only; all 18 local font files required.
+#   vendor: true  → jsDelivr CDN (with SRI integrity hashes), falling back
+#                   to local copies (with a warning) if unreachable.
+#   vendor: false → local copies only; missing files fail the build.
+# The published environments (production, nekoweb, neocities) enable both;
+# local development stays strictly local.
+# Scope: vendored site assets only (fonts, jQuery, nanogallery2, fuse.js,
+# mark.js). Analytics and Netlify Identity are gated on the build environment
+# instead (see baseof.html), so a production build still loads them.
+allowCDN:
+  fonts: false
+  vendor: false
+
 logo:
   svg: "images/logo.svg"
   height: "3.75rem"
