@@ -13,11 +13,14 @@
             SRI integrity hash of the exact CDN bytes — never minified, so
             the browser's check matches); otherwise the local copy is used
             instead and a warning is logged.
-  Local copies are the exact upstream files (already minified by their
-  authors); they are never re-minified, only fingerprinted.
             Hard error if neither source is available.
+  Local copies are served as-is in development (easy to debug), minified and
+  fingerprinted in every other environment, so a published build's CDN
+  fallback is production-grade.
 */ -}}
 {{- $local := resources.Get .path -}}
+{{- $localOut := $local -}}
+{{- if ne hugo.Environment "development" }}{{- $localOut = $local | resources.Minify }}{{- end }}
 {{- if site.Params.allowCDN.vendor }}
   {{- $remote := try (resources.GetRemote .cdnUrl) }}
   {{- if $remote.Err }}
@@ -26,7 +29,7 @@
     {{- else }}
       {{- warnf "vendor/asset: %s unreachable, using local %q" .cdnUrl .path }}
     {{- end }}
-    {{- with $local | fingerprint }}
+    {{- with $localOut | fingerprint }}
       {{- if eq $.assetType "script" }}
   <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"{{ if $.defer }} defer{{ end }}></script>
       {{- else }}
@@ -46,7 +49,7 @@
   {{- if not $local }}
     {{- errorf "vendor/asset: allowCDN is disabled but no local copy of %q" .path }}
   {{- end }}
-  {{- with $local | fingerprint }}
+  {{- with $localOut | fingerprint }}
     {{- if eq $.assetType "script" }}
   <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"{{ if $.defer }} defer{{ end }}></script>
     {{- else }}
