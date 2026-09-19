@@ -29,10 +29,19 @@
     "noto-sans-normal-greek-ext-100-900-v37.woff2"
     "noto-sans-normal-latin-100-900-v37.woff2"
     "noto-sans-normal-latin-ext-100-900-v37.woff2"
-    "noto-sans-normal-vietnamese-100-900-v37.woff2"
-    "ngy2_icon_font.woff2"
-    "ngy2_icon_font.woff"
-  }}
+    "noto-sans-normal-vietnamese-100-900-v37.woff2" }}
+  {{- /*
+      The nanogallery2 icon fonts (ngy2_icon_font.woff2/.woff) live in
+      static/fonts/ instead: nanogallery2's CSS references them by exact
+      name with a query-string cache-buster, so they must be published
+      unhashed, and static/ does that automatically. The trade-off is that
+      they can't be checked via resources.Get — a missing file degrades to
+      invisible gallery icons rather than a failed build.
+  */ -}}
+  {{- /*
+      Existence check only — publishing happens in head/fonts-local.html
+      (fingerprint), when the local @font-face block is actually emitted.
+  */ -}}
   {{- range $f := $fontFiles }}
     {{- if not (resources.Get (printf "fonts/%s" $f)) }}
       {{- errorf "vendor/fonts: missing local font file %q (required as CDN fallback)" $f }}
@@ -42,14 +51,14 @@
     {{- $fontCSS := "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" }}
     {{- if (try (resources.GetRemote $fontCSS)).Err }}
       {{- warnf "vendor/fonts: Google Fonts unreachable, using local @font-face" }}
-      {{ partial "head/fonts-local.html" }}
+      {{ partial "head/fonts-local.html" (dict "fonts" $fontFiles) }}
     {{- else }}
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="{{ $fontCSS }}" rel="stylesheet">
     {{- end }}
   {{- else }}
-    {{ partial "head/fonts-local.html" }}
+    {{ partial "head/fonts-local.html" (dict "fonts" $fontFiles) }}
   {{- end }}
     {{- if eq hugo.Environment "production" }}
     <!-- Simple Analytics -->

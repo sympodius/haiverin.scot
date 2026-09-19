@@ -1790,15 +1790,16 @@ footer {
 
     a {
 	transition: 0.1s;
-    }
-    
-    a {
 	text-decoration: none;
 	text-decoration-color: var(--logo-low);
 	background-image: linear-gradient(to bottom, var(--logo-high) 0%, var(--logo-low) 100%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	color: transparent;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
     }
     
     a:hover {
