@@ -15,9 +15,9 @@ categories:
 - writing
 tags:
 - coding
-- Emacs
-- Org mode
-- writing computer
+- emacs
+- org-mode
+- writing-computer
 - keyboard
 draft: false
 ---

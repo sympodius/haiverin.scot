@@ -13,18 +13,18 @@ categories:
 tags:
 - writing
 - coding
-- Elisp
-- Emacs
-- Org Mode
-- Markdown
-- LaTeX
+- elisp
+- emacs
+- org-mode
+- markdown
+- latex
 - publishing
-- Microsoft Word
-- OpenOffice.org
-- LibreOffice
-- OmmWriter
-- Scrivener
-- Vim
+- microsoft-word
+- openoffice.org
+- libreoffice
+- ommwriter
+- scrivener
+- vim
 draft: false
 ---
 

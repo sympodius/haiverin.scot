@@ -20,7 +20,7 @@ tags:
 - knitting
 - food
 - baking
-- COVID-19
+- covid-19
 draft: false
 ---
 

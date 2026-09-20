@@ -13,8 +13,8 @@ categories:
 tags:
 - coding
 - hugo
-- web design
-- static site generators
+- web-design
+- static-site-generators
 - emacs
 - backstage
 - tutorial
