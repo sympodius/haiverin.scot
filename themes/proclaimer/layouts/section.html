@@ -1,6 +1,15 @@
 {{ define "main" }}
 {{- $pages := .Pages }}
-{{- $paginator := .Paginate $pages.ByDate.Reverse }}
+{{- /* Section-page featured set: the pages shown in this section's top banner. In dedupe mode (enough content), this section's "More on" excludes them. */ -}}
+{{- $secDedupeMin := 9 }}
+{{- with site.Params.sectionPageDedupeMin }}{{- $secDedupeMin = int . }}{{- end }}
+{{- $secDedupeMode := "auto" }}
+{{- with site.Params.sectionPageDedupe }}{{- $secDedupeMode = . }}{{- end }}
+{{- $dedupe := and (ne $secDedupeMode "off") (or (eq $secDedupeMode "always") (ge (len $pages) $secDedupeMin)) }}
+{{- $featured := slice }}
+{{- if $dedupe }}{{- $featured = first 4 $pages.ByDate.Reverse }}{{- end }}
+{{- $moreOn := $pages | complement $featured }}
+{{- $paginator := .Paginate $moreOn.ByDate.Reverse }}
     <div class="list-page-container">
       <div id="section-title">{{ .Title | humanize | title -}}</div>
 
@@ -60,10 +69,12 @@
     {{- end }}
 
       <div class="single-page-container">
+        {{- if or (.Content) (gt (len $moreOn) 0) }}
         <article class="more-on">
           {{ .Content }}
+          {{- if gt (len $moreOn) 0 }}
           <h1>More on {{ .Title | humanize | title -}}</h1>
-          {{- range (.Paginate .Pages).Pages }}
+          {{- range $paginator.Pages }}
             {{- $page := . }}
             {{- $bannerImages := .Params.images }}
             {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
@@ -100,7 +111,9 @@
           </div>
           {{- end }}
           {{ partial "pagination.html" . }}
+          {{- end }}
         </article>
+        {{- end }}
 
         <aside class="aside-list">
         {{- $sec := .Section }}

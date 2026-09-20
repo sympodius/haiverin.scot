@@ -1,6 +1,26 @@
 {{ define "main" }}
 {{- $pages := where site.Pages "Kind" "page" }}
-{{- $paginator := .Paginate $pages.ByDate.Reverse }}
+{{- /* Front-page featured set: the pages shown in the top banner and section banners. In dedupe mode (enough content), "More on" excludes these. */ -}}
+{{- $dedupeMin := 18 }}
+{{- with site.Params.frontPageDedupeMin }}{{- $dedupeMin = int . }}{{- end }}
+{{- $dedupeMode := "auto" }}
+{{- with site.Params.frontPageDedupe }}{{- $dedupeMode = . }}{{- end }}
+{{- $dedupe := and (ne $dedupeMode "off") (or (eq $dedupeMode "always") (ge (len $pages) $dedupeMin)) }}
+{{- $featured := slice }}
+{{- $scratch := newScratch }}
+{{- if $dedupe }}
+  {{- $featured = first 4 $pages.ByDate.Reverse }}
+  {{- range site.Sections }}
+    {{- $pick := first 3 (complement $featured .Pages).ByDate.Reverse }}
+    {{- if lt (len $pick) 3 }}
+      {{- $pick = (union $pick (first (sub 3 (len $pick)) (complement $pick .Pages).ByDate.Reverse)).ByDate.Reverse }}
+    {{- end }}
+    {{- $scratch.Set (printf "pick-%s" .RelPermalink) $pick }}
+    {{- $featured = union $featured $pick }}
+  {{- end }}
+{{- end }}
+{{- $moreOn := $pages | complement $featured }}
+{{- $paginator := .Paginate $moreOn.ByDate.Reverse }}
     <div class="list-page-container">
 
     {{- if not $paginator.HasPrev }}
@@ -62,6 +82,8 @@
         {{- $section := . }}
         {{- with $section }}
           {{- $sectionPages := $section.Pages }}
+          {{- $show := first 3 $sectionPages.ByDate.Reverse }}
+          {{- with $scratch.Get (printf "pick-%s" .RelPermalink) }}{{- $show = . }}{{- end }}
         <div class="section-boxes-section-container">
           <div class="section-boxes-section-title"><a href="{{- $section.RelPermalink -}}">{{- $section.LinkTitle -}}</a></div>
 	  {{- /* Top story in section's banner image, appropriately linked */}}
@@ -79,7 +101,7 @@
           {{- end }}
 	  {{- /* Other stories in section including top story --- This is just the first category, and the story title, each appropriately linked */}}
           <ul>
-          {{- range $sectionPages.ByDate.Reverse | first 3 }}
+          {{- range $show }}
             {{- $page := . }}
             <li>{{- with $page.GetTerms "categories" -}}<a class="section-boxes-category" href="{{- (index . 0).RelPermalink -}}">{{- (index . 0).LinkTitle | humanize | title -}}</a>{{- end -}}<br><div class="section-boxes-category-title-spacer"></div><a class="section-boxes-title" href="{{- $page.RelPermalink -}}">{{- $page.Title -}}</a></li>
           {{- end }}
@@ -91,10 +113,12 @@
     {{- end }}
 
       <div class="single-page-container">
+        {{- if or (.Content) (gt (len $moreOn) 0) }}
         <article class="more-on">
           {{ .Content }}
+          {{- if gt (len $moreOn) 0 }}
           <h1>More on {{ site.Title -}}</h1>
-          {{- range (.Paginate .Pages).Pages }}
+          {{- range $paginator.Pages }}
             {{- $page := . }}
             {{- $bannerImages := .Params.images }}
             {{- $bannerImgURL := index $bannerImages 0 | safeURL }}
@@ -131,7 +155,9 @@
           </div>
           {{- end }}
           {{ partial "pagination.html" . }}
+          {{- end }}
         </article>
+        {{- end }}
 
         <aside class="aside-list">
           <div class="aside-card aside-card-list-top print-hidden-block hidden">

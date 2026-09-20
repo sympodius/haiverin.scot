@@ -14,6 +14,41 @@ social:
 enableSearch: true
 searchPagerSize: 5
 
+# Front-page banner de-duplication (see layouts/home.html).
+# When the site has at least this many content pages, the top banner and
+# section banners claim pages that are then excluded from the paginated
+# "More on" list. Below this number, the front page falls back to the legacy
+# behaviour (pages shown in the banners may repeat in "More on").
+# Suggested value: (top banner pages) + (3 x number of listed sections) + (pagination.pagerSize from hugo.yaml)
+# e.g. 4 + (3 x 3) + 5 = 18 for three listed sections and a pager size of 5.
+# Re-derive whenever sections or pagination.pagerSize change.
+frontPageDedupeMin: 18
+
+# frontPageDedupe: auto | always | off (default: auto)
+#   auto   - dedupe when the site has at least frontPageDedupeMin content pages,
+#            legacy behaviour (banners may overlap "More on") below that.
+#   always - dedupe regardless of content count ("More on" may start short).
+#   off    - never dedupe.
+# frontPageDedupe: auto
+
+# Section-page de-duplication (see layouts/section.html).
+# When a section has at least this many content pages, the section page's top
+# banner (its 4 newest pages) claims pages that are then excluded from that
+# section's paginated "More on" list. Below this number, the section page
+# falls back to the legacy behaviour (banner pages may repeat in "More on").
+# Suggested value: (section top banner pages) + (pagination.pagerSize from hugo.yaml)
+# e.g. 4 + 5 = 9 with a pager size of 5.
+# Re-derive whenever the section banner size or pagination.pagerSize changes.
+sectionPageDedupeMin: 9
+
+# sectionPageDedupe: auto | always | off (default: auto)
+#   auto   - dedupe when a section has at least sectionPageDedupeMin content
+#            pages (evaluated per section), legacy behaviour below that.
+#   always - dedupe regardless of section size ("More on" may start short or
+#            be empty).
+#   off    - never dedupe.
+# sectionPageDedupe: auto
+
 # allowCDN: build-time source selection for vendored third-party assets.
 #   fonts: true  → Google Fonts CDN, falling back to the local @font-face
 #                  block (with a warning) if unreachable at build time.
