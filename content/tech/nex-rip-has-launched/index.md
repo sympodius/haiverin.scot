@@ -20,6 +20,7 @@ tags:
 - hindrex
 - hugo
 - nexami-engeo
+- fabienne-black
 - nex
 - nex-rip
 draft: false
@@ -55,23 +56,31 @@ I actually helped him design the *engeo* website back in the day (that's the roc
 
 He called me up to see if I was still making websites, but I told him it had been a while since I did one for someone else. I showed him *haiverin.scot* and told him it was really just a place for me to put my thoughts, but he loved it! He said he wanted one just like that... but as if it was a comic book from the future. Sounded fun, so I signed up.
 
-Nex is trying to create a blog, a tutorial website, and a review website all in one. His top priority is to encourage people to make music together and be part of a community that actually communicates. It all sounds wonderful. I really hope it does well.
+Nex is trying to create a blog, a tutorial website, a review website, and a place to share his music... all-in-one. His top priority is to encourage people to make music together and be part of a community that actually communicates. It all sounds wonderful. I really hope it does well.
 
-From my end, I was initially just helping make a re-themed version of *haiverin.scot*, but then Nex kept asking me about other technical stuff. Since I was around anyway, I didn't mind chipping in. He was setting up computers and music equipment in this little room in his flat and was getting a little confused about the order of things. I don't really know too much about music, but I understood the physics of getting the sound through the things it needed to get through before it went into the computer. His little studio is working quite well now. All the cables are labelled and routed around in a sensible way.
+From my end, I was initially just helping make a re-themed version of *haiverin.scot*, but then Nex kept asking me about other technical stuff. Since I was around anyway, I didn't mind chipping in. He was setting up computers and music equipment in this little room in his flat and was getting a little confused about the order of things. Nex knows loads about sound and how to process it, but he's less confident about connecting up hardware (as well as the more technical aspects of how digital stuff works). I don't really know much about sound engineering, but I understood the physics of getting the sound through the things it needed to get through before it went into the computer. Another famous face---Fabienne Black of *Le Chien* fame---was there to help as well. She actually did the lion's share of connecting everything together. She also left me more than a little starstruck. Nex's little studio is working quite well now, with all the cables labelled and routed around in a sensible way.
 
 After we got all that set up, Nex was asking me what I knew about computer music production. The answer, again, was not that much. But I knew a bit about storing audio digitally, and I knew a lot about open source software. We had a lot of discussions about the pros and cons of open source versus proprietary, and he seems really excited that open source could really mesh well with what he's trying to do with his new site.
 
-Apparently Nex had a bit of a bad incident when he tried to get his old demos loaded up on the new computer. The most up-to-date version of the software he used back then no longer supports the old files. I feel bad for him, though it's a little surprising he didn't have them backed up in a more generic format somewhere. I guess that's the sort of stuff you maybe think about when you're more on the tech end of things. When I explained to him that open source stuff generally can't be locked down that way (even in a worst case scenario, you could probably hire a programmer to fork a 'dead' project and get it working well enough to get your files back), he sort of went all-in.
+Apparently Nex had a bit of a bad incident when he tried to get his old demos loaded up onto a new computer a few years ago. The most up-to-date version of the software he used back in the day no longer supports the old files. I feel bad for him (though it's a little surprising he didn't have them backed up in a more generic format somewhere). I guess that's the sort of stuff you maybe think about when you're more on the tech end of things. When I explained to him that open source stuff generally can't be locked down that way (even in a worst case scenario, you could probably hire a programmer to fork a 'dead' project and get it working well enough to get your files back), he sort of went all-in.
 
 As a result of this, we got into a long discussion about some way to rate how hindered software was. I pulled in a friend of mine who is good with this stuff (the great Ladon) and we came up with the *Hindrance Index Rating System* (hindrex). Nex really wanted to have a score that he could just apply to stuff, but he also wanted to have a series of criteria to get to that score. He thought it would be too messy to have to explain the criteria each time, so my big contribution was decodable numbering. The idea came from the file permissions on Unix-like systems. After a lot of discussion about what the exact criteria should be, we got a working system going that Nex is going to use when talking about any software in his tutorials.
 
 The idea of rating how hindered software is... actually sounds pretty useful. I've never really seen an easy way to compare software on that kind of criteria with a simple numbering scheme.
 
-In any case, the site has launched and you can see it over at [Nex.RIP](https://nex.rip). The page discussing [Hindrex ratings](https://nex.rip/secrets/hindrex-ratings) has a little coder/decoder that I quickly knocked up---in case you want to use the system in your own reviews.
+In any case, the site has launched and you can see it over at [Nex.RIP](https://nex.rip). The page discussing [Hindrex ratings](https://nex.rip/secrets/hindrex-ratings) has a little coder/decoder that I quickly knocked up---in case you want to use the system in your own reviews. You can also add a query string to that page's URL to get a summary for a Hindrex rating. For example:
+
+[https://nex.rip/secrets/hindrex-ratings?score=1662](https://nex.rip/secrets/hindrex-ratings?score=1662)
+
+will return information about the Hindrex rating for code *ZI-FP-FF-A-ZC-NN-RTR-LRC*. Or, if you prefer, you could give the code instead:
+
+[https://nex.rip/secrets/hindrex-ratings?code=ZI-FP-FF-A-ZC-NN-RTR-LRC](https://nex.rip/secrets/hindrex-ratings?code=ZI-FP-FF-A-ZC-NN-RTR-LRC)
+
+Nex is hoping people might use Hindrex ratings when discussing software online, and linking the score/code back to these summaries for a canonical explanation.
 
 I'm pretty proud of the rest of the site too. I hooked up all Nex's listening devices to get an accurate widget of what he's been listening to recently. I thought I did a pretty good job with the *comic-book-from-the-future* theming. There's some fun little animations and such kicking about, but I tried not to go overboard. Nex wanted it to be FUNctional first (with the emphasis on the fun).
 
-I'll be continuing to help out with the site for the foreseeable future. Nex isn't so hot with markup, and he'd like my help with explaining some of the technical aspects of the tutorials (hopefully I won't mess that up). It's all quite exciting, and I'm really looking forward to seeing what people make of it all. It'll be nice to hear some new music from Nex too, though he says that might actually be a little while off. He really wants to make sure he's doing the hard work of figuring all this stuff out in a cheap and efficient way, and then proving it works by making a record with the same approach from the tutorials.
+I'll be continuing to help out with the site for the foreseeable future. Nex isn't so hot with markup, and he'd like my help with explaining some of the technical aspects of the tutorials (hopefully I won't mess that up). It's all quite exciting, and I'm really looking forward to the response from Nex's fanbase. It'll be nice to hear some new music from him too, though he says that might actually be a little while off. He really wants to make sure he's doing the hard work of figuring all this stuff out in a cheap and efficient way, and then proving it works by making a record with the same approach from the tutorials.
 
 Whatever comes of it, it's been great fun so far. Feel free to come along on the journey with us too. You might discover talent you didn't know you had!
 
