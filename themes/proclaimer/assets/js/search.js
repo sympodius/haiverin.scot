@@ -100,7 +100,16 @@ function populateResults(results) {
 	    lastHref = "aria-disabled=\"true\"";
 	    nextHref = "aria-disabled=\"true\"";
 	}
-	for (let i = 1; i < (numberOfPages+1); i++) {
+	// Render only a sliding 5-page window around the current page (matching
+	// the server-side pagination partial), not every page number, so the
+	// controls stay bounded no matter how many results match.
+	var slots = 5;
+	var windowStart = Math.max(1, searchPage - Math.floor(slots / 2));
+	var windowEnd = Math.min(numberOfPages, windowStart + slots - 1);
+	if (windowEnd - windowStart + 1 < slots) {
+	    windowStart = Math.max(1, windowEnd - slots + 1);
+	}
+	for (let i = windowStart; i < (windowEnd+1); i++) {
 	    var activationClass = "";
 	    var href = "href=\"/search/?q=" + searchQuery.replace(/\s/g, "+") + "&p=" + i.toString() + "&s=" + searchPagerSize.toString() + "\"";
 	    var page = i.toString();
