@@ -950,6 +950,10 @@ figure img:hover {
     box-shadow: var(--shadow-elevation-medium);
 }
 
+h2.footnotes {
+    margin-top: 8.940696718rem;
+}
+
 aside {
     display: block;
     width: 60.125rem;

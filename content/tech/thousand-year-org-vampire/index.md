@@ -541,7 +541,8 @@ Naturally, I'm not going to be releasing that file because it would breach copyr
 
 I hope you've enjoyed this tutorial on literate programming, and about playing *TYOV* in Emacs. May you create your greatest vampiric tomorrow by living your best foreboding today. Happy Halloween, everyone!
 
-## Footnotes
+<h2 class="footnotes">Footnotes</h2>
+
 [^Dungeon Master]: A Dungeon Master is the person who would normally tell you what was happening in your game world.
 [^Oulipo]: Short for Ouvroir de littérature potentielle (Workshop of Potential Literature). It was originally a collective of French writers and mathematicians who put playful, artificial constraints on their creative efforts in order to produce more diverse works.
 [^Org Mode Formatting]: [The official Org Mode site](https://orgmode.org/) has an overview of text formatting options and other information about Org Mode.
