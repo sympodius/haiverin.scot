@@ -3,20 +3,23 @@
 #+AUTHOR: John Urquhart Ferguson
 #+EMAIL: mail@sympodius.net
 #+DATE:[2025-06-07 Sat]
-#+LAST_MODIFIED: [2025-10-20 Mon 21:16]
+#+LAST_MODIFIED: [2026-10-09 Fri 18:44]
 #+DESCRIPTION: This file is a play space (as well as some helper functions) for the Tim Hutchings game, /Thousand Year Old Vampire/.
 #+CATEGORY: Role-playing, Games
 #+STARTUP: content
-#+TYP_TODO: MEMORY(m) DIARY(d) | FORGOTTEN(f)
+#+LATEX_COMPILER: xelatex
+#+TYP_TODO: MEMORY(m) DIARY-ENTRY(d) | FORGOTTEN(f)
 #+TYP_TODO: ALIVE(a) | EXPIRED(e)
-#+TAGS: { MORTAL(m)  IMMORTAL(i) }
+#+TAGS: { MORTAL(m) IMMORTAL(i) }
 #+PROPERTY: LOGGING nil
+
+@@latex:\newpage@@
 
 This file is for playing a session of the role-playing game /[[https://timhutchings.itch.io/tyov][Thousand Year Old Vampire]]/ by [[https://thousandyearoldvampire.com/][Tim Hutchings]]. It helps play the standard single player version of the game. This file keeps track of what prompt you are on; calculates which prompt to do next; and helps you keep a record of play. This record includes experiences; memories; diary entries; skills; resources; characters; marks; and forgotten/lost/checked/expired things.
 
 The file assumes you are playing the standard version of the game, and own a copy of the original game. If you are using different prompts from the standard ones, you may need to alter the =#+ALL_PROMPTS= variable (though the supplied functions currently don't work for Prompts with more than nine variants).
 
-In response to prompts, you may need to occasionally change the variable: =#+CURRENT_PROMPT=.
+In response to prompts, you may need to occasionally change the variable: =#+CURRENT_PROMPT= in [[*Play Variables][Play Variables]].
 
 In order to run code blocks without confirmation for this Emacs session (affects all buffers)---which makes this file far more pleasant to use---run the following code block at the start of your play session by placing your cursor at the end of the =setq= line after the closing parenthesis and hitting ~C-x C-e~.
 
@@ -33,17 +36,17 @@ In this game you will create a fictional vampire and chronicle their life over a
 - /Characters/
 - /Marks/
 
-The game is played by responding to Prompts, chosen randomly. Almost all Prompts will force you to modify the above Traits, as well as create an Experience. Experiences exist in one of your five Memories (which can store three Experiences each). You can free up Memories by moving them to your Diary (taking all the attached Experiences with them), or Forgetting them. You can have up to four Diary Entries at any one time. Again, however, you can free up space in your Diary by Forgetting Entries (taking all the attached Experiences with them).
+The game is played by responding to Prompts, chosen randomly. Almost all Prompts will force you to modify the above Traits, as well as create an Experience. Experiences are created in one of your five Memories (which can store three Experiences each). You cannot edit an Experience after you have moved onto another Prompt. Experiences can never be moved or deleted individually. You can free up entire Memories by moving them to your Diary or forgetting them (in both cases, taking all the attached Experiences with them). Once in your Diary, Memories become Entries. You can have up to four Diary Entries at any one time, and you can keep moving Memories into your Diary until you hit this number. You cannot add Experiences to Diary Entries, or edit them. Even in Diary Entries, Experiences can never be moved or deleted individually. Although you cannot free up space in a Diary by forgetting individual Entries, you are free to discard the entire Diary (taking all the attached Entries and Experiences with it) and start a new one.
 
-When you forget a Memory, you cannot refer to it anymore because it no longer exists in your mind and you have no way to reference it.
+When you forget a Memory or lose/discard a Diary, you cannot refer to it anymore because it no longer exists in your mind and you have no way to reference it.
 
-You may store up to five current Memories, made up of at most three Experiences each. Up to four Memories can be moved to your Diary. If you have run out of Memories in which to store Experiences, you must move a Memory to be Forgotten from current Memories, or to your Diary. To change a Memory or Diary Entry to something else, hit ~C-c C-t~ while your cursor is on it, then select the desired option. Experiences within a Memory should connect logically together. If it doesn't thematically fit inside any current Memory, a new one will need to be used (potentially requiring Memory management). Keep in mind that you can only forget/move entire Memories (not individual Experiences) and that Experiences cannot be moved between Memories once recorded.
+You may store up to five current Memories, made up of at most three Experiences each. Up to four Memories can individually be moved to your Diary (becoming Entries). If you have run out of Memories in which to store Experiences, you must move a Memory to be Forgotten from current Memories, or to your Diary (as an Entry). To change a Memory or Diary Entry to something else, hit ~C-c C-t~ while your cursor is on it, then select the desired option. Experiences within a Memory should connect logically together. If an Experience doesn't thematically fit inside any current Memory, a new Memory will need to be used (potentially requiring Memory management). Keep in mind that you can only forget/move entire Memories (not individual Experiences) and that Experiences cannot be moved between Memories once recorded.
 
-Your Diary is a physical Resource and should be listed as one. Once a Memory has been moved to your Diary, you can no longer add Experiences to it, and you will take whatever is written there as the absolute truth, with no additional knowledge about the events described. You also cannot forget individual Memories in your Diary. You can be told that you've lost your Diary, however, in which case all those Memories would then be marked as Forgotten at the same time. You can create a Diary whenever you need one, but you may only have one at a time and any previous Diaries will be lost.
+Your Diary is a physical Resource and should be listed as one. Once a Memory has been moved to your Diary as an Entry, you can no longer add Experiences to it, and you will take whatever is written there as the absolute truth, with no additional knowledge about the events described. You also cannot forget individual Entries in your Diary. You can be told that you've lost your Diary, however, in which case all those Entries would then be marked as Forgotten at the same time. You can create a Diary whenever you need one, but you may only have one at a time and any previous Diaries will be lost.
 
 If a Prompt tells you that you lose your Diary, all Entries in it must be Forgotten as well, requiring you to create a new Diary. You may only have one Diary at a time.
 
-You can mark a memory as forgotten, or move it to a diary using ~C-c C-t~ when the cursor is on the memory's heading.
+You can mark a Memory as forgotten, or move it to a Diary using ~C-c C-t~ when the cursor is on the Memory's heading.
 
 An Experience should take the form of:
 
@@ -71,13 +74,13 @@ Start the game by creating a short history for your soon-to-be vampire (generall
 
 Once you have finished with your vampire, they will have three Skills, three Resources, a Mark, at least three Mortals, one Immortal, and one Experience in each of their five Memories.
 ** Playing The Game
-Start the game by placing the cursor into the =Gameplay Function= called =get-next-prompt= and hitting ~C-c C-c~. It will create a results section underneath, displaying the Prompt from the book that you should look up and resolve. Continue to do this each time you are ready to move onto the next Prompt. You can similarly use the other =Gameplay Functions= to do convenient things. These are:
+Start the game by placing the cursor into the [[*Gameplay Functions][Gameplay Function]] called =get-next-prompt= and hitting ~C-c C-c~. It will create a results section underneath, displaying the Prompt from the book that needs resolved. Continue to do this each time you are ready to move onto the next Prompt. You can similarly use the other [[*Gameplay Functions][Gameplay Functions]] to do convenient things. These are:
 
 - =reset-used-prompts=---have the game forget which Prompts you have visited thus far
 - =reset-current-prompt=---have the game go back to the first Prompt in the book
-- =reset-playspace=---delete everything you have created under the [[Play Space]] heading
+- =reset-playspace=---delete everything you have created under the [[*Play Space][Play Space]] heading
 - =restart-game=---have the game forget which Prompts you have visited thus far, and go back to the first Prompt in the book
-- =reset-game=---have the game forget which Prompts you have visited thus far, go back to the first Prompt in the book, and delete everything you have created under the [[Play Space]] heading
+- =reset-game=---have the game forget which Prompts you have visited thus far, go back to the first Prompt in the book, and delete everything you have created under the [[*Play Space][Play Space]] heading
 
 You might be able to undo the above actions by immediately hitting ~C-/~ right after.
 ** Ending The Game
@@ -101,7 +104,7 @@ This section contains the variables that keep track of your progress through the
 #+USED_PROMPTS: ()
 #+ALL_PROMPTS: (1.1 1.2 1.3 2.1 2.2 2.3 3.1 3.2 3.3 4.1 4.2 4.3 5.1 5.2 5.3 6.1 6.2 6.3 7.1 7.2 7.3 8.1 8.2 8.3 9.1 9.2 9.3 10.1 10.2 10.3 11.1 11.2 11.3 12.1 12.2 12.3 13.1 13.2 13.3 14.1 14.2 14.3 15.1 15.2 15.3 16.1 16.2 16.3 17.1 17.2 17.3 18.1 18.2 18.3 19.1 19.2 19.3 20.1 20.2 20.3 21.1 21.2 21.3 22.1 22.2 22.3 23.1 23.2 23.3 24.1 24.2 24.3 25.1 25.2 25.3 26.1 26.2 26.3 27.1 27.2 27.3 28.1 28.2 28.3 29.1 29.2 29.3 30.1 30.2 30.3 31.1 31.2 31.3 32.1 32.2 32.3 33.1 33.2 33.3 34.1 34.2 34.3 35.1 35.2 35.3 36.1 36.2 36.3 37.1 37.2 37.3 38.1 38.2 38.3 39.1 39.2 39.3 40.1 40.2 40.3 41.1 41.2 41.3 42.1 42.2 42.3 43.1 43.2 43.3 44.1 44.2 44.3 45.1 45.2 45.3 46.1 46.2 46.3 47.1 47.2 47.3 48.1 48.2 48.3 49.1 49.2 49.3 50.1 50.2 50.3 51.1 51.2 51.3 52.1 52.2 52.3 53.1 53.2 53.3 54.1 54.2 54.3 55.1 55.2 55.3 56.1 56.2 56.3 57.1 57.2 57.3 58.1 58.2 58.3 59.1 59.2 59.3 60.1 60.2 60.3 61.1 61.2 61.3 62.1 62.2 62.3 63.1 63.2 63.3 64.1 64.2 64.3 65.1 65.2 65.3 66.1 66.2 66.3 67.1 67.2 67.3 68.1 68.2 68.3 69.1 69.2 69.3 70.1 70.2 70.3 71.1 71.2 71.3 72.1 73.1 74.1 75.1 76.1 77.1 78.1 79.1 80.1)
 
-The code block, =prompt-number-generator=, was used to create the =#+ALL_PROMPTS= variable. By changing the variables in the code block declaration, it could be used to update =#+ALL_PROMPTS= to match a game with the same prompt structure as /Thousand Year OId Vampire/ (perhaps /[[https://www.drivethrurpg.com/en/product/453826/tales-from-the-gods][Tales from the Gods]]/ by Axo Stories).
+The code block, =prompt-number-generator=, was used to create the =#+ALL_PROMPTS= variable. By changing the variables in the code block declaration, it could be used to update =#+ALL_PROMPTS= to match a game with the same prompt structure as /Thousand Year Old Vampire/ (perhaps /[[https://www.drivethrurpg.com/en/product/453826/tales-from-the-gods][Tales from the Gods]]/ by Axo Stories).
 
 #+name: prompt-number-generator
 #+begin_src emacs-lisp :tangle no :var main-prompts=71 prompt-variants=3 end-game-prompts=9 :results silent
@@ -125,24 +128,23 @@ The code block, =prompt-number-generator=, was used to create the =#+ALL_PROMPTS
         (let ((regexp (format "^[ \t]*#\\+%s:" (regexp-quote "ALL_PROMPTS")))
               (case-fold-search t))
           (goto-char (point-min))
-          (if (re-search-forward regexp nil t)
-              (progn
-                (insert " ")
-                (delete-region (point) (line-end-position))
-                (insert (format "%s" prompt-list)))))))
+          (when (re-search-forward regexp nil t)
+            (insert " ")
+            (delete-region (point) (line-end-position))
+            (insert (format "%s" prompt-list))))))
     (print prompt-list))
 #+end_src
 * Worker Functions
-This section contains worker functions that are required by the gameplay functions in the next section. You should never need to call these worker functions directly, so you should ignore this section and move onto the next one.
+This section contains worker functions that are required by the gameplay functions in a later section. You should never need to call these worker functions directly, so you should ignore this section and move onto the next one.
 
 #+name: simple-dice-simulator
-#+begin_src emacs-lisp :tangle no :var die-type=20 :results silent
-  (random die-type)
+#+begin_src emacs-lisp :tangle no :var die-type=10 :results silent
+  (+ 1 (random die-type))
 #+end_src
 
 #+name: move-amount
-#+begin_src emacs-lisp :tangle no :var d20=simple-dice-simulator(die-type=20) :var d6=simple-dice-simulator(die-type=6) :results silent
-  (- d20 d6)
+#+begin_src emacs-lisp :tangle no :var d10=simple-dice-simulator(die-type=10) :var d6=simple-dice-simulator(die-type=6) :results silent
+  (- d10 d6)
 #+end_src
 
 #+name: get-current-prompt
@@ -152,9 +154,8 @@ This section contains worker functions that are required by the gameplay functio
       (let ((regexp (format "^[ \t]*#\\+%s:" (regexp-quote "CURRENT_PROMPT")))
             (case-fold-search t))
         (goto-char (point-min))
-        (if (re-search-forward regexp nil t)
-            (string-to-number (buffer-substring (point) (line-end-position)))
-          (eval nil)))))
+        (when (re-search-forward regexp nil t)
+          (string-to-number (buffer-substring (point) (line-end-position)))))))
 #+end_src
 
 #+name: get-lowest-prompt
@@ -164,9 +165,8 @@ This section contains worker functions that are required by the gameplay functio
       (let ((regexp (format "^[ \t]*#\\+%s:" (regexp-quote "ALL_PROMPTS")))
             (case-fold-search t))
         (goto-char (point-min))
-        (if (re-search-forward regexp nil t)
-            (apply 'min (read (buffer-substring (point) (line-end-position))))
-          (eval nil)))))
+        (when (re-search-forward regexp nil t)
+          (apply 'min (read (buffer-substring (point) (line-end-position))))))))
 #+end_src
 
 #+name: get-highest-prompt
@@ -176,9 +176,8 @@ This section contains worker functions that are required by the gameplay functio
       (let ((regexp (format "^[ \t]*#\\+%s:" (regexp-quote "ALL_PROMPTS")))
             (case-fold-search t))
         (goto-char (point-min))
-        (if (re-search-forward regexp nil t)
-            (apply 'max (read (buffer-substring (point) (line-end-position))))
-          (eval nil)))))
+        (when (re-search-forward regexp nil t)
+          (apply 'max (read (buffer-substring (point) (line-end-position))))))))
 #+end_src
 
 #+name: get-all-prompts
@@ -188,9 +187,8 @@ This section contains worker functions that are required by the gameplay functio
       (let ((regexp (format "^[ \t]*#\\+%s:" (regexp-quote "ALL_PROMPTS")))
             (case-fold-search t))
         (goto-char (point-min))
-        (if (re-search-forward regexp nil t)
-            (read (buffer-substring (point) (line-end-position)))
-          (eval '())))))
+        (when (re-search-forward regexp nil t)
+          (read (buffer-substring (point) (line-end-position)))))))
 #+end_src
 
 #+name: get-used-prompts
@@ -200,9 +198,8 @@ This section contains worker functions that are required by the gameplay functio
       (let ((regexp (format "^[ \t]*#\\+%s:" (regexp-quote "USED_PROMPTS")))
             (case-fold-search t))
         (goto-char (point-min))
-        (if (re-search-forward regexp nil t)
-            (read (buffer-substring (point) (line-end-position)))
-          (eval '())))))
+        (when (re-search-forward regexp nil t)
+          (read (buffer-substring (point) (line-end-position)))))))
 #+end_src
 
 #+name: set-used-prompts
@@ -213,11 +210,10 @@ This section contains worker functions that are required by the gameplay functio
         (let ((regexp (format "^[ \t]*#\\+%s:" (regexp-quote "USED_PROMPTS")))
               (case-fold-search t))
           (goto-char (point-min))
-          (if (re-search-forward regexp nil t)
-              (progn
-                (insert " ")
-                (delete-region (point) (line-end-position))
-                (insert (format "%s" val-list))))))))
+          (when (re-search-forward regexp nil t)
+            (insert " ")
+            (delete-region (point) (line-end-position))
+            (insert (format "%s" val-list)))))))
   (when (boundp 'new-val-list)
     (set-used-prompts new-val-list))
 #+end_src
@@ -230,11 +226,10 @@ This section contains worker functions that are required by the gameplay functio
         (let ((regexp (format "^[ \t]*#\\+%s:" (regexp-quote "CURRENT_PROMPT")))
               (case-fold-search t))
           (goto-char (point-min))
-          (if (re-search-forward regexp nil t)
-              (progn
-                (insert " ")
-                (delete-region (point) (line-end-position))
-                (insert (number-to-string val))))))))
+          (when (re-search-forward regexp nil t)
+            (insert " ")
+            (delete-region (point) (line-end-position))
+            (insert (number-to-string val)))))))
   (when (boundp 'new-val)
     (set-current-prompt new-val))
 #+end_src
@@ -244,7 +239,7 @@ This section contains functions that may be useful to the player. To run any of 
 The code block, =reset-used-prompts=, will force this play session to forget which Prompts you have visited thus far.
 
 #+name: reset-used-prompts
-#+begin_src emacs-lisp :tangle no :noweb yes :results silent
+#+begin_src emacs-lisp :tangle no :noweb yes :noweb-prefix no :results silent
   <<set-used-prompts>>
   (set-used-prompts "()")
 #+end_src
@@ -252,12 +247,12 @@ The code block, =reset-used-prompts=, will force this play session to forget whi
 The code block, =reset-current-prompt=, will force this play session to go back to the first Prompt in the book.
 
 #+name: reset-current-prompt
-#+begin_src emacs-lisp :tangle no :noweb yes :results silent
+#+begin_src emacs-lisp :tangle no :noweb yes :noweb-prefix no :results silent
   <<set-current-prompt>>
   (set-current-prompt 1.1)
 #+end_src
 
-The code block, =reset-playspace=, will delete everything that has so far been created under the [[Play Space]] heading, and reset it to the start of play.
+The code block, =reset-playspace=, will delete everything that has so far been created under the [[*Play Space][Play Space]] heading, and reset it to the start of play.
 
 #+name: reset-playspace
 #+begin_src emacs-lisp :tangle no :results silent
@@ -266,21 +261,26 @@ The code block, =reset-playspace=, will delete everything that has so far been c
       (let ((regexp (format "^%s" (regexp-quote "* Play Space")))
             (case-fold-search t))
         (goto-char (point-min))
-        (when (re-search-forward regexp nil t)
-          (org-cut-subtree))
-        (delete-trailing-whitespace)
+        (unless (re-search-forward regexp nil t)
+          (user-error "No top-level Play Space heading found in this buffer"))
+        (org-cut-subtree)
+        (while (and (> (point) (point-min))
+                    (save-excursion
+                      (forward-line -1)
+                      (looking-at "^[ \t]*$")))
+          (delete-char -1))
         (insert "* Play Space\n"
                 "** Experiences\n"
                 "*** MEMORY Name of Memory One\n"
-                "**** 0.1: A short history of your character before becoming a vampire; how you feel about your life so far and what you hope for the future---any additional information you want to include.\n"
+                "- 0.1: A short history of your character before becoming a vampire; how you feel about your life so far and what you hope for the future---any additional information you want to include.\n"
                 "*** MEMORY Name of Memory Two\n"
-                "**** 0.2: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.\n"
+                "- 0.2: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.\n"
                 "*** MEMORY Name of Memory Three\n"
-                "**** 0.3: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.\n"
+                "- 0.3: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.\n"
                 "*** MEMORY Name of Memory Four\n"
-                "**** 0.4: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.\n"
+                "- 0.4: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.\n"
                 "*** MEMORY Name of Memory Five\n"
-                "**** 0.5: A description of how you were sired and marked; how you feel about your change and your sire---any additional information you want to include.\n"
+                "- 0.5: A description of how you were sired and marked; how you feel about your change and your sire---any additional information you want to include.\n"
                 "** Skills\n"
                 "- [ ] Name of Unchecked Skill\n"
                 "- [ ] Name of Unchecked Skill\n"
@@ -293,13 +293,13 @@ The code block, =reset-playspace=, will delete everything that has so far been c
                 "- Name of Resource---short description of resource\n"
                 "- +Name of Lost Resource---short description of resource+\n"
                 "** Characters\n"
-                "*** ALIVE First Mortal's Name                                     :MORTAL:\n"
+                "*** ALIVE First Mortal's Name                                      :MORTAL:\n"
                 "Description of first mortal.\n"
-                "*** ALIVE Second Mortal's Name                                    :MORTAL:\n"
+                "*** ALIVE Second Mortal's Name                                     :MORTAL:\n"
                 "Description of second mortal.\n"
-                "*** ALIVE Third Mortal's Name                                     :MORTAL:\n"
+                "*** ALIVE Third Mortal's Name                                      :MORTAL:\n"
                 "Description of third mortal.\n"
-                "*** ALIVE Name of Your Sire                                     :IMMORTAL:\n"
+                "*** ALIVE Name of Your Sire                                      :IMMORTAL:\n"
                 "Description of the creature that turned you into a vampire.\n"
                 "*** EXPIRED Name of mortal Character                              :MORTAL:\n"
                 "Description of mortal character.\n"
@@ -310,24 +310,24 @@ The code block, =reset-playspace=, will delete everything that has so far been c
 The code block, =restart-game=, will force this play session to forget which Prompts you have visited thus far, and go back to the first Prompt in the book.
 
 #+name: restart-game
-#+begin_src emacs-lisp :tangle no :noweb yes :results silent
+#+begin_src emacs-lisp :tangle no :noweb yes :noweb-prefix no :results silent
   <<reset-used-prompts>>
   <<reset-current-prompt>>
 #+end_src
 
-The code block, =reset-game=, will force this play session to forget which Prompts you have visited thus far, go back to the first Prompt in the book, and delete everything that has so far been created under the [[Play Space]] heading; resetting everything to the start of play.
+The code block, =reset-game=, will force this play session to forget which Prompts you have visited thus far, go back to the first Prompt in the book, and delete everything that has so far been created under the [[*Play Space][Play Space]] heading; resetting everything to the start of play.
 
 #+name: reset-game
-#+begin_src emacs-lisp :tangle no :noweb yes :results silent
+#+begin_src emacs-lisp :tangle no :noweb yes :noweb-prefix no :results silent
   <<restart-game>>
   <<reset-playspace>>
 #+end_src
 
-The code block, =get-next-prompt=, will create a results section underneath showing the Prompt number from the book which you need to resolve next. When re-run, this code block will update the results section underneath with the next Prompt to resolve. Keep repeating this step to resolve more Prompts until the game ends.
+The code block, =get-next-prompt=, will create a results section underneath showing the number of which Prompt from the book you need to resolve next. When re-run, this code block will update the results section underneath with the next Prompt to resolve. Keep repeating this step to resolve more Prompts until the game ends.
 
 #+name: get-next-prompt
-#+begin_src emacs-lisp :tangle no :noweb yes :var lowest-prompt=get-lowest-prompt() highest-prompt=get-highest-prompt() curr-prompt=get-current-prompt() all-prompts=get-all-prompts() used-prompts=get-used-prompts() move-by=move-amount()
-  (let ((new-prompt (max lowest-prompt (+ (+ 0.1 (ffloor curr-prompt)) move-by))))
+#+begin_src emacs-lisp :tangle no :noweb yes :noweb-prefix no :var lowest-prompt=get-lowest-prompt() highest-prompt=get-highest-prompt() curr-prompt=get-current-prompt() all-prompts=get-all-prompts() used-prompts=get-used-prompts() move-by=move-amount()
+  (let ((new-prompt (max lowest-prompt (/ (round (* 10 (+ (+ 0.1 (ffloor curr-prompt)) move-by))) 10.0))))  ; Add the move to the current prompt, then snap to the nearest tenth (round the x10 value) so float drift can't produce a value that fails to match a stored prompt
     <<set-current-prompt>>
     <<set-used-prompts>>
     (catch 'prompt-found
@@ -335,7 +335,7 @@ The code block, =get-next-prompt=, will create a results section underneath show
         (when (> new-prompt highest-prompt)
           (setq new-prompt highest-prompt)
           (throw 'prompt-found t))
-        (setq new-prompt (/ (+ 1 (ffloor (* 10 new-prompt))) 10))))  ; Floating point addition not reliable, so using integer addition. This does restrict to 9 variants
+        (setq new-prompt (/ (+ 1 (ffloor (* 10 new-prompt))) 10))))  ; Step forward to the next tenth (snapping to whole tenths via ffloor so float drift can't accumulate) until we hit an available prompt (this does limit the code to working with no more than 9 variants per prompt)
     (set-current-prompt new-prompt)
     (set-used-prompts (sort (add-to-list 'used-prompts new-prompt) '<))
     (message "%s" (number-to-string new-prompt)))
@@ -343,15 +343,15 @@ The code block, =get-next-prompt=, will create a results section underneath show
 * Play Space
 ** Experiences
 *** MEMORY Name of Memory One
-**** 0.1: A short history of your character before becoming a vampire; how you feel about your life so far and what you hope for the future---any additional information you want to include.
+- 0.1: A short history of your character before becoming a vampire; how you feel about your life so far and what you hope for the future---any additional information you want to include.
 *** MEMORY Name of Memory Two
-**** 0.2: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.
+- 0.2: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.
 *** MEMORY Name of Memory Three
-**** 0.3: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.
+- 0.3: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.
 *** MEMORY Name of Memory Four
-**** 0.4: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.
+- 0.4: An experience from before you were a vampire combining two of your traits; how you felt about that experience and how it might affect you moving forward---any additional information you want to include.
 *** MEMORY Name of Memory Five
-**** 0.5: A description of how you were sired and marked; how you feel about your change and your sire---any additional information you want to include.
+- 0.5: A description of how you were sired and marked; how you feel about your change and your sire---any additional information you want to include.
 ** Skills
 - [ ] Name of Unchecked Skill
 - [ ] Name of Unchecked Skill
@@ -364,13 +364,13 @@ The code block, =get-next-prompt=, will create a results section underneath show
 - Name of Resource---short description of resource
 - +Name of Lost Resource---short description of resource+
 ** Characters
-*** ALIVE First Mortal's Name                                     :MORTAL:
+*** ALIVE First Mortal's Name                                      :MORTAL:
 Description of first mortal.
-*** ALIVE Second Mortal's Name                                    :MORTAL:
+*** ALIVE Second Mortal's Name                                     :MORTAL:
 Description of second mortal.
-*** ALIVE Third Mortal's Name                                     :MORTAL:
+*** ALIVE Third Mortal's Name                                      :MORTAL:
 Description of third mortal.
-*** ALIVE Name of Your Sire                                     :IMMORTAL:
+*** ALIVE Name of Your Sire                                      :IMMORTAL:
 Description of the creature that turned you into a vampire.
 *** EXPIRED Name of mortal Character                              :MORTAL:
 Description of mortal character.
