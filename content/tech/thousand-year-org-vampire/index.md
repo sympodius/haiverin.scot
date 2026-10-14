@@ -163,7 +163,7 @@ Just below these variables, I created the first code block in the file:
 ```emacs-lisp {linenos=inline style=dracula}
 #+name: prompt-number-generator
 #+begin_src emacs-lisp :tangle no :var main-prompts=71 prompt-variants=3 end-game-prompts=9 :results silent
-  ;; This generates a list that can be used as the value for ALL_PROMPTS. It assumes that end-game-prompts have no variations and come after the main prompts.
+  ;; This generates a list that can be used as the value for ALL_PROMPTS. It assumes that end-game-prompts have no variations and come after the main Prompts.
   (let ((x 1)
         (y 1)
         (z 1)
@@ -378,7 +378,7 @@ From my perspective while playing the game, I really only want the file to tell 
 ```emacs-lisp {linenos=inline style=dracula}
 #+name: get-next-prompt
 #+begin_src emacs-lisp :tangle no :noweb yes :noweb-prefix no :var lowest-prompt=get-lowest-prompt() highest-prompt=get-highest-prompt() curr-prompt=get-current-prompt() all-prompts=get-all-prompts() used-prompts=get-used-prompts() move-by=move-amount()
-  (let ((new-prompt (max lowest-prompt (/ (round (* 10 (+ (+ 0.1 (ffloor curr-prompt)) move-by))) 10.0))))  ; Add the move to the current prompt, then snap to the nearest tenth (round the x10 value) so float drift can't produce a value that fails to match a stored prompt
+  (let ((new-prompt (max lowest-prompt (/ (round (* 10 (+ (+ 0.1 (ffloor curr-prompt)) move-by))) 10.0))))  ; Add the move to the current Prompt, then snap to the nearest tenth (round the x10 value) so float drift can't produce a value that fails to match a stored Prompt
     <<set-current-prompt>>
     <<set-used-prompts>>
     (catch 'prompt-found
@@ -386,7 +386,7 @@ From my perspective while playing the game, I really only want the file to tell 
         (when (> new-prompt highest-prompt)
           (setq new-prompt highest-prompt)
           (throw 'prompt-found t))
-        (setq new-prompt (/ (+ 1 (ffloor (* 10 new-prompt))) 10))))  ; Step forward to the next tenth (snapping to whole tenths via ffloor so float drift can't accumulate) until we hit an available prompt (this does limit the code to working with no more than 9 variants per prompt)
+        (setq new-prompt (/ (+ 1 (ffloor (* 10 new-prompt))) 10))))  ; Step forward to the next tenth (snapping to whole tenths via ffloor so float drift can't accumulate) until we hit an available Prompt (this does limit the code to working with no more than 9 variants per Prompt)
     (set-current-prompt new-prompt)
     (set-used-prompts (sort (add-to-list 'used-prompts new-prompt) '<))
     (message "%s" (number-to-string new-prompt)))
@@ -505,6 +505,8 @@ If you want to make life easier on yourself and just get a completed Org file th
 As a little homework assignment for those of you who have bought the game, you might like to code the prompt text into the system as well. I've done this with my own (private) copy of *Thousand Year Org Vampire*, and it means that I can play the game entirely within Emacs. No book, dice, or pen-and-paper needed. What a time to be alive!
 
 Naturally, I'm not going to be releasing that file because it would breach copyright. Also, I just really want you to [buy a copy](https://timhutchings.itch.io/tyov) of the game from [Tim Hutchings](https://thousandyearoldvampire.com/). He deserves it for all his hard work in making such a cool game.
+
+> **Editor's note (14 October 2026):** I've now written the follow-up post, *[Bride of Thousand Year Org Vampire](/tech/bride-of-thousand-year-org-vampire/)*, which walks through exactly how I did that homework. Now you too can play the entire game inside Emacs, no book in sight.
 
 I hope you've enjoyed this tutorial on literate programming, and about playing *TYOV* in Emacs. May you create your greatest vampiric tomorrow by living your best foreboding today. Happy Halloween, everyone!
 

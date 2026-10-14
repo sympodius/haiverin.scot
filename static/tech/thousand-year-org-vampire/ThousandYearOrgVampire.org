@@ -17,7 +17,7 @@
 
 This file is for playing a session of the role-playing game /[[https://timhutchings.itch.io/tyov][Thousand Year Old Vampire]]/ by [[https://thousandyearoldvampire.com/][Tim Hutchings]]. It helps play the standard single player version of the game. This file keeps track of what prompt you are on; calculates which prompt to do next; and helps you keep a record of play. This record includes experiences; memories; diary entries; skills; resources; characters; marks; and forgotten/lost/checked/expired things.
 
-The file assumes you are playing the standard version of the game, and own a copy of the original game. If you are using different prompts from the standard ones, you may need to alter the =#+ALL_PROMPTS= variable (though the supplied functions currently don't work for Prompts with more than nine variants).
+The file assumes you are playing the standard version of the game, and own a copy of the original game. If you are using different prompts from the standard ones, you may need to alter the =#+ALL_PROMPTS= variable (though the supplied functions currently don't work for prompts with more than nine variants).
 
 In response to prompts, you may need to occasionally change the variable: =#+CURRENT_PROMPT= in [[*Play Variables][Play Variables]].
 
@@ -56,7 +56,7 @@ For example:
 
 ~- 1.1: Stalking the deserts over lonely years, I watch generations of Christian knights waste themselves on the swords of the Saracen; it’s a certainty that Charles is among them---I dream of his touch as I sleep beneath the burning sand.~
 
-Here, the prompt number ~1.1~ indicates that this is the first of the `one' prompts. In the standard version of the game, all but end-game prompts contain three variants. The number after the point indicates the variant, with ~.1~ being the first, ~.2~ being the second, and so on. This file will tell you which variant to use.
+Here, the prompt number ~1.1~ indicates that this is the first of the `one' Prompts. In the standard version of the game, all but end-game Prompts contain three variants. The number after the point indicates the variant, with ~.1~ being the first, ~.2~ being the second, and so on. This file will tell you which variant to use.
 
 When a Prompt tells you to check a Skill, incorporate it into your new Experience, then check it off in the Skill List (using ~C-c C-c~). You may only check a Skill once unless told otherwise. You can still use a checked Skill to resolve Prompts; you just cannot check it again. If, however, a Prompt tells you to Lose a Skill, then it can no longer be used to resolve a Prompt. To indicate that a skill is lost, enclose its text with a ~+~ symbol on either side.
 
@@ -108,7 +108,7 @@ The code block, =prompt-number-generator=, was used to create the =#+ALL_PROMPTS
 
 #+name: prompt-number-generator
 #+begin_src emacs-lisp :tangle no :var main-prompts=71 prompt-variants=3 end-game-prompts=9 :results silent
-  ;; This generates a list that can be used as the value for ALL_PROMPTS. It assumes that end-game-prompts have no variations and come after the main prompts.
+  ;; This generates a list that can be used as the value for ALL_PROMPTS. It assumes that end-game-prompts have no variations and come after the main Prompts.
   (let ((x 1)
         (y 1)
         (z 1)
@@ -327,7 +327,7 @@ The code block, =get-next-prompt=, will create a results section underneath show
 
 #+name: get-next-prompt
 #+begin_src emacs-lisp :tangle no :noweb yes :noweb-prefix no :var lowest-prompt=get-lowest-prompt() highest-prompt=get-highest-prompt() curr-prompt=get-current-prompt() all-prompts=get-all-prompts() used-prompts=get-used-prompts() move-by=move-amount()
-  (let ((new-prompt (max lowest-prompt (/ (round (* 10 (+ (+ 0.1 (ffloor curr-prompt)) move-by))) 10.0))))  ; Add the move to the current prompt, then snap to the nearest tenth (round the x10 value) so float drift can't produce a value that fails to match a stored prompt
+  (let ((new-prompt (max lowest-prompt (/ (round (* 10 (+ (+ 0.1 (ffloor curr-prompt)) move-by))) 10.0))))  ; Add the move to the current Prompt, then snap to the nearest tenth (round the x10 value) so float drift can't produce a value that fails to match a stored Prompt
     <<set-current-prompt>>
     <<set-used-prompts>>
     (catch 'prompt-found
@@ -335,7 +335,7 @@ The code block, =get-next-prompt=, will create a results section underneath show
         (when (> new-prompt highest-prompt)
           (setq new-prompt highest-prompt)
           (throw 'prompt-found t))
-        (setq new-prompt (/ (+ 1 (ffloor (* 10 new-prompt))) 10))))  ; Step forward to the next tenth (snapping to whole tenths via ffloor so float drift can't accumulate) until we hit an available prompt (this does limit the code to working with no more than 9 variants per prompt)
+        (setq new-prompt (/ (+ 1 (ffloor (* 10 new-prompt))) 10))))  ; Step forward to the next tenth (snapping to whole tenths via ffloor so float drift can't accumulate) until we hit an available Prompt (this does limit the code to working with no more than 9 variants per Prompt)
     (set-current-prompt new-prompt)
     (set-used-prompts (sort (add-to-list 'used-prompts new-prompt) '<))
     (message "%s" (number-to-string new-prompt)))
